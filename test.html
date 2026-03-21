@@ -4,15 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gems Taiwan - 寶石台灣 合成生物學教育推廣</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Microsoft YaHei', 'Arial', sans-serif;
+    <link rel="stylesheet" href="styles.css">
             line-height: 1.6;
             color: #333;
         }
@@ -64,7 +56,34 @@
             margin: 0 auto;
             padding: 0 20px;
         }
-        
+
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 20px;
+        }
+
+        .text-highlight {
+            font-size: 20px;
+            color: #764ba2;
+            margin-bottom: 30px;
+        }
+
+        .cta-link {
+            color: #667eea;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .big-button {
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            cursor: pointer;
+            display: inline-block;
+            text-align: center;
+        }
+
         section {
             padding: 60px 0;
             border-bottom: 1px solid #eee;
@@ -244,25 +263,26 @@
         <div class="header-container">
             <div class="logo">💎 Gems Taiwan</div>
             <nav>
-                <ul>
-                    <li><a href="#" onclick="showSection('home')">首頁 Home</a></li>
-                    <li><a href="#" onclick="showSection('about')">關於我們 About</a></li>
-                    <li><a href="#" onclick="showSection('philosophy')">教育理念 Philosophy</a></li>
-                    <li><a href="#" onclick="showSection('resources')">教學資源 Resources</a></li>
-                    <li><a href="#" onclick="showSection('ethics')">科學與倫理 Ethics</a></li>
-                    <li><a href="#" onclick="showSection('play')">互動遊戲 Play</a></li>
-                    <li><a href="#" onclick="showSection('blog')">部落格 Blog</a></li>
-                    <li><a href="#" onclick="showSection('involved')">參與我們 Get Involved</a></li>
+                    <ul>
+                    <li><a href="#" onclick="showSection('about')">About us</a></li>
+                    <li><a href="#" onclick="showSection('resources')">Resources</a></li>
+                    <li><a href="#" onclick="showSection('ethics')">Science & Ethnics</a></li>
+                    <li><a href="#" onclick="showSection('play')">Online Games</a></li>
+                    <li><a href="#" onclick="showSection('blog')">Blogs / News</a></li>
+                    <li><a href="#" onclick="showSection('involved')">Get Involved</a></li>
+                    <li><a href="#" onclick="showSection('artworks')">Artworks</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
+    <main class="main-content">
+
     <!-- Home Section -->
     <section id="home" class="active">
         <div class="container">
             <h1>🌱 寶石台灣 | Gems Taiwan</h1>
-            <p style="font-size: 20px; color: #764ba2; margin-bottom: 30px;">推廣合成生物學，啟發科學未來</p>
+            <p class="text-highlight">推廣合成生物學，啟發科學未來</p>
             
             <h2>核心願景 Vision & Mission</h2>
             <div class="content-box">
@@ -348,31 +368,18 @@
         </div>
     </section>
 
-    <!-- Philosophy Section -->
-    <section id="philosophy">
+    <!-- Artworks Section -->
+    <section id="artworks">
         <div class="container">
-            <h1>教育理念 Philosophy</h1>
-            
-            <h2>為什麼要推廣合成生物學？</h2>
-            <div class="content-box">
-                <p>合成生物學是21世紀最具潛力的科學領域之一。透過實踐和實驗，學生可以：</p>
-                <ul style="margin-left: 20px; margin-top: 15px;">
-                    <li>了解生命的基本原理</li>
-                    <li>培養科學思維與解決問題的能力</li>
-                    <li>探索生物技術在醫療、環保、農業等領域的應用</li>
-                    <li>為未來的科學創新奠定基礎</li>
-                </ul>
+            <h1>Artworks</h1>
+            <p class="text-highlight">展示學生與團隊的合成生物學藝術作品、海報與插畫。</p>
+            <div class="image-row">
+                <div class="image-placeholder">🖼️ Art Piece 1</div>
+                <div class="image-placeholder">🖼️ Art Piece 2</div>
             </div>
-            
-            <h2>對科學教育的看法 Our View on Science Education</h2>
-            <div class="content-box">
-                <p>科學教育不應該只停留在課本。我們相信透過親身體驗、動手實驗，學生才能真正理解科學的精妙。我們的教學方法強調：</p>
-                <ul style="margin-left: 20px; margin-top: 15px;">
-                    <li><strong>實驗性學習 Hands-on Learning</strong> - 讓學生進行真實的實驗</li>
-                    <li><strong>跨領域整合 Interdisciplinary Approach</strong> - 將科學與生活結合</li>
-                    <li><strong>創新思維 Critical Thinking</strong> - 鼓勵學生提問與探索</li>
-                    <li><strong>社會責任 Social Responsibility</strong> - 認識科學與倫理的關係</li>
-                </ul>
+            <div class="image-row">
+                <div class="image-placeholder">🖼️ Art Piece 3</div>
+                <div class="image-placeholder">🖼️ Art Piece 4</div>
             </div>
         </div>
     </section>
@@ -517,7 +524,7 @@
             <div class="content-box">
                 <p>學校、教育機構或組織都歡迎申請我們的工作坊！</p>
                 <p style="margin-top: 15px;"><strong>申請方式：</strong>填寫下方Google表單，我們的團隊將在5個工作日內與您聯繫。</p>
-                <p style="margin-top: 15px;"><a href="https://forms.gle/example" target="_blank" style="color: #667eea; font-weight: bold;">→ 立即申請工作坊 Apply Now</a></p>
+                <p style="margin-top: 15px;"><a href="https://forms.gle/example" target="_blank" class="cta-link">→ 立即申請工作坊 Apply Now</a></p>
             </div>
             
             <h2>工作坊內容 Workshop Details</h2>
@@ -562,7 +569,7 @@
             <div class="content-box">
                 <p style="margin-bottom: 20px;">點擊下方連結填寫申請表，讓您的學校體驗合成生物學的樂趣！</p>
                 <a href="https://forms.gle/example" target="_blank">
-                    <button style="width: 100%; padding: 15px; font-size: 18px; cursor: pointer;">
+                    <button class="big-button">
                         📋 填寫工作坊申請表 Click to Apply
                     </button>
                 </a>
@@ -570,26 +577,13 @@
         </div>
     </section>
 
+    </main>
+
     <footer>
         <p>&copy; 2025 Gems Taiwan | 寶石台灣 合成生物學教育推廣</p>
         <p>推廣合成生物學，啟發科學未來 | Promoting Synthetic Biology, Inspiring Scientific Future</p>
     </footer>
 
-    <script>
-        function showSection(sectionId) {
-            // Hide all sections
-            const sections = document.querySelectorAll('section');
-            sections.forEach(section => {
-                section.classList.remove('active');
-            });
-            
-            // Show selected section
-            const selectedSection = document.getElementById(sectionId);
-            if (selectedSection) {
-                selectedSection.classList.add('active');
-                window.scrollTo(0, 0);
-            }
-        }
-    </script>
+    <script src="scripts.js"></script>
 </body>
 </html>
