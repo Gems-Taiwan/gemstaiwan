@@ -3,31 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gems Taiwan - 寶石台灣 合成生物學教育推廣</title>
+    <title>Gems Taiwan - Newsroom Style</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --bg: #ffffff;
+            --text: #1f2937;
+            --muted: #4b5563;
+            --border: #e5e7eb;
+            --primary: #111827;
+            --accent: #3b82f6;
+            --accent-soft: #eff6ff;
+            --shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
         }
 
+        * { box-sizing: border-box; }
         body {
-            font-family: 'Microsoft YaHei', 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #fff;
+            margin: 0;
+            font-family: Inter, Helvetica, Arial, sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.55;
         }
 
         header {
             background: #fff;
-            color: #222;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-bottom: 1px solid var(--border);
             position: sticky;
             top: 0;
-            z-index: 100;
-            border-bottom: 1px solid #e5e5e5;
+            z-index: 10;
         }
 
+        .top-bar {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 14px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+
+        .brand .logo {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            border: 2px solid var(--primary);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+
+        nav.main-nav {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        nav.main-nav a {
+            text-decoration: none;
+            color: var(--text);
+            padding: 10px 14px;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: background .2s, color .2s;
+        }
+
+        nav.main-nav a:hover {
+            background: var(--accent-soft);
+            color: var(--accent);
+        }
+
+        nav.main-nav a.active {
+            background: var(--accent);
+            color: white;
+            box-shadow: var(--shadow);
+        }
+
+        .hero {
+            width:100%;
+            height: 260px;
+            background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero h1 {
+            font-size: 2.15rem;
+            margin: 0;
+            color: #111827;
+        }
+
+        .main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 32px 16px;
+        }
+
+        section { display: none; }
+        section.active { display: block; }
+
+        .section-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+            margin-top: 18px;
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 18px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
+        }
+
+        .card h3 {
+            margin: 0 0 8px;
+            color: #0f172a;
+        }
+
+        .card p { margin: 0; color: var(--muted); }
+
+        .content-title {
+            margin-bottom: 10px;
+            font-size: 1.55rem;
+            color: #111827;
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            background: #fff;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--muted);
+            padding: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .top-bar { flex-wrap: wrap; gap: 10px; }
+            .hero { height: 220px; }
+            .hero h1 { font-size: 1.7rem; }
+            nav.main-nav { flex-wrap: wrap; justify-content: center; }
+        }
+    </style>
+</head>
         .header-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -278,14 +410,106 @@
 </head>
 <body>
     <header>
-        <div class="header-container">
-            <div class="logo">💎 Gems Taiwan</div>
-            <nav>
-                    <ul>
-                    <li><a href="#" onclick="showSection('about')">About us</a></li>
-                    <li><a href="#" onclick="showSection('resources')">Resources</a></li>
-                    <li><a href="#" onclick="showSection('ethics')">Science & Ethnics</a></li>
-                    <li><a href="#" onclick="showSection('play')">Online Games</a></li>
+        <div class="top-bar">
+            <div class="brand"><span class="logo">💎</span> Gems Taiwan Newsroom</div>
+            <nav class="main-nav" aria-label="Primary">
+                <a href="#" onclick="showSection('about'); return false;" class="active">About us</a>
+                <a href="#" onclick="showSection('resources'); return false;">Resources</a>
+                <a href="#" onclick="showSection('ethics'); return false;">Science & Ethnics</a>
+                <a href="#" onclick="showSection('play'); return false;">Online Games</a>
+                <a href="#" onclick="showSection('blog'); return false;">Blogs / News</a>
+                <a href="#" onclick="showSection('involved'); return false;">Get Involved</a>
+                <a href="#" onclick="showSection('artworks'); return false;">Artworks</a>
+            </nav>
+            <div class="search">🔍 Search</div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Gems Taiwan Synthetic Biology Hub</h1>
+    </section>
+
+    <main class="main">
+        <section id="about" class="active">
+            <h2 class="content-title">About us</h2>
+            <div class="card">
+                <h3>Who we are</h3>
+                <p>Gems Taiwan is a synthetic biology education movement combining science, art and policy. We provide in-school workshops, teacher training, and community programming.</p>
+            </div>
+            <div class="card">
+                <h3>Mission</h3>
+                <p>Empower young learners with hands-on bioengineering science, ethical discussion, and creative thinking through game-based learning.</p>
+            </div>
+        </section>
+
+        <section id="resources">
+            <h2 class="content-title">Resources</h2>
+            <div class="section-grid">
+                <div class="card"><h3>Lesson Plans</h3><p>Download curriculum modules for different ages.</p></div>
+                <div class="card"><h3>Teacher Guides</h3><p>Structured guides for facilitation and assessment.</p></div>
+                <div class="card"><h3>Media Library</h3><p>Slides, posters, and videos for classroom use.</p></div>
+            </div>
+        </section>
+
+        <section id="ethics">
+            <h2 class="content-title">Science & Ethnics</h2>
+            <div class="card">
+                <h3>Ethical Principles</h3>
+                <p>Discuss safety, equity, environmental responsibility, and consent in synthetic biology.</p>
+            </div>
+            <div class="card">
+                <h3>Learning Activities</h3>
+                <p>Scenario-based debates and critical thinking prompts for classrooms.</p>
+            </div>
+        </section>
+
+        <section id="play">
+            <h2 class="content-title">Online Games</h2>
+            <div class="section-grid">
+                <div class="card"><h3>DNA Matching</h3><p>Practice base pairing and sequence design.</p></div>
+                <div class="card"><h3>Gene Editor Simulator</h3><p>Learn about CRISPR concepts with an interactive demo.</p></div>
+                <div class="card"><h3>Cell Factory</h3><p>Build custom microbe workflows with resource constraints.</p></div>
+            </div>
+        </section>
+
+        <section id="blog">
+            <h2 class="content-title">Blogs / News</h2>
+            <div class="card"><h3>Workshop Recap</h3><p>Latest classroom events and outcomes from partner schools.</p></div>
+            <div class="card"><h3>Community Voices</h3><p>Practitioner reflections and student spotlights.</p></div>
+        </section>
+
+        <section id="involved">
+            <h2 class="content-title">Get Involved</h2>
+            <div class="card"><h3>Join a Workshop</h3><p>Request a session with your institution.</p></div>
+            <div class="card"><h3>Volunteer</h3><p>Contribute as content creator, mentor or event support.</p></div>
+            <div class="card"><h3>Partner</h3><p>Collaborate with us on funding and curriculum expansion.</p></div>
+        </section>
+
+        <section id="artworks">
+            <h2 class="content-title">Artworks</h2>
+            <div class="section-grid">
+                <div class="card"><h3>Project Gallery</h3><p>View student artworks inspired by synthetic biology concepts.</p></div>
+                <div class="card"><h3>Design Showcase</h3><p>Illustrations, posters, and creative visual essays.</p></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2025 Gems Taiwan. Synthetic biology education & community.
+    </footer>
+
+    <script>
+        function showSection(id) {
+            document.querySelectorAll('main section').forEach(s => s.classList.remove('active'));
+            const target = document.getElementById(id);
+            if (target) target.classList.add('active');
+            document.querySelectorAll('nav.main-nav a').forEach(link => {
+                link.classList.toggle('active', link.textContent.trim() === (id === 'ethics' ? 'Science & Ethnics' : id === 'play' ? 'Online Games' : id === 'blog' ? 'Blogs / News' : id === 'involved' ? 'Get Involved' : id === 'artworks' ? 'Artworks' : 'About us'));
+            });
+        }
+    </script>
+</body>
+</html>
                     <li><a href="#" onclick="showSection('blog')">Blogs / News</a></li>
                     <li><a href="#" onclick="showSection('involved')">Get Involved</a></li>
                     <li><a href="#" onclick="showSection('artworks')">Artworks</a></li>
