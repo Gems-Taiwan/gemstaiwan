@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gems Taiwan - 寶石台灣 合成生物學教育推廣</title>
+    <title>Gems Taiwan - Synthetic Biology Education Outreach</title>
     <style>
         * {
             margin: 0;
@@ -37,28 +37,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 12px;
-        }
-
-        .lang-switch {
-            display: inline-flex;
-            align-items: center;
-            background: rgba(100,116,139,0.1);
-            border: 1px solid rgba(148,163,184,0.35);
-            border-radius: 999px;
-            padding: 4px 8px;
-            font-size: 14px;
-            color: #334155;
-        }
-
-        .lang-switch select {
-            border: none;
-            outline: none;
-            background: transparent;
-            color: #334155;
-            font-weight: 600;
-            margin-left: 6px;
-            cursor: pointer;
         }
 
         .logo {
@@ -310,14 +288,7 @@
 <body>
     <header>
         <div class="header-container">
-            <div class="logo" id="logo">💎 Gems Taiwan</div>
-            <div class="lang-switch">
-                <label for="langSelect">EN / 繁</label>
-                <select id="langSelect" onchange="setLanguage(this.value)">
-                    <option value="en">English</option>
-                    <option value="zh">中文</option>
-                </select>
-            </div>
+            <div class="logo" id="logo">Gems Taiwan</div>
             <nav>
                     <ul>
                     <li><a id="nav-about" href="#" onclick="showSection('about')">About us</a></li>
@@ -337,40 +308,39 @@
     <!-- Home Section -->
     <section id="home" class="active">
         <div class="container">
-            <h1 id="home-title">🌱 寶石台灣 | Gems Taiwan</h1>
-            <p id="home-slogan" class="text-highlight">推廣合成生物學，啟發科學未來</p>
+            <h1 id="home-title">Gems Taiwan</h1>
+            <p id="home-slogan" class="text-highlight">Promoting synthetic biology and inspiring the next generation of scientists.</p>
             
-            <h2 id="home-vision">核心願景 Vision & Mission</h2>
+            <h2 id="home-vision">Vision & Mission</h2>
             <div class="content-box">
-                <p>我們致力於透過創新教育，推廣合成生物學知識，培養下一代科學家。讓每個學生都能體驗科學的樂趣與力量。</p>
+                <p>We are dedicated to using innovative education to teach synthetic biology and empower students with science literacy.</p>
             </div>
             
             <div class="image-row">
-                <div class="image-placeholder">🖥️ 編程與科技 Coding & Technology</div>
-                <div class="image-placeholder">📊 內容創作 Content Creation</div>
+                <div class="image-placeholder">Coding & Technology</div>
+                <div class="image-placeholder">Content Creation</div>
             </div>
             
-            <h2>2024-2025 影響力地圖 Impact Map</h2>
+            <h2>Impact Map 2024-2025</h2>
             <div class="impact-stats">
                 <div class="stat-card">
                     <div class="stat-number">50+</div>
-                    <div class="stat-label">合作學校 Partner Schools</div>
+                    <div class="stat-label">Partner Schools</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">2000+</div>
-                    <div class="stat-label">受惠學生 Students Reached</div>
+                    <div class="stat-label">Students Reached</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">15+</div>
-                    <div class="stat-label">工作坊場次 Workshops Held</div>
+                    <div class="stat-label">Workshops Held</div>
                 </div>
             </div>
             
-            <h2>我們的宗旨 Our Slogan</h2>
+            <h2>Our Slogan</h2>
             <div class="content-box">
                 <p style="font-size: 18px; text-align: center; color: #667eea; font-weight: bold;">
-                    「生命由你，設計未來」<br>
-                    <em>Designing Life, Creating Future</em>
+                    "Designing Life, Creating Future"
                 </p>
             </div>
         </div>
@@ -379,39 +349,39 @@
     <!-- About Section -->
     <section id="about">
         <div class="container">
-            <h1 id="about-title">關於我們 About Us</h1>
+            <h1 id="about-title">About Us</h1>
             
-            <h2 id="about-team">顧問與團隊 2026 Advisors & Team 2026</h2>
+            <h2 id="about-team">Advisors & Team 2026</h2>
             <div class="team-grid">
                 <div class="team-card">
                     <div class="team-avatar"></div>
-                    <h3 style="margin-top: 0;">顧問 Advisor</h3>
+                    <h3 style="margin-top: 0;">Advisor</h3>
                     <p>Professor Name</p>
-                    <p style="color: #666; font-size: 14px;">專業領域 / Field of Expertise</p>
+                    <p style="color: #666; font-size: 14px;">Field of Expertise</p>
                 </div>
                 <div class="team-card">
                     <div class="team-avatar"></div>
-                    <h3 style="margin-top: 0;">主任 Director</h3>
+                    <h3 style="margin-top: 0;">Director</h3>
                     <p>Team Leader Name</p>
-                    <p style="color: #666; font-size: 14px;">項目負責人 / Project Lead</p>
+                    <p style="color: #666; font-size: 14px;">Project Lead</p>
                 </div>
                 <div class="team-card">
                     <div class="team-avatar"></div>
-                    <h3 style="margin-top: 0;">團隊成員 Team Member</h3>
+                    <h3 style="margin-top: 0;">Team Member</h3>
                     <p>Member Name</p>
-                    <p style="color: #666; font-size: 14px;">教育推廣 / Education</p>
+                    <p style="color: #666; font-size: 14px;">Education</p>
                 </div>
                 <div class="team-card">
                     <div class="team-avatar"></div>
-                    <h3 style="margin-top: 0;">團隊成員 Team Member</h3>
+                    <h3 style="margin-top: 0;">Team Member</h3>
                     <p>Member Name</p>
-                    <p style="color: #666; font-size: 14px;">技術開發 / Technology</p>
+                    <p style="color: #666; font-size: 14px;">Technology</p>
                 </div>
             </div>
             
-            <h2>指導老師 Mentors</h2>
+            <h2>Mentors</h2>
             <div class="content-box">
-                <p>感謝以下老師的指導與支持：</p>
+                <p>We appreciate the guidance and support from our mentors:</p>
                 <ul style="margin-left: 20px; margin-top: 10px;">
                     <li>Teacher Name 1</li>
                     <li>Teacher Name 2</li>
@@ -419,8 +389,8 @@
                 </ul>
             </div>
             
-            <h2>合作學校 Partner Schools</h2>
-            <div class="image-placeholder">📚 合作學校照片集錦 Photos of Partner Schools</div>
+            <h2>Partner Schools</h2>
+            <div class="image-placeholder">Photos of Partner Schools</div>
         </div>
     </section>
 
@@ -428,14 +398,14 @@
     <section id="artworks">
         <div class="container">
             <h1 id="artworks-title">Artworks</h1>
-            <p class="text-highlight">展示學生與團隊的合成生物學藝術作品、海報與插畫。</p>
+            <p class="text-highlight">Showcasing student and team synthetic biology creative work.</p>
             <div class="image-row">
-                <div class="image-placeholder">🖼️ Art Piece 1</div>
-                <div class="image-placeholder">🖼️ Art Piece 2</div>
+                <div class="image-placeholder">Art Piece 1</div>
+                <div class="image-placeholder">Art Piece 2</div>
             </div>
             <div class="image-row">
-                <div class="image-placeholder">🖼️ Art Piece 3</div>
-                <div class="image-placeholder">🖼️ Art Piece 4</div>
+                <div class="image-placeholder">Art Piece 3</div>
+                <div class="image-placeholder">Art Piece 4</div>
             </div>
         </div>
     </section>
@@ -443,37 +413,37 @@
     <!-- Resources Section -->
     <section id="resources">
         <div class="container">
-            <h1 id="resources-title">教學資源 Educational Resources</h1>
+            <h1 id="resources-title">Educational Resources</h1>
             
-            <h2>教案 Lesson Plans</h2>
+            <h2>Lesson Plans</h2>
             <ul class="resources-list">
-                <li>📄 <a href="#">2024年教案集 Lesson Plans 2024</a> (PDF)</li>
-                <li>📄 <a href="#">2025年教案集 Lesson Plans 2025</a> (PDF)</li>
-                <li>📄 <a href="#">進階教案 Advanced Curriculum</a> (PDF)</li>
+                <li><a href="#">Lesson Plans 2024</a> (PDF)</li>
+                <li><a href="#">Lesson Plans 2025</a> (PDF)</li>
+                <li><a href="#">Advanced Curriculum</a> (PDF)</li>
             </ul>
             
-            <h2>簡報 PPT Presentations</h2>
+            <h2>Presentations</h2>
             <ul class="resources-list">
-                <li>🖥️ <a href="#">合成生物學入門 Introduction to Synthetic Biology</a> (PPT)</li>
-                <li>🖥️ <a href="#">DNA與遺傳 DNA & Genetics</a> (PPT)</li>
-                <li>🖥️ <a href="#">生物工程實務 Bioengineering in Practice</a> (PPT)</li>
+                <li><a href="#">Introduction to Synthetic Biology</a> (PPT)</li>
+                <li><a href="#">DNA & Genetics</a> (PPT)</li>
+                <li><a href="#">Bioengineering in Practice</a> (PPT)</li>
             </ul>
             
-            <h2>實驗手冊 Lab Manuals</h2>
+            <h2>Lab Manuals</h2>
             <div class="content-box">
-                <h3>By Year / 按年份</h3>
+                <h3>By year</h3>
                 <ul class="resources-list">
-                    <li>📋 <a href="#">2024年實驗手冊 2024 Lab Manual</a> (PDF)</li>
-                    <li>📋 <a href="#">2025年實驗手冊 2025 Lab Manual</a> (PDF)</li>
+                    <li><a href="#">2024 Lab Manual</a> (PDF)</li>
+                    <li><a href="#">2025 Lab Manual</a> (PDF)</li>
                 </ul>
             </div>
             
-            <h2>影片 & 遊戲 Videos & Board Games</h2>
+            <h2>Videos & Games</h2>
             <ul class="resources-list">
-                <li>🎥 <a href="#">DNA複製實驗 DNA Replication Video</a></li>
-                <li>🎥 <a href="#">基因編輯教學 Gene Editing Tutorial</a></li>
-                <li>🎲 <a href="#">生物桌遊PDF Bio Board Game PDF</a></li>
-                <li>🎲 <a href="#">遺傳學遊戲 Genetics Game PDF</a></li>
+                <li><a href="#">DNA Replication Video</a></li>
+                <li><a href="#">Gene Editing Tutorial</a></li>
+                <li><a href="#">Bio Board Game PDF</a></li>
+                <li><a href="#">Genetics Game PDF</a></li>
             </ul>
         </div>
     </section>
@@ -481,30 +451,30 @@
     <!-- Ethics Section -->
     <section id="ethics">
         <div class="container">
-            <h1 id="ethics-title">科學與倫理 Science & Ethics</h1>
+            <h1 id="ethics-title">Science & Ethics</h1>
             
-            <h2>什麼是合成生物學？ What is Synthetic Biology?</h2>
+            <h2>What is Synthetic Biology?</h2>
             <div class="content-box">
-                <p>合成生物學是一門跨越生物學、工程學和計算機科學的學科。它涉及設計和改造生物系統，創造出自然界中不存在的新生物。</p>
-                <p style="margin-top: 15px;">應用領域包括：藥物開發、生物燃料、環境修復、食品製造等。</p>
+                <p>Synthetic biology combines biology, engineering and computational science to design and build novel biological systems.</p>
+                <p style="margin-top: 15px;">Applications include drug development, biofuels, environmental remediation, and food technology.</p>
             </div>
             
-            <h2>基因編輯的底線與道德 Ethics of Gene Editing</h2>
+            <h2>Ethics of Gene Editing</h2>
             <div class="content-box">
-                <p>作為負責任的科學傳播者，我們認為必須探討基因編輯的倫理問題：</p>
+                <p>We pursue responsible science communication and examine these ethical considerations:</p>
                 <ul style="margin-left: 20px; margin-top: 15px;">
-                    <li><strong>安全性 Safety</strong> - 確保技術的安全性與可控性</li>
-                    <li><strong>公平性 Equity</strong> - 確保技術造福全人類，而非少數人</li>
-                    <li><strong>環保責任 Environmental Responsibility</strong> - 考慮對生態的影響</li>
-                    <li><strong>知情同意 Informed Consent</strong> - 透明溝通與社會參與</li>
-                    <li><strong>宗教與文化 Religious & Cultural Values</strong> - 尊重多元觀點</li>
+                    <li><strong>Safety</strong> - Ensure safe and controlled use of technology</li>
+                    <li><strong>Equity</strong> - Ensure benefits are accessible to all</li>
+                    <li><strong>Environmental Responsibility</strong> - Consider ecological impact</li>
+                    <li><strong>Informed Consent</strong> - Promote transparency and participation</li>
+                    <li><strong>Respect for Cultural Values</strong> - Embrace diverse perspectives</li>
                 </ul>
             </div>
             
-            <h2>我們的承諾 Our Commitment</h2>
+            <h2>Our Commitment</h2>
             <div class="content-box">
-                <p style="color: #764ba2; font-weight: bold;">💚 我們致力於成為負責任的科學傳播者</p>
-                <p style="margin-top: 15px;">在推廣科學知識的同時，我們強調倫理思考、環保意識，並鼓勵學生進行批判性思維。科學的力量在於造福人類，這是我們教育的核心價值。</p>
+                <p style="color: #764ba2; font-weight: bold;">We are committed to responsible science education.</p>
+                <p style="margin-top: 15px;">We emphasize ethical reflection, environmental awareness, and critical thinking as core educational values.</p>
             </div>
         </div>
     </section>
@@ -512,30 +482,27 @@
     <!-- Play Section -->
     <section id="play">
         <div class="container">
-            <h1 id="play-title">互動遊戲 Interactive Games</h1>
-            <p>我們設計了多款寓教於樂的遊戲，幫助學生理解複雜的生物概念。</p>
+            <h1 id="play-title">Interactive Games</h1>
+            <p>Explore educational games designed to make biology concepts engaging and fun.</p>
             
             <div class="impact-stats">
                 <div class="stat-card">
-                    <div style="font-size: 40px; margin-bottom: 10px;">🧬</div>
-                    <h3 style="margin: 0;">DNA配對遊戲</h3>
-                    <p style="color: #666; font-size: 14px;">DNA Matching Game</p>
+                    <h3 style="margin: 0;">DNA Matching Game</h3>
+                    <p style="color: #666; font-size: 14px;">Learn base pairing through play.</p>
                 </div>
                 <div class="stat-card">
-                    <div style="font-size: 40px; margin-bottom: 10px;">🔬</div>
-                    <h3 style="margin: 0;">基因編輯模擬</h3>
-                    <p style="color: #666; font-size: 14px;">Gene Editing Simulator</p>
+                    <h3 style="margin: 0;">Gene Editing Simulator</h3>
+                    <p style="color: #666; font-size: 14px;">Understand CRISPR concepts interactively.</p>
                 </div>
                 <div class="stat-card">
-                    <div style="font-size: 40px; margin-bottom: 10px;">🦠</div>
-                    <h3 style="margin: 0;">細胞工廠</h3>
-                    <p style="color: #666; font-size: 14px;">Cell Factory</p>
+                    <h3 style="margin: 0;">Cell Factory</h3>
+                    <p style="color: #666; font-size: 14px;">Build virtual microbial production lines.</p>
                 </div>
             </div>
             
             <div class="content-box">
-                <h2>敬請期待 Coming Soon</h2>
-                <p>我們正在開發更多互動遊戲。更新內容敬請關注我們的部落格！</p>
+                <h2>Coming Soon</h2>
+                <p>More interactive games are in development. Check back frequently for updates.</p>
             </div>
         </div>
     </section>
@@ -543,30 +510,30 @@
     <!-- Blog Section -->
     <section id="blog">
         <div class="container">
-            <h1 id="blog-title">活動紀錄與部落格 Blog & News</h1>
+            <h1 id="blog-title">Blog & News</h1>
             
-            <h2>最新工作坊 Latest Workshops</h2>
+            <h2>Latest Workshops</h2>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
                 <div class="content-box">
-                    <h3 style="margin-top: 0;">2025春季工作坊 Spring Workshop 2025</h3>
-                    <div style="background: #667eea; color: white; padding: 40px; text-align: center; border-radius: 4px; margin: 10px 0;">📸 工作坊側拍照片</div>
-                    <p>日期 Date: 2025年3月</p>
-                    <p>參與人數 Participants: 150+名學生</p>
+                    <h3 style="margin-top: 0;">Spring Workshop 2025</h3>
+                    <div style="background: #667eea; color: white; padding: 40px; text-align: center; border-radius: 4px; margin: 10px 0;">Workshop Highlights</div>
+                    <p>Date: March 2025</p>
+                    <p>Participants: 150+ students</p>
                 </div>
                 <div class="content-box">
-                    <h3 style="margin-top: 0;">冬季工作坊 Winter Workshop 2024</h3>
-                    <div style="background: #764ba2; color: white; padding: 40px; text-align: center; border-radius: 4px; margin: 10px 0;">🎥 工作坊影片</div>
-                    <p>日期 Date: 2024年12月</p>
-                    <p>參與人數 Participants: 120+名學生</p>
+                    <h3 style="margin-top: 0;">Winter Workshop 2024</h3>
+                    <div style="background: #764ba2; color: white; padding: 40px; text-align: center; border-radius: 4px; margin: 10px 0;">Workshop Video</div>
+                    <p>Date: December 2024</p>
+                    <p>Participants: 120+ students</p>
                 </div>
             </div>
             
-            <h2>部落格文章 Blog Posts</h2>
+            <h2>Blog Posts</h2>
             <ul class="resources-list">
-                <li>📝 <a href="#">合成生物學如何改變世界 How SynBio is Changing the World</a></li>
-                <li>📝 <a href="#">學生心得分享 Student Testimonials</a></li>
-                <li>📝 <a href="#">教師資源分享 Teacher Resources & Tips</a></li>
-                <li>📝 <a href="#">最新科學新聞 Latest Scientific News</a></li>
+                <li><a href="#">How Synthetic Biology is Changing the World</a></li>
+                <li><a href="#">Student Testimonials</a></li>
+                <li><a href="#">Teacher Resources & Tips</a></li>
+                <li><a href="#">Latest Scientific News</a></li>
             </ul>
         </div>
     </section>
@@ -574,46 +541,46 @@
     <!-- Get Involved Section -->
     <section id="involved">
         <div class="container">
-            <h1 id="involved-title">參與我們 Get Involved</h1>
+            <h1 id="involved-title">Get Involved</h1>
             
-            <h2>工作坊申請 Workshop Application</h2>
+            <h2>Workshop Application</h2>
             <div class="content-box">
-                <p>學校、教育機構或組織都歡迎申請我們的工作坊！</p>
-                <p style="margin-top: 15px;"><strong>申請方式：</strong>填寫下方Google表單，我們的團隊將在5個工作日內與您聯繫。</p>
-                <p style="margin-top: 15px;"><a href="https://forms.gle/example" target="_blank" class="cta-link">→ 立即申請工作坊 Apply Now</a></p>
+                <p>Schools, educational organizations, and groups are welcome to apply for our workshops.</p>
+                <p style="margin-top: 15px;"><strong>How to apply:</strong> Fill out the form below, and our team will contact you within 5 business days.</p>
+                <p style="margin-top: 15px;"><a href="https://forms.gle/example" target="_blank" class="cta-link">→ Apply for a Workshop</a></p>
             </div>
             
-            <h2>工作坊內容 Workshop Details</h2>
+            <h2>Workshop Details</h2>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0;">
                 <div class="content-box">
-                    <h3 style="margin-top: 0;">基礎班 Basic Level</h3>
-                    <p><strong>時長：</strong>2小時</p>
-                    <p><strong>人數：</strong>20-40人</p>
-                    <p><strong>年級：</strong>國小5-6年級</p>
-                    <p style="color: #666; font-size: 14px;">適合初入門的學生</p>
+                    <h3 style="margin-top: 0;">Basic Level</h3>
+                    <p><strong>Duration:</strong> 2 hours</p>
+                    <p><strong>Participants:</strong> 20-40</p>
+                    <p><strong>Grade:</strong> Upper elementary</p>
+                    <p style="color: #666; font-size: 14px;">Ideal for beginners</p>
                 </div>
                 <div class="content-box">
-                    <h3 style="margin-top: 0;">進階班 Advanced Level</h3>
-                    <p><strong>時長：</strong>4小時</p>
-                    <p><strong>人數：</strong>15-30人</p>
-                    <p><strong>年級：</strong>國中-高中</p>
-                    <p style="color: #666; font-size: 14px;">深入學習與實驗</p>
+                    <h3 style="margin-top: 0;">Advanced Level</h3>
+                    <p><strong>Duration:</strong> 4 hours</p>
+                    <p><strong>Participants:</strong> 15-30</p>
+                    <p><strong>Grade:</strong> Middle/High school</p>
+                    <p style="color: #666; font-size: 14px;">In-depth learning and experiments</p>
                 </div>
                 <div class="content-box">
-                    <h3 style="margin-top: 0;">教師培訓 Teacher Training</h3>
-                    <p><strong>時長：</strong>6小時</p>
-                    <p><strong>人數：</strong>10-20人</p>
-                    <p><strong>對象：</strong>教育工作者</p>
-                    <p style="color: #666; font-size: 14px;">培訓老師教學技巧</p>
+                    <h3 style="margin-top: 0;">Teacher Training</h3>
+                    <p><strong>Duration:</strong> 6 hours</p>
+                    <p><strong>Participants:</strong> 10-20</p>
+                    <p><strong>Audience:</strong> Educators</p>
+                    <p style="color: #666; font-size: 14px;">Enhancing teaching skills</p>
                 </div>
             </div>
             
-            <h2>聯絡我們 Contact Us</h2>
+            <h2>Contact Us</h2>
             <div class="content-box">
-                <p><strong>📧 Email：</strong> contact@gemstaiwan.org</p>
-                <p><strong>📱 Phone：</strong> (02) XXXX-XXXX</p>
-                <p><strong>📍 Location：</strong> Taiwan</p>
-                <p style="margin-top: 20px; color: #667eea;"><strong>🌐 Follow Us / 關注我們：</strong></p>
+                <p><strong>Email:</strong> contact@gemstaiwan.org</p>
+                <p><strong>Phone:</strong> (02) XXXX-XXXX</p>
+                <p><strong>Location:</strong> Taiwan</p>
+                <p style="margin-top: 20px; color: #667eea;"><strong>Follow Us:</strong></p>
                 <div style="margin-top: 10px;">
                     <button>Facebook</button>
                     <button>Instagram</button>
@@ -621,12 +588,12 @@
                 </div>
             </div>
             
-            <h2>預約工作坊 Book a Workshop</h2>
+            <h2>Book a Workshop</h2>
             <div class="content-box">
-                <p style="margin-bottom: 20px;">點擊下方連結填寫申請表，讓您的學校體驗合成生物學的樂趣！</p>
+                <p style="margin-bottom: 20px;">Click the link below to request a workshop for your school.</p>
                 <a href="https://forms.gle/example" target="_blank">
                     <button class="big-button">
-                        📋 填寫工作坊申請表 Click to Apply
+                        Click to Apply
                     </button>
                 </a>
             </div>
@@ -641,80 +608,6 @@
     </footer>
 
     <script>
-        const i18n = {
-            en: {
-                logo: '💎 Gems Taiwan',
-                navAbout: 'About us',
-                navResources: 'Resources',
-                navEthics: 'Science & Ethics',
-                navPlay: 'Online Games',
-                navBlog: 'Blogs / News',
-                navInvolved: 'Get Involved',
-                navArtworks: 'Artworks',
-                homeTitle: '🌱 Gems Taiwan',
-                homeSlogan: 'Promoting synthetic biology, inspiring scientific future',
-                homeVision: 'Vision & Mission',
-                aboutTitle: 'About Us',
-                artworksTitle: 'Artworks',
-                resourcesTitle: 'Educational Resources',
-                ethicsTitle: 'Science & Ethics',
-                playTitle: 'Interactive Games',
-                blogTitle: 'Blog & News',
-                involvedTitle: 'Get Involved',
-            },
-            zh: {
-                logo: '💎 寶石台灣',
-                navAbout: '關於我們',
-                navResources: '資源',
-                navEthics: '科學與倫理',
-                navPlay: '互動遊戲',
-                navBlog: '部落格 / 新聞',
-                navInvolved: '參與我們',
-                navArtworks: '藝術作品',
-                homeTitle: '🌱 寶石台灣',
-                homeSlogan: '推廣合成生物學，啟發科學未來',
-                homeVision: '核心願景',
-                aboutTitle: '關於我們',
-                artworksTitle: '藝術作品',
-                resourcesTitle: '教學資源',
-                ethicsTitle: '科學與倫理',
-                playTitle: '互動遊戲',
-                blogTitle: '部落格與新聞',
-                involvedTitle: '參與我們',
-            }
-        };
-
-        const translateMap = {
-            logo: 'logo',
-            navAbout: 'nav-about',
-            navResources: 'nav-resources',
-            navEthics: 'nav-ethics',
-            navPlay: 'nav-play',
-            navBlog: 'nav-blog',
-            navInvolved: 'nav-involved',
-            navArtworks: 'nav-artworks',
-            homeTitle: 'home-title',
-            homeSlogan: 'home-slogan',
-            homeVision: 'home-vision',
-            aboutTitle: 'about-title',
-            artworksTitle: 'artworks-title',
-            resourcesTitle: 'resources-title',
-            ethicsTitle: 'ethics-title',
-            playTitle: 'play-title',
-            blogTitle: 'blog-title',
-            involvedTitle: 'involved-title',
-        };
-
-        function setLanguage(lang) {
-            const strings = i18n[lang] || i18n.en;
-            Object.keys(translateMap).forEach(key => {
-                const el = document.getElementById(translateMap[key]);
-                if (el && strings[key] !== undefined) {
-                    el.textContent = strings[key];
-                }
-            });
-        }
-
         function showSection(sectionId) {
             const sections = document.querySelectorAll('section');
             sections.forEach(section => section.classList.remove('active'));
@@ -733,7 +626,6 @@
 
         document.addEventListener('DOMContentLoaded', function () {
             showSection('about');
-            setLanguage('en');
         });
     </script>
 </body>
