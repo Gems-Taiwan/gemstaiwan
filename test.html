@@ -14,27 +14,51 @@
         body {
             font-family: 'Microsoft YaHei', 'Arial', sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: #fff;
+            color: #2b2e3a;
+            background: linear-gradient(140deg, #eef1f8 0%, #dce5f2 40%, #f3f5fa 100%);
+            min-height: 100vh;
         }
 
         header {
-            background: #fff;
-            color: #222;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            background: rgba(255,255,255,0.9);
+            color: #1f2937;
+            box-shadow: 0 1px 15px rgba(15, 23, 42, 0.12);
             position: sticky;
             top: 0;
-            z-index: 100;
-            border-bottom: 1px solid #e5e5e5;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(148,163,184,0.25);
+            backdrop-filter: blur(10px);
         }
 
         .header-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 12px 20px;
+            padding: 8px 18px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 12px;
+        }
+
+        .lang-switch {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(100,116,139,0.1);
+            border: 1px solid rgba(148,163,184,0.35);
+            border-radius: 999px;
+            padding: 4px 8px;
+            font-size: 14px;
+            color: #334155;
+        }
+
+        .lang-switch select {
+            border: none;
+            outline: none;
+            background: transparent;
+            color: #334155;
+            font-weight: 600;
+            margin-left: 6px;
+            cursor: pointer;
         }
 
         .logo {
@@ -54,28 +78,30 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 10px 16px;
+            padding: 8px 14px;
             border-radius: 999px;
-            color: #444;
+            color: #334155;
             text-decoration: none;
             font-weight: 600;
             transition: all .25s ease;
-            border: 1px solid transparent;
+            border: 1px solid rgba(148,163,184,0.35);
+            background: rgba(255,255,255,0.7);
+            backdrop-filter: blur(6px);
         }
 
         nav a:hover {
-            background: #f5f5f7;
-            color: #171717;
-            box-shadow: inset 0 0 0 1px #d8d8d8;
+            background: linear-gradient(135deg, #f0f5ff, #e9eef9);
+            color: #0f172a;
+            box-shadow: 0 6px 14px rgba(15, 23, 42, 0.16);
             text-decoration: none;
         }
 
         nav a.active {
-            background: #f1f1f5;
-            color: #111;
+            background: linear-gradient(145deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
             font-weight: 700;
-            border: 1px solid #d8d8d8;
-            box-shadow: 0 2px 8px rgba(24, 24, 24, 0.08);
+            border: 1px solid #5167ba;
+            box-shadow: 0 8px 20px rgba(51, 65, 85, 0.22);
         }
 
         .container {
@@ -115,8 +141,13 @@
 
         section {
             padding: 60px 0;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid rgba(148,163,184,0.22);
             display: none;
+            background: rgba(255,255,255,0.75);
+            box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+            backdrop-filter: blur(5px);
+            border-radius: 14px;
+            margin: 20px 0;
         }
 
         section.active {
@@ -279,16 +310,23 @@
 <body>
     <header>
         <div class="header-container">
-            <div class="logo">💎 Gems Taiwan</div>
+            <div class="logo" id="logo">💎 Gems Taiwan</div>
+            <div class="lang-switch">
+                <label for="langSelect">EN / 繁</label>
+                <select id="langSelect" onchange="setLanguage(this.value)">
+                    <option value="en">English</option>
+                    <option value="zh">中文</option>
+                </select>
+            </div>
             <nav>
                     <ul>
-                    <li><a href="#" onclick="showSection('about')">About us</a></li>
-                    <li><a href="#" onclick="showSection('resources')">Resources</a></li>
-                    <li><a href="#" onclick="showSection('ethics')">Science & Ethnics</a></li>
-                    <li><a href="#" onclick="showSection('play')">Online Games</a></li>
-                    <li><a href="#" onclick="showSection('blog')">Blogs / News</a></li>
-                    <li><a href="#" onclick="showSection('involved')">Get Involved</a></li>
-                    <li><a href="#" onclick="showSection('artworks')">Artworks</a></li>
+                    <li><a id="nav-about" href="#" onclick="showSection('about')">About us</a></li>
+                    <li><a id="nav-resources" href="#" onclick="showSection('resources')">Resources</a></li>
+                    <li><a id="nav-ethics" href="#" onclick="showSection('ethics')">Science & Ethics</a></li>
+                    <li><a id="nav-play" href="#" onclick="showSection('play')">Online Games</a></li>
+                    <li><a id="nav-blog" href="#" onclick="showSection('blog')">Blogs / News</a></li>
+                    <li><a id="nav-involved" href="#" onclick="showSection('involved')">Get Involved</a></li>
+                    <li><a id="nav-artworks" href="#" onclick="showSection('artworks')">Artworks</a></li>
                 </ul>
             </nav>
         </div>
@@ -299,10 +337,10 @@
     <!-- Home Section -->
     <section id="home" class="active">
         <div class="container">
-            <h1>🌱 寶石台灣 | Gems Taiwan</h1>
-            <p class="text-highlight">推廣合成生物學，啟發科學未來</p>
+            <h1 id="home-title">🌱 寶石台灣 | Gems Taiwan</h1>
+            <p id="home-slogan" class="text-highlight">推廣合成生物學，啟發科學未來</p>
             
-            <h2>核心願景 Vision & Mission</h2>
+            <h2 id="home-vision">核心願景 Vision & Mission</h2>
             <div class="content-box">
                 <p>我們致力於透過創新教育，推廣合成生物學知識，培養下一代科學家。讓每個學生都能體驗科學的樂趣與力量。</p>
             </div>
@@ -341,9 +379,9 @@
     <!-- About Section -->
     <section id="about">
         <div class="container">
-            <h1>關於我們 About Us</h1>
+            <h1 id="about-title">關於我們 About Us</h1>
             
-            <h2>顧問與團隊 2026 Advisors & Team 2026</h2>
+            <h2 id="about-team">顧問與團隊 2026 Advisors & Team 2026</h2>
             <div class="team-grid">
                 <div class="team-card">
                     <div class="team-avatar"></div>
@@ -389,7 +427,7 @@
     <!-- Artworks Section -->
     <section id="artworks">
         <div class="container">
-            <h1>Artworks</h1>
+            <h1 id="artworks-title">Artworks</h1>
             <p class="text-highlight">展示學生與團隊的合成生物學藝術作品、海報與插畫。</p>
             <div class="image-row">
                 <div class="image-placeholder">🖼️ Art Piece 1</div>
@@ -405,7 +443,7 @@
     <!-- Resources Section -->
     <section id="resources">
         <div class="container">
-            <h1>教學資源 Educational Resources</h1>
+            <h1 id="resources-title">教學資源 Educational Resources</h1>
             
             <h2>教案 Lesson Plans</h2>
             <ul class="resources-list">
@@ -443,7 +481,7 @@
     <!-- Ethics Section -->
     <section id="ethics">
         <div class="container">
-            <h1>科學與倫理 Science & Ethics</h1>
+            <h1 id="ethics-title">科學與倫理 Science & Ethics</h1>
             
             <h2>什麼是合成生物學？ What is Synthetic Biology?</h2>
             <div class="content-box">
@@ -474,7 +512,7 @@
     <!-- Play Section -->
     <section id="play">
         <div class="container">
-            <h1>互動遊戲 Interactive Games</h1>
+            <h1 id="play-title">互動遊戲 Interactive Games</h1>
             <p>我們設計了多款寓教於樂的遊戲，幫助學生理解複雜的生物概念。</p>
             
             <div class="impact-stats">
@@ -505,7 +543,7 @@
     <!-- Blog Section -->
     <section id="blog">
         <div class="container">
-            <h1>活動紀錄與部落格 Blog & News</h1>
+            <h1 id="blog-title">活動紀錄與部落格 Blog & News</h1>
             
             <h2>最新工作坊 Latest Workshops</h2>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
@@ -536,7 +574,7 @@
     <!-- Get Involved Section -->
     <section id="involved">
         <div class="container">
-            <h1>參與我們 Get Involved</h1>
+            <h1 id="involved-title">參與我們 Get Involved</h1>
             
             <h2>工作坊申請 Workshop Application</h2>
             <div class="content-box">
@@ -603,6 +641,80 @@
     </footer>
 
     <script>
+        const i18n = {
+            en: {
+                logo: '💎 Gems Taiwan',
+                navAbout: 'About us',
+                navResources: 'Resources',
+                navEthics: 'Science & Ethics',
+                navPlay: 'Online Games',
+                navBlog: 'Blogs / News',
+                navInvolved: 'Get Involved',
+                navArtworks: 'Artworks',
+                homeTitle: '🌱 Gems Taiwan',
+                homeSlogan: 'Promoting synthetic biology, inspiring scientific future',
+                homeVision: 'Vision & Mission',
+                aboutTitle: 'About Us',
+                artworksTitle: 'Artworks',
+                resourcesTitle: 'Educational Resources',
+                ethicsTitle: 'Science & Ethics',
+                playTitle: 'Interactive Games',
+                blogTitle: 'Blog & News',
+                involvedTitle: 'Get Involved',
+            },
+            zh: {
+                logo: '💎 寶石台灣',
+                navAbout: '關於我們',
+                navResources: '資源',
+                navEthics: '科學與倫理',
+                navPlay: '互動遊戲',
+                navBlog: '部落格 / 新聞',
+                navInvolved: '參與我們',
+                navArtworks: '藝術作品',
+                homeTitle: '🌱 寶石台灣',
+                homeSlogan: '推廣合成生物學，啟發科學未來',
+                homeVision: '核心願景',
+                aboutTitle: '關於我們',
+                artworksTitle: '藝術作品',
+                resourcesTitle: '教學資源',
+                ethicsTitle: '科學與倫理',
+                playTitle: '互動遊戲',
+                blogTitle: '部落格與新聞',
+                involvedTitle: '參與我們',
+            }
+        };
+
+        const translateMap = {
+            logo: 'logo',
+            navAbout: 'nav-about',
+            navResources: 'nav-resources',
+            navEthics: 'nav-ethics',
+            navPlay: 'nav-play',
+            navBlog: 'nav-blog',
+            navInvolved: 'nav-involved',
+            navArtworks: 'nav-artworks',
+            homeTitle: 'home-title',
+            homeSlogan: 'home-slogan',
+            homeVision: 'home-vision',
+            aboutTitle: 'about-title',
+            artworksTitle: 'artworks-title',
+            resourcesTitle: 'resources-title',
+            ethicsTitle: 'ethics-title',
+            playTitle: 'play-title',
+            blogTitle: 'blog-title',
+            involvedTitle: 'involved-title',
+        };
+
+        function setLanguage(lang) {
+            const strings = i18n[lang] || i18n.en;
+            Object.keys(translateMap).forEach(key => {
+                const el = document.getElementById(translateMap[key]);
+                if (el && strings[key] !== undefined) {
+                    el.textContent = strings[key];
+                }
+            });
+        }
+
         function showSection(sectionId) {
             const sections = document.querySelectorAll('section');
             sections.forEach(section => section.classList.remove('active'));
@@ -621,6 +733,7 @@
 
         document.addEventListener('DOMContentLoaded', function () {
             showSection('about');
+            setLanguage('en');
         });
     </script>
 </body>
