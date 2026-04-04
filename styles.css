@@ -213,21 +213,6 @@ main {
   line-height: 1.6;
 }
 
-.game-card {
-  display: flex;
-  flex-direction: column;
-}
-
-.game-card .game-body {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-.game-card .game-body .btn {
-  margin-top: auto;
-}
-
 /* ── BUTTONS ── */
 .btn {
   display: inline-flex;
