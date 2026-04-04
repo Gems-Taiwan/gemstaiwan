@@ -1,496 +1,1411 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gems Taiwan - Synthetic Biology Education Outreach</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gems Taiwan — Synthetic Biology Education</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
-        body {
-            font-family: 'Segoe UI', 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #2a2f3a;
-            background: #f4f1eb;
-            min-height: 100vh;
-        }
+  <style>
+    :root {
+      --green-50: #EAF3DE;
+      --green-100: #C0DD97;
+      --green-200: #97C459;
+      --green-400: #639922;
+      --green-600: #3B6D11;
+      --green-800: #27500A;
+      --teal-50: #E1F5EE;
+      --teal-100: #9FE1CB;
+      --teal-400: #1D9E75;
+      --teal-600: #0F6E56;
+      --teal-800: #085041;
+      --amber-50: #FAEEDA;
+      --amber-100: #FAC775;
+      --amber-400: #BA7517;
+      --amber-600: #854F0B;
+      --gray-50: #F7F6F2;
+      --gray-100: #D3D1C7;
+      --gray-200: #B4B2A9;
+      --gray-600: #5F5E5A;
+      --gray-800: #444441;
+      --gray-900: #2C2C2A;
+      --blue-50: #E6F1FB;
+      --blue-400: #378ADD;
+      --blue-800: #0C447C;
+      --coral-50: #FAECE7;
+      --coral-400: #D85A30;
 
-        header {
-            background: #fff;
-            color: #273449;
-            box-shadow: 0 1px 10px rgba(17, 24, 39, 0.12);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid #e3e3e3;
-        }
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
 
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 8px 18px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+      --bg: #F5F3EC;
+      --surface: #FFFFFF;
+      --surface-2: #F0EDE4;
+      --text-primary: #1C2012;
+      --text-secondary: #4A4D40;
+      --text-muted: #7A7D70;
+      --border: rgba(60, 65, 50, 0.12);
+      --border-strong: rgba(60, 65, 50, 0.22);
+      --accent: #3B6D11;
+      --accent-light: #639922;
+      --accent-pale: #EAF3DE;
+    }
 
-        .logo {
-            font-size: 24px;
-            font-weight: 900;
-            color: #222;
-        }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text-primary);
+      min-height: 100vh;
+      font-size: 16px;
+      line-height: 1.65;
+    }
 
-        nav a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 8px 14px;
-            border-radius: 999px;
-            color: #334155;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all .25s ease;
-            border: 1px solid rgba(148,163,184,0.35);
-            background: rgba(255,255,255,0.7);
-            backdrop-filter: blur(6px);
-        }
+    /* ── HEADER ── */
+    header {
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 900;
+    }
 
-        nav a:hover {
-            background: #edf2f7;
-            color: #1f2937;
-            box-shadow: 0 4px 10px rgba(15, 23, 42, 0.10);
-            text-decoration: none;
-        }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
 
-        nav a.active {
-            background: #4a5568;
-            color: #fff;
-            font-weight: 700;
-            border: 1px solid #334155;
-            box-shadow: 0 6px 12px rgba(15, 23, 42, 0.16);
-        }
+    .logo {
+      font-family: var(--font-display);
+      font-size: 22px;
+      color: var(--accent);
+      text-decoration: none;
+      letter-spacing: -0.3px;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+    .logo-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-light);
+      display: inline-block;
+    }
 
-        .main-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding-top: 20px;
-        }
+    nav {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
 
-        .text-highlight {
-            font-size: 20px;
-            color: #764ba2;
-            margin-bottom: 30px;
-        }
+    nav a {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: 20px;
+      border: 1px solid transparent;
+      transition: all 0.18s;
+      cursor: pointer;
+      white-space: nowrap;
+    }
 
-        .cta-link {
-            color: #667eea;
-            font-weight: bold;
-            text-decoration: none;
-        }
+    nav a:hover {
+      background: var(--accent-pale);
+      color: var(--accent);
+      border-color: var(--green-100);
+    }
 
-        .big-button {
-            width: 100%;
-            padding: 15px;
-            font-size: 18px;
-            cursor: pointer;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            border-radius: 8px;
-        }
+    nav a.active {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
 
-        section {
-            padding: 60px 0;
-            border-bottom: 1px solid rgba(148,163,184,0.22);
-            display: none;
-            background: rgba(255,255,255,0.75);
-            box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
-            backdrop-filter: blur(5px);
-            border-radius: 14px;
-            margin: 20px 0;
-        }
+    /* ── MAIN LAYOUT ── */
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 32px 24px 80px;
+    }
 
-        section.active {
-            display: block;
-        }
+    section { display: none; }
+    section.active { display: block; }
 
-        h1 {
-            font-size: 36px;
-            margin-bottom: 20px;
-            color: #273449;
-        }
+    /* ── HERO (HOME) ── */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      padding: 64px 0 48px;
+    }
 
-        h2 {
-            font-size: 28px;
-            margin-bottom: 20px;
-            color: #2f3f52;
-        }
+    @media (max-width: 700px) {
+      .hero { grid-template-columns: 1fr; padding: 32px 0 24px; }
+      .hero-art { display: none; }
+    }
 
-        h3 {
-            font-size: 22px;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            color: #374458;
-        }
+    .hero-eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent-light);
+      margin-bottom: 16px;
+    }
 
-        .image-placeholder {
-            background: #f7f7f7;
-            color: #444;
-            padding: 60px 20px;
-            text-align: center;
-            border-radius: 8px;
-            margin: 20px 0;
-            font-size: 18px;
-            min-height: 200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid #e5e5e5;
-        }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 5vw, 58px);
+      line-height: 1.1;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+    }
 
-        .image-row {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
 
-        .impact-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
+    .hero p {
+      font-size: 17px;
+      color: var(--text-secondary);
+      max-width: 440px;
+      line-height: 1.7;
+    }
 
-        .stat-card {
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            border: 1px solid #e2e2e7;
-        }
+    .hero-art {
+      aspect-ratio: 4/3;
+      background: var(--accent-pale);
+      border-radius: 20px;
+      border: 1px solid var(--green-100);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
 
-        .stat-number {
-            font-size: 32px;
-            font-weight: bold;
-            color: #667eea;
-        }
+    /* SVG illustration inside hero */
+    .hero-art svg {
+      width: 90%;
+      max-width: 320px;
+    }
 
-        .stat-label {
-            color: #666;
-            margin-top: 10px;
-        }
+    /* ── STAT ROW ── */
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 48px 0;
+    }
 
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px 20px;
+      text-align: center;
+    }
 
-        .team-card {
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            border: 1px solid #e5e8e8;
-        }
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 40px;
+      color: var(--accent);
+      line-height: 1;
+    }
 
-        .team-avatar {
-            width: 120px;
-            height: 120px;
-            background: #d8e1e9;
-            border-radius: 50%;
-            margin: 0 auto 15px;
-        }
+    .stat-label {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
 
-        .subpage-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 16px;
-            margin: 20px 0;
-        }
+    /* ── SECTION HEADER ── */
+    .section-header {
+      margin-bottom: 40px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
 
-        .subpage-card {
-            background: #fff;
-            border: 1px dashed #cbd5e0;
-            border-radius: 10px;
-            padding: 20px;
-            min-height: 140px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: #475569;
-        }
+    .section-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--accent-light);
+      margin-bottom: 10px;
+    }
 
-        .subpage-card span {
-            margin-top: 8px;
-            font-size: 14px;
-            color: #64748b;
-        }
+    .section-header h1 {
+      font-family: var(--font-display);
+      font-size: 38px;
+      color: var(--text-primary);
+      letter-spacing: -0.5px;
+    }
 
-        .resources-list {
-            list-style: none;
-            margin: 20px 0;
-            padding: 0;
-        }
+    .section-header p {
+      color: var(--text-secondary);
+      margin-top: 10px;
+      max-width: 600px;
+      font-size: 16px;
+    }
 
-        .resources-list li {
-            padding: 12px;
-            margin: 10px 0;
-            background: #f8f9fa;
-            border-left: 4px solid #667eea;
-            border-radius: 4px;
-        }
+    /* ── CARD GRID ── */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+      margin: 24px 0;
+    }
 
-        .resources-list a {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 500;
-        }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+      transition: border-color 0.18s, box-shadow 0.18s;
+    }
 
-        .resources-list a:hover {
-            text-decoration: underline;
-        }
+    .card:hover {
+      border-color: var(--border-strong);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    }
 
-        button.primary-nav {
-            padding: 10px 16px;
-            margin-right: 10px;
-            border-radius: 999px;
-            border: 1px solid transparent;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #fff;
-            font-weight: 600;
-        }
+    .card-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+      font-size: 20px;
+    }
 
-        button.primary-nav:hover {
-            opacity: 0.95;
-        }
+    .card-icon.green { background: var(--green-50); }
+    .card-icon.teal  { background: var(--teal-50); }
+    .card-icon.amber { background: var(--amber-50); }
+    .card-icon.coral { background: var(--coral-50); }
+    .card-icon.blue  { background: var(--blue-50); }
 
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-        }
+    .card h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
 
-        @media (max-width: 768px) {
-            nav ul {
-                gap: 10px;
-                font-size: 14px;
-            }
+    .card p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
 
-            h1 {
-                font-size: 28px;
-            }
+    .card-tag {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--accent-pale);
+      color: var(--accent);
+    }
 
-            .header-container {
-                flex-direction: column;
-                gap: 10px;
-            }
-        }
-    </style>
+    /* ── RESOURCE ITEM ── */
+    .resource-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 20px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      margin-bottom: 12px;
+      transition: border-color 0.18s;
+    }
+
+    .resource-item:hover { border-color: var(--border-strong); }
+
+    .resource-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: var(--accent-pale);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 16px;
+    }
+
+    .resource-info { flex: 1; }
+    .resource-info strong { font-size: 14px; color: var(--text-primary); }
+    .resource-info span { display: block; font-size: 13px; color: var(--text-muted); }
+
+    .resource-link {
+      font-size: 13px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .resource-link:hover { text-decoration: underline; }
+
+    /* ── YEAR GROUP ── */
+    .year-group {
+      margin-bottom: 32px;
+    }
+
+    .year-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding: 6px 0;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 12px;
+    }
+
+    /* ── TEAM GRID ── */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+      margin: 24px 0;
+    }
+
+    .team-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px 20px;
+      text-align: center;
+    }
+
+    .avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--accent-pale);
+      border: 2px solid var(--green-100);
+      margin: 0 auto 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 22px;
+      color: var(--accent);
+    }
+
+    .team-card h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .team-card .role {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* ── BLOG POSTS ── */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .blog-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: border-color 0.18s;
+    }
+
+    .blog-card:hover { border-color: var(--border-strong); }
+
+    .blog-thumb {
+      height: 160px;
+      background: var(--green-50);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--green-400);
+      font-size: 14px;
+    }
+
+    .blog-body { padding: 20px; }
+
+    .blog-meta {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .blog-body h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    .blog-body p {
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    /* ── ETHICS SECTION ── */
+    .ethics-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px;
+      margin-bottom: 16px;
+    }
+
+    .ethics-block h3 {
+      font-family: var(--font-display);
+      font-size: 22px;
+      margin-bottom: 12px;
+      color: var(--text-primary);
+    }
+
+    .ethics-block p {
+      color: var(--text-secondary);
+      line-height: 1.75;
+    }
+
+    .ethics-block ul {
+      margin-top: 12px;
+      padding-left: 20px;
+      color: var(--text-secondary);
+      line-height: 2;
+    }
+
+    /* ── GAME CARDS ── */
+    .game-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .game-thumb {
+      height: 180px;
+      background: linear-gradient(135deg, var(--teal-50), var(--green-50));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+    }
+
+    .game-body { padding: 20px; }
+
+    .game-body h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--text-primary);
+    }
+
+    .game-body p {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 14px;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid var(--border-strong);
+      background: var(--surface);
+      color: var(--text-primary);
+      transition: all 0.18s;
+    }
+
+    .btn:hover {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    .btn-primary:hover {
+      background: var(--green-800);
+      border-color: var(--green-800);
+    }
+
+    /* ── INVOLVEMENT ── */
+    .involve-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px;
+    }
+
+    .involve-card h3 {
+      font-family: var(--font-display);
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .involve-card p {
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+    }
+
+    /* ── PHILOSOPHY ── */
+    .philosophy-block {
+      background: var(--surface);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 12px 12px 0;
+      padding: 24px 28px;
+      margin-bottom: 16px;
+    }
+
+    .philosophy-block h3 {
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--text-primary);
+    }
+
+    .philosophy-block p {
+      color: var(--text-secondary);
+      line-height: 1.75;
+    }
+
+    /* ── TIMELINE ── */
+    .timeline {
+      position: relative;
+      padding-left: 28px;
+      margin: 32px 0;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 8px;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: var(--border-strong);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 28px;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -24px;
+      top: 6px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid var(--bg);
+      box-shadow: 0 0 0 1px var(--accent);
+    }
+
+    .timeline-year {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--accent-light);
+      margin-bottom: 4px;
+    }
+
+    .timeline-item h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .timeline-item p {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* ── ARTWORK ── */
+    .artwork-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .artwork-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .artwork-thumb {
+      height: 200px;
+      background: var(--green-50);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .artwork-info {
+      padding: 16px 20px;
+    }
+
+    .artwork-info h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .artwork-info p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* ── IMPACT MAP PLACEHOLDER ── */
+    .impact-map {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      height: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 8px;
+      color: var(--text-muted);
+      font-size: 15px;
+      margin: 32px 0;
+    }
+
+    /* ── SLOGAN BAND ── */
+    .slogan-band {
+      background: var(--accent);
+      color: #fff;
+      border-radius: 16px;
+      padding: 36px 40px;
+      margin: 40px 0 24px;
+      text-align: center;
+    }
+
+    .slogan-band p {
+      font-family: var(--font-display);
+      font-size: 26px;
+      font-style: italic;
+      letter-spacing: -0.3px;
+      line-height: 1.4;
+    }
+
+    .slogan-band span {
+      display: block;
+      margin-top: 8px;
+      font-size: 14px;
+      opacity: 0.75;
+      font-family: var(--font-body);
+      font-style: normal;
+    }
+
+    /* ── CONTACT ── */
+    .contact-row {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .contact-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 20px;
+      min-width: 200px;
+    }
+
+    .contact-item .label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .contact-item a {
+      font-size: 14px;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .contact-item a:hover { text-decoration: underline; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--gray-900);
+      color: var(--gray-200);
+      text-align: center;
+      padding: 28px 20px;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    footer strong {
+      color: #fff;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .header-inner { padding: 0 14px; height: auto; padding-top: 10px; padding-bottom: 10px; flex-direction: column; align-items: flex-start; }
+      nav { gap: 4px; }
+      nav a { font-size: 12px; padding: 5px 10px; }
+      main { padding: 20px 14px 60px; }
+      .stat-row { grid-template-columns: 1fr 1fr; }
+      .slogan-band p { font-size: 20px; }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="header-container">
-            <a class="logo" id="logo" href="#" onclick="showSection('home')">Gems Taiwan</a>
-            <nav>
-                    <ul>
-                    <li><a id="nav-about" href="#" onclick="showSection('about')">About us</a></li>
-                    <li><a id="nav-resources" href="#" onclick="showSection('resources')">Resources</a></li>
-                    <li><a id="nav-ethics" href="#" onclick="showSection('ethics')">Science & Ethics</a></li>
-                    <li><a id="nav-play" href="#" onclick="showSection('play')">Online Games</a></li>
-                    <li><a id="nav-blog" href="#" onclick="showSection('blog')">Blogs / News</a></li>
-                    <li><a id="nav-involved" href="#" onclick="showSection('involved')">Get Involved</a></li>
-                    <li><a id="nav-artworks" href="#" onclick="showSection('artworks')">Artworks</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <main class="main-content">
+<header>
+  <div class="header-inner">
+    <a class="logo" href="#" onclick="show('home');return false;">
+      <span class="logo-dot"></span>Gems Taiwan
+    </a>
+    <nav id="nav">
+      <a href="#" onclick="show('home');return false;" id="n-home">首頁 Home</a>
+      <a href="#" onclick="show('about');return false;" id="n-about">關於我們</a>
+      <a href="#" onclick="show('philosophy');return false;" id="n-philosophy">教育理念</a>
+      <a href="#" onclick="show('resources');return false;" id="n-resources">教學資源</a>
+      <a href="#" onclick="show('ethics');return false;" id="n-ethics">科學與倫理</a>
+      <a href="#" onclick="show('play');return false;" id="n-play">互動遊戲</a>
+      <a href="#" onclick="show('blog');return false;" id="n-blog">活動紀錄</a>
+      <a href="#" onclick="show('involved');return false;" id="n-involved">參與我們</a>
+      <a href="#" onclick="show('artworks');return false;" id="n-artworks">Artworks</a>
+    </nav>
+  </div>
+</header>
 
-    <!-- Home Section -->
-    <section id="home" class="active">
-        <div class="container">
-            <h1 id="home-title">Gems Taiwan</h1>
-            <p id="home-slogan" class="text-highlight">Promoting synthetic biology and inspiring the next generation of scientists.</p>
-            
-            <h2 id="home-vision">Vision & Mission</h2>
-            <div class="content-box">
-                <p>We are dedicated to using innovative education to teach synthetic biology and empower students with science literacy.</p>
-            </div>
-            
-            <div class="image-row">
-                <div class="image-placeholder">Coding & Technology</div>
-                <div class="image-placeholder">Content Creation</div>
-            </div>
-            
-            <h2>Impact Map 2024-2025</h2>
-            <div class="impact-stats">
-                <div class="stat-card">
-                    <div class="stat-number">50+</div>
-                    <div class="stat-label">Partner Schools</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">2000+</div>
-                    <div class="stat-label">Students Reached</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">15+</div>
-                    <div class="stat-label">Workshops Held</div>
-                </div>
-            </div>
-            
-            <h2>Our Slogan</h2>
-            <div class="content-box">
-                <p style="font-size: 18px; text-align: center; color: #667eea; font-weight: bold;">
-                    "Designing Life, Creating Future"
-                </p>
-            </div>
-        </div>
-    </section>
+<main>
 
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <h1 id="about-title">About Us</h1>
-            <div class="subpage-grid">
-                <div class="subpage-card">
-                    <strong>Mission</strong>
-                    <span>Describe purpose and long-term impact here.</span>
-                </div>
-                <div class="subpage-card">
-                    <strong>Team</strong>
-                    <span>Add team overview and roles here.</span>
-                </div>
-                <div class="subpage-card">
-                    <strong>Contact</strong>
-                    <span>Insert contact details and social links.</span>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ═══════════════════════════════════════════════════════ HOME -->
+<section id="home" class="active">
 
-    <!-- Artworks Section -->
-    <section id="artworks">
-        <div class="container">
-            <h1 id="artworks-title">Artworks</h1>
-            <div class="subpage-grid">
-                <div class="subpage-card"><strong>Artwork Slot 1</strong><span>Add content here</span></div>
-                <div class="subpage-card"><strong>Artwork Slot 2</strong><span>Add content here</span></div>
-                <div class="subpage-card"><strong>Artwork Slot 3</strong><span>Add content here</span></div>
-            </div>
-        </div>
-    </section>
+  <div class="hero">
+    <div class="hero-text">
+      <div class="hero-eyebrow">Gems Taiwan · 2024–2025</div>
+      <h1>Designing <em>Life,</em><br>Creating Future</h1>
+      <p>We bring synthetic biology into classrooms across Taiwan — making science accessible, meaningful, and inspiring for the next generation.</p>
+    </div>
+    <div class="hero-art">
+      <!-- Illustrative SVG: children & science -->
+      <svg viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg" fill="none">
+        <!-- DNA helix background decoration -->
+        <circle cx="160" cy="120" r="90" fill="#C0DD97" opacity="0.25"/>
+        <!-- beaker -->
+        <rect x="140" y="80" width="40" height="50" rx="6" fill="#3B6D11" opacity="0.15"/>
+        <rect x="148" y="90" width="24" height="32" rx="4" fill="#1D9E75" opacity="0.35"/>
+        <!-- bubbles -->
+        <circle cx="158" cy="102" r="4" fill="#3B6D11" opacity="0.4"/>
+        <circle cx="168" cy="96" r="3" fill="#639922" opacity="0.5"/>
+        <circle cx="163" cy="110" r="2.5" fill="#1D9E75" opacity="0.45"/>
+        <!-- left child silhouette -->
+        <circle cx="110" cy="142" r="14" fill="#639922" opacity="0.6"/>
+        <rect x="102" y="155" width="16" height="22" rx="4" fill="#3B6D11" opacity="0.5"/>
+        <!-- right child silhouette -->
+        <circle cx="210" cy="142" r="14" fill="#1D9E75" opacity="0.6"/>
+        <rect x="202" y="155" width="16" height="22" rx="4" fill="#0F6E56" opacity="0.5"/>
+        <!-- hands reaching toward beaker -->
+        <line x1="124" y1="158" x2="142" y2="145" stroke="#3B6D11" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
+        <line x1="196" y1="158" x2="178" y2="145" stroke="#0F6E56" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
+        <!-- stars / sparkles -->
+        <circle cx="80" cy="80" r="3" fill="#639922" opacity="0.5"/>
+        <circle cx="240" cy="80" r="3" fill="#1D9E75" opacity="0.5"/>
+        <circle cx="76" cy="160" r="2" fill="#3B6D11" opacity="0.4"/>
+        <circle cx="248" cy="155" r="2" fill="#0F6E56" opacity="0.4"/>
+      </svg>
+    </div>
+  </div>
 
-    <!-- Resources Section -->
-    <section id="resources">
-        <div class="container">
-            <h1 id="resources-title">Educational Resources</h1>
-            <div class="subpage-grid">
-                <div class="subpage-card"><strong>Resource Slot 1</strong><span>Add links or files here</span></div>
-                <div class="subpage-card"><strong>Resource Slot 2</strong><span>Add links or files here</span></div>
-                <div class="subpage-card"><strong>Resource Slot 3</strong><span>Add links or files here</span></div>
-            </div>
-        </div>
-    </section>
+  <!-- Stats -->
+  <div class="stat-row">
+    <div class="stat-card">
+      <div class="stat-num">50+</div>
+      <div class="stat-label">Partner schools reached</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">2,000+</div>
+      <div class="stat-label">Students impacted</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">15+</div>
+      <div class="stat-label">Workshops held</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">2</div>
+      <div class="stat-label">Years of outreach</div>
+    </div>
+  </div>
 
-    <!-- Ethics Section -->
-    <section id="ethics">
-        <div class="container">
-            <h1 id="ethics-title">Science & Ethics</h1>
-            <div class="subpage-grid">
-                <div class="subpage-card"><strong>Ethics Overview</strong><span>Add ethics principles here</span></div>
-                <div class="subpage-card"><strong>Policy Notes</strong><span>Add guidance and policy details</span></div>
-                <div class="subpage-card"><strong>Community</strong><span>Add outreach notes and participation</span></div>
-            </div>
-        </div>
-    </section>
+  <!-- Impact Map placeholder -->
+  <div class="section-header" style="margin-top:48px;">
+    <div class="section-eyebrow">Impact Map</div>
+    <h1>Schools We've Reached — 2024 & 2025</h1>
+    <p>A visual record of every school and community we've connected with across Taiwan.</p>
+  </div>
 
-    <!-- Play Section -->
-    <section id="play">
-        <div class="container">
-            <h1 id="play-title">Interactive Games</h1>
-            <div class="subpage-grid">
-                <div class="subpage-card"><strong>Game Slot 1</strong><span>Add game details here</span></div>
-                <div class="subpage-card"><strong>Game Slot 2</strong><span>Add game details here</span></div>
-                <div class="subpage-card"><strong>Game Slot 3</strong><span>Add game details here</span></div>
-            </div>
-        </div>
-    </section>
+  <div class="impact-map">
+    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="24" cy="24" r="20" stroke="#C0DD97" stroke-width="2"/>
+      <path d="M12 28 Q18 18 24 22 Q30 26 36 18" stroke="#639922" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <circle cx="18" cy="26" r="3" fill="#639922" opacity="0.6"/>
+      <circle cx="28" cy="21" r="3" fill="#1D9E75" opacity="0.6"/>
+    </svg>
+    <p style="font-size:14px; color:var(--text-muted);">Interactive map coming soon — schools will be plotted here</p>
+  </div>
 
-    <!-- Blog Section -->
-    <section id="blog">
-        <div class="container">
-            <h1 id="blog-title">Blog & News</h1>
-            <div class="subpage-grid">
-                <div class="subpage-card"><strong>Post Slot 1</strong><span>Add summary and link here</span></div>
-                <div class="subpage-card"><strong>Post Slot 2</strong><span>Add summary and link here</span></div>
-                <div class="subpage-card"><strong>Post Slot 3</strong><span>Add summary and link here</span></div>
-            </div>
-        </div>
-    </section>
+  <!-- Project Timeline -->
+  <div class="section-header" style="margin-top: 40px;">
+    <div class="section-eyebrow">Timeline</div>
+    <h1>Projects We've Done</h1>
+  </div>
 
-    <!-- Get Involved Section -->
-    <section id="involved">
-        <div class="container">
-            <h1 id="involved-title">Get Involved</h1>
-            <div class="subpage-grid">
-                <div class="subpage-card"><strong>Workshop Application</strong><span>Space to add registration links and forms.</span></div>
-                <div class="subpage-card"><strong>Volunteer</strong><span>Details about joining the team.</span></div>
-                <div class="subpage-card"><strong>Events</strong><span>Plans for future workshops and events.</span></div>
-            </div>
-        </div>
-    </section>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-year">2024</div>
+      <h3>First outreach workshops — Northern Taiwan</h3>
+      <p>Launched pilot workshops in Taipei and New Taipei City, reaching 5 schools.</p>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2024</div>
+      <h3>Boardgame & lesson plan development</h3>
+      <p>Designed our first synthetic biology boardgame and curriculum materials.</p>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2025</div>
+      <h3>Expansion to Central & Southern Taiwan</h3>
+      <p>Grew to 50+ partner schools and launched online interactive games.</p>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2025</div>
+      <h3>iGEM participation</h3>
+      <p>Presented our education outreach project on the international stage.</p>
+    </div>
+  </div>
 
-    </main>
+  <div class="slogan-band">
+    <p>"Designing Life, Creating Future"</p>
+    <span>Gems Taiwan · Synthetic Biology Education Outreach</span>
+  </div>
 
-    <footer>
-        <p>&copy; 2025 Gems Taiwan | Synthetic Biology Education Outreach</p>
-        <p>Promoting Synthetic Biology, Inspiring Scientific Future</p>
-    </footer>
+</section>
 
-    <script>
-        function showSection(sectionId) {
-            const sections = document.querySelectorAll('section');
-            sections.forEach(section => section.classList.remove('active'));
+<!-- ═══════════════════════════════════════════════════════ ABOUT -->
+<section id="about">
+  <div class="section-header">
+    <div class="section-eyebrow">關於我們</div>
+    <h1>About Us</h1>
+    <p>Meet the team behind Gems Taiwan — students, educators, and advocates for science literacy.</p>
+  </div>
 
-            const selected = document.getElementById(sectionId);
-            if (selected) {
-                selected.classList.add('active');
-                window.scrollTo(0, 0);
-            }
+  <!-- Mission -->
+  <div class="ethics-block" style="border-left: 3px solid var(--accent); border-radius: 0 14px 14px 0; margin-bottom: 32px;">
+    <h3>Our Mission</h3>
+    <p>Gems Taiwan is a student-led education outreach organisation dedicated to bringing synthetic biology into Taiwan's classrooms. We believe science education should go beyond textbooks — sparking curiosity, critical thinking, and a sense of responsibility toward the world we are designing.</p>
+  </div>
 
-            const links = document.querySelectorAll('nav a');
-            links.forEach(link => {
-                link.classList.toggle('active', link.getAttribute('onclick').includes("'" + sectionId + "'"));
-            });
-        }
+  <!-- Advisors -->
+  <div class="section-eyebrow" style="margin-bottom: 16px;">Advisors & Instructors (指導老師)</div>
+  <div class="team-grid" style="margin-bottom: 40px;">
+    <div class="team-card">
+      <div class="avatar">師</div>
+      <h3>Advisor Name</h3>
+      <div class="role">Faculty Advisor</div>
+    </div>
+    <div class="team-card">
+      <div class="avatar">師</div>
+      <h3>Advisor Name</h3>
+      <div class="role">Instructor</div>
+    </div>
+  </div>
 
-        document.addEventListener('DOMContentLoaded', function () {
-            showSection('home');
-        });
-    </script>
+  <!-- Team 2026 -->
+  <div class="section-eyebrow" style="margin-bottom: 16px;">Team 2026</div>
+  <div class="team-grid">
+    <div class="team-card">
+      <div class="avatar">N</div>
+      <h3>Neo</h3>
+      <div class="role">Website & Coding Lead</div>
+    </div>
+    <div class="team-card">
+      <div class="avatar">K</div>
+      <h3>Katherine</h3>
+      <div class="role">About & Philosophy</div>
+    </div>
+    <div class="team-card">
+      <div class="avatar">D</div>
+      <h3>Dylan</h3>
+      <div class="role">Resources & Blog</div>
+    </div>
+    <div class="team-card">
+      <div class="avatar">C</div>
+      <h3>Caden</h3>
+      <div class="role">Ethics & Online Games</div>
+    </div>
+    <div class="team-card">
+      <div class="avatar">O</div>
+      <h3>Oscar</h3>
+      <div class="role">Games & Get Involved</div>
+    </div>
+  </div>
+
+  <!-- Partner schools photo placeholder -->
+  <div class="section-header" style="margin-top: 48px;">
+    <div class="section-eyebrow">過往合作學校</div>
+    <h1>Partner Schools</h1>
+  </div>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-icon green">🏫</div>
+      <h3>School photos coming soon</h3>
+      <p>Photos from our workshops and partner school visits will appear here.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon teal">📸</div>
+      <h3>Workshop moments</h3>
+      <p>Upload photos here to document each visit and collaboration.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon amber">🤝</div>
+      <h3>Ongoing partnerships</h3>
+      <p>We continue building relationships with schools across Taiwan.</p>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <div class="section-header" style="margin-top: 48px;">
+    <div class="section-eyebrow">Contact</div>
+    <h1>Get In Touch</h1>
+  </div>
+  <div class="contact-row">
+    <div class="contact-item">
+      <div class="label">Email</div>
+      <a href="mailto:gems.taiwan@example.com">gems.taiwan@example.com</a>
+    </div>
+    <div class="contact-item">
+      <div class="label">Instagram</div>
+      <a href="#">@gems.taiwan</a>
+    </div>
+    <div class="contact-item">
+      <div class="label">GitHub</div>
+      <a href="https://gems-taiwan.github.io/gemstaiwan/test.html" target="_blank">gems-taiwan.github.io</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ PHILOSOPHY -->
+<section id="philosophy">
+  <div class="section-header">
+    <div class="section-eyebrow">教育理念</div>
+    <h1>Our Philosophy</h1>
+    <p>Why we believe synthetic biology belongs in every classroom.</p>
+  </div>
+
+  <div class="philosophy-block">
+    <h3>Why promote synthetic biology?</h3>
+    <p>Synthetic biology is one of the defining sciences of our time. From medicine to agriculture, climate solutions to materials science, it is reshaping the world. Yet most students in Taiwan have never heard the term. We believe that changes now.</p>
+  </div>
+
+  <div class="philosophy-block">
+    <h3>Our view on science education</h3>
+    <p>Science education should not stop at facts and formulas. It should cultivate the ability to question, imagine, and take responsibility. We design our workshops to be hands-on, discussion-based, and connected to real-world problems students care about.</p>
+  </div>
+
+  <div class="philosophy-block">
+    <h3>Empowering students as future scientists</h3>
+    <p>Every student we reach is a potential scientist, policymaker, or informed citizen who will one day shape how biotechnology is used. Our role is to give them the foundations — the knowledge, the vocabulary, and the ethical instincts — to do so wisely.</p>
+  </div>
+
+  <div class="card-grid" style="margin-top: 40px;">
+    <div class="card">
+      <div class="card-icon green">🔬</div>
+      <h3>Hands-on learning</h3>
+      <p>Activities and experiments that make abstract biology tangible and exciting.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon teal">💬</div>
+      <h3>Critical dialogue</h3>
+      <p>We encourage students to debate, question, and form their own views on science and society.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon amber">🌱</div>
+      <h3>Long-term impact</h3>
+      <p>We track outcomes and continue learning from every school we visit.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ RESOURCES -->
+<section id="resources">
+  <div class="section-header">
+    <div class="section-eyebrow">教學資源</div>
+    <h1>Educational Resources</h1>
+    <p>Download lesson plans, slide decks, lab manuals, and more — freely available for teachers and educators.</p>
+  </div>
+
+  <div class="year-group">
+    <div class="year-label">2025</div>
+    <div class="resource-item">
+      <div class="resource-icon">📄</div>
+      <div class="resource-info">
+        <strong>Lesson Plan — Introduction to Synthetic Biology</strong>
+        <span>教案 · PDF · Updated 2025</span>
+      </div>
+      <a class="resource-link" href="#">Download ↓</a>
+    </div>
+    <div class="resource-item">
+      <div class="resource-icon">📊</div>
+      <div class="resource-info">
+        <strong>Slide Deck — What is a Genetic Circuit?</strong>
+        <span>PowerPoint · 32 slides</span>
+      </div>
+      <a class="resource-link" href="#">Download ↓</a>
+    </div>
+    <div class="resource-item">
+      <div class="resource-icon">🧪</div>
+      <div class="resource-info">
+        <strong>Lab Manual — Gel Electrophoresis Activity</strong>
+        <span>實驗手冊 · PDF</span>
+      </div>
+      <a class="resource-link" href="#">Download ↓</a>
+    </div>
+    <div class="resource-item">
+      <div class="resource-icon">🎲</div>
+      <div class="resource-info">
+        <strong>Boardgame — Genes & Machines (PDF Print Kit)</strong>
+        <span>Boardgame printable · PDF</span>
+      </div>
+      <a class="resource-link" href="#">Download ↓</a>
+    </div>
+  </div>
+
+  <div class="year-group">
+    <div class="year-label">2024</div>
+    <div class="resource-item">
+      <div class="resource-icon">📄</div>
+      <div class="resource-info">
+        <strong>Lesson Plan — DNA and You</strong>
+        <span>教案 · PDF · 2024</span>
+      </div>
+      <a class="resource-link" href="#">Download ↓</a>
+    </div>
+    <div class="resource-item">
+      <div class="resource-icon">🎥</div>
+      <div class="resource-info">
+        <strong>Video — Synthetic Biology Explained in 5 Minutes</strong>
+        <span>Video · YouTube link</span>
+      </div>
+      <a class="resource-link" href="#">Watch →</a>
+    </div>
+    <div class="resource-item">
+      <div class="resource-icon">📊</div>
+      <div class="resource-info">
+        <strong>Slide Deck — CRISPR: Editing the Code of Life</strong>
+        <span>PowerPoint · 28 slides · 2024</span>
+      </div>
+      <a class="resource-link" href="#">Download ↓</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ ETHICS -->
+<section id="ethics">
+  <div class="section-header">
+    <div class="section-eyebrow">科學與倫理</div>
+    <h1>Science & Ethics</h1>
+    <p>We are committed to being responsible communicators of science. Understanding the ethical dimensions of synthetic biology is as important as understanding the science itself.</p>
+  </div>
+
+  <div class="ethics-block">
+    <h3>What is Synthetic Biology?</h3>
+    <p>Synthetic biology is the design and engineering of biological parts, devices, and systems — or the redesign of existing natural biological systems — for useful purposes. It blends molecular biology, engineering, and computer science to create organisms or biological tools that do not exist in nature, or to improve upon those that do.</p>
+    <p style="margin-top: 12px;">Applications range from insulin production and disease diagnostics to biodegradable plastics and environmental cleanup. The field moves fast, and so does the responsibility that comes with it.</p>
+  </div>
+
+  <div class="ethics-block">
+    <h3>Ethical boundaries of gene editing</h3>
+    <p>Gene editing technologies like CRISPR raise profound questions that science alone cannot answer. We discuss these openly in our workshops:</p>
+    <ul>
+      <li>Where is the line between treatment and enhancement?</li>
+      <li>Who gets access to gene therapies, and who decides?</li>
+      <li>What happens when edits affect future generations (germline editing)?</li>
+      <li>How do we govern technologies that move faster than regulation?</li>
+    </ul>
+  </div>
+
+  <div class="ethics-block">
+    <h3>Our commitment as science communicators</h3>
+    <p>Gems Taiwan does not promote synthetic biology uncritically. We believe students deserve to understand both the promise and the peril. We present evidence-based science alongside diverse perspectives — scientific, cultural, legal, and philosophical — so students can form their own informed views.</p>
+  </div>
+
+  <div class="card-grid" style="margin-top: 32px;">
+    <div class="card">
+      <div class="card-icon blue">⚖️</div>
+      <h3>Dual-use awareness</h3>
+      <p>We teach students that the same knowledge can be used for good or harm — and why biosafety governance matters.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon green">🌐</div>
+      <h3>Community engagement</h3>
+      <p>Ethical science is science in conversation with society. We bring community perspectives into every discussion.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon coral">🔍</div>
+      <h3>Transparency</h3>
+      <p>We are open about uncertainty, limitations, and the areas where science does not yet have answers.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ PLAY -->
+<section id="play">
+  <div class="section-header">
+    <div class="section-eyebrow">互動遊戲</div>
+    <h1>Online Games</h1>
+    <p>Games we designed to make synthetic biology fun, accessible, and memorable.</p>
+  </div>
+
+  <div class="card-grid">
+    <div class="game-card card">
+      <div class="game-thumb">🧬</div>
+      <div class="game-body">
+        <h3>Gene Builder</h3>
+        <p>Assemble genetic circuits to solve environmental puzzles. Drag and drop promoters, genes, and terminators.</p>
+        <a class="btn btn-primary" href="#">Play now →</a>
+      </div>
+    </div>
+    <div class="game-card card">
+      <div class="game-thumb">🦠</div>
+      <div class="game-body">
+        <h3>Bacteria City</h3>
+        <p>Design engineered bacteria to clean up pollution in a simulated city environment.</p>
+        <a class="btn btn-primary" href="#">Play now →</a>
+      </div>
+    </div>
+    <div class="game-card card">
+      <div class="game-thumb">🔬</div>
+      <div class="game-body">
+        <h3>Lab Escape Room</h3>
+        <p>Solve synthetic biology puzzles to escape the lab. Perfect for classroom teams.</p>
+        <a class="btn btn-primary" href="#">Play now →</a>
+      </div>
+    </div>
+    <div class="game-card card">
+      <div class="game-thumb">🎲</div>
+      <div class="game-body">
+        <h3>SynBio Quiz</h3>
+        <p>Test your knowledge across topics from DNA replication to genetic ethics.</p>
+        <a class="btn btn-primary" href="#">Play now →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ BLOG -->
+<section id="blog">
+  <div class="section-header">
+    <div class="section-eyebrow">活動紀錄與部落格</div>
+    <h1>Blog & News</h1>
+    <p>Workshop recaps, team updates, and reflections from the field.</p>
+  </div>
+
+  <div class="blog-grid">
+    <div class="blog-card">
+      <div class="blog-thumb">📸 Workshop photos</div>
+      <div class="blog-body">
+        <div class="blog-meta">March 2025 · Workshop Recap</div>
+        <h3>Spring Workshop at Taipei Municipal Jianguo High School</h3>
+        <p>A look back at our DNA extraction activity and student Q&A session.</p>
+        <a class="btn" href="#">Read more →</a>
+      </div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-thumb">🏆 Event coverage</div>
+      <div class="blog-body">
+        <div class="blog-meta">November 2024 · iGEM</div>
+        <h3>Gems Taiwan at iGEM 2024 — What We Learned</h3>
+        <p>Reflections from our first international presentation and the connections we made.</p>
+        <a class="btn" href="#">Read more →</a>
+      </div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-thumb">📰 News</div>
+      <div class="blog-body">
+        <div class="blog-meta">September 2024 · News</div>
+        <h3>Launching Our Boardgame: Genes & Machines</h3>
+        <p>The story behind designing our first educational boardgame for middle schoolers.</p>
+        <a class="btn" href="#">Read more →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ GET INVOLVED -->
+<section id="involved">
+  <div class="section-header">
+    <div class="section-eyebrow">參與我們</div>
+    <h1>Get Involved</h1>
+    <p>Whether you're a school looking for a workshop or a student wanting to join the team — we'd love to hear from you.</p>
+  </div>
+
+  <div class="card-grid">
+    <div class="involve-card card">
+      <div class="card-icon green" style="margin-bottom:14px;">🏫</div>
+      <h3>Book a Workshop</h3>
+      <p>We visit schools across Taiwan and run workshops tailored to your students' level. Fill out our Google Form to schedule a session.</p>
+      <a class="btn btn-primary" href="https://forms.google.com" target="_blank">Apply via Google Form →</a>
+    </div>
+    <div class="involve-card card">
+      <div class="card-icon teal" style="margin-bottom:14px;">🙋</div>
+      <h3>Volunteer & Join the Team</h3>
+      <p>We're always looking for passionate students to join Gems Taiwan. No prior experience required — just curiosity and enthusiasm.</p>
+      <a class="btn" href="#">Learn more →</a>
+    </div>
+    <div class="involve-card card">
+      <div class="card-icon amber" style="margin-bottom:14px;">📅</div>
+      <h3>Upcoming Events</h3>
+      <p>Follow our workshops, talks, and competitions. Check back regularly for the latest dates and locations.</p>
+      <a class="btn" href="#">View calendar →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ ARTWORKS -->
+<section id="artworks">
+  <div class="section-header">
+    <div class="section-eyebrow">Artworks</div>
+    <h1>Artwork Gallery</h1>
+    <p>Visual works created for our education outreach — from homepage illustrations to the impact map and boardgame art.</p>
+  </div>
+
+  <div class="artwork-grid">
+    <div class="artwork-card">
+      <div class="artwork-thumb">
+        <!-- Hero illustration preview -->
+        <svg viewBox="0 0 200 160" width="160" xmlns="http://www.w3.org/2000/svg" fill="none">
+          <circle cx="100" cy="80" r="55" fill="#C0DD97" opacity="0.35"/>
+          <circle cx="80" cy="100" r="12" fill="#639922" opacity="0.6"/>
+          <circle cx="120" cy="100" r="12" fill="#1D9E75" opacity="0.6"/>
+          <rect x="90" y="50" width="20" height="30" rx="4" fill="#3B6D11" opacity="0.3"/>
+        </svg>
+      </div>
+      <div class="artwork-info">
+        <h3>Homepage Illustration</h3>
+        <p>Children & education elements · for homepage hero</p>
+      </div>
+    </div>
+    <div class="artwork-card">
+      <div class="artwork-thumb">
+        <svg viewBox="0 0 200 160" width="160" xmlns="http://www.w3.org/2000/svg" fill="none">
+          <rect x="20" y="30" width="160" height="100" rx="8" fill="#EAF3DE" stroke="#C0DD97" stroke-width="1.5"/>
+          <circle cx="60" cy="80" r="8" fill="#3B6D11" opacity="0.5"/>
+          <circle cx="100" cy="60" r="6" fill="#1D9E75" opacity="0.5"/>
+          <circle cx="140" cy="90" r="7" fill="#639922" opacity="0.5"/>
+          <circle cx="80" cy="100" r="5" fill="#0F6E56" opacity="0.45"/>
+        </svg>
+      </div>
+      <div class="artwork-info">
+        <h3>Impact Map Design</h3>
+        <p>Schools served — number of students involved</p>
+      </div>
+    </div>
+    <div class="artwork-card">
+      <div class="artwork-thumb">
+        <svg viewBox="0 0 200 160" width="160" xmlns="http://www.w3.org/2000/svg" fill="none">
+          <rect x="30" y="20" width="140" height="120" rx="10" fill="#EAF3DE" stroke="#C0DD97" stroke-width="1.5"/>
+          <circle cx="100" cy="80" r="30" fill="#97C459" opacity="0.3"/>
+          <text x="100" y="85" text-anchor="middle" font-size="12" fill="#3B6D11" font-family="serif">Tab Art</text>
+        </svg>
+      </div>
+      <div class="artwork-info">
+        <h3>Tab & Navigation Design</h3>
+        <p>Visual language for the site's navigation elements</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="ethics-block" style="margin-top: 32px; border-left: 3px solid var(--amber-400); border-radius: 0 14px 14px 0;">
+    <h3>Add your artwork</h3>
+    <p>This section is ready for illustrations, boardgame art, and workshop photography. Replace the placeholders above with images and descriptions of each piece.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p><strong>Gems Taiwan</strong> · Synthetic Biology Education Outreach</p>
+  <p>Promoting Synthetic Biology, Inspiring Scientific Future · 設計生命，創造未來</p>
+  <p style="margin-top:8px; color: #888; font-size: 13px;">&copy; 2025 Gems Taiwan. All rights reserved.</p>
+</footer>
+
+<script>
+  function show(id) {
+    document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+    const sec = document.getElementById(id);
+    if (sec) sec.classList.add('active');
+    const link = document.getElementById('n-' + id);
+    if (link) link.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  document.addEventListener('DOMContentLoaded', () => show('home'));
+</script>
+
 </body>
 </html>
