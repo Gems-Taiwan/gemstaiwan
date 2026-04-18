@@ -11,6 +11,7 @@ const PAGES = [
   { href: 'blog.html',        label: 'Blog' },
   { href: 'involved.html',    label: 'Involved' },
   { href: 'artworks.html',    label: 'Artworks' },
+  
 ];
 
 function injectHeader() {
