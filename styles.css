@@ -423,7 +423,7 @@ main {
 /* ── GAME CARDS ── */
 .game-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; padding: 0; }
 .game-thumb {
-  height: 180px;
+  height: 150px;
   background: var(--green-50);
   display: flex;
   align-items: center;
@@ -561,5 +561,4 @@ footer strong { color: #fff; }
   main { padding: 20px 14px 60px; }
   .stat-row { grid-template-columns: 1fr 1fr; }
   .slogan-band p { font-size: 20px; }
-  .game-thumb { height: 140px; }
 }
