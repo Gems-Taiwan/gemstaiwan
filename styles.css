@@ -423,7 +423,7 @@ main {
 /* ── GAME CARDS ── */
 .game-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; padding: 0; }
 .game-thumb {
-  height: 150px;
+  height: 120px;
   background: var(--green-50);
   display: flex;
   align-items: center;
