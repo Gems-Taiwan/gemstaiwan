@@ -432,6 +432,15 @@ main {
 }
 
 .game-body { padding: 20px; }
+.game-image {
+  height: 100px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 10px;
+  background-color: var(--green-50);
+  border-radius: 8px;
+}
 .game-body h3 { font-size: 16px; font-weight: 600; margin-bottom: 6px; color: var(--text-primary); }
 .game-body p { font-size: 14px; color: var(--text-muted); }
 
