@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gems Taiwan — Educational Resources</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <script>window.ACTIVE_PAGE = 'resources.html';</script>
+  <script defer src="../nav.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+ 
+    :root {
+      --cream: #FAF8F3;
+      --ink: #1C1B18;
+      --ink-mid: #5A5850;
+      --ink-faint: #B8B4AB;
+      --border: rgba(28,27,24,0.10);
+      --border-mid: rgba(28,27,24,0.18);
+ 
+      --dengue: #C07038;
+      --dengue-bg: #FDF0E6;
+      --dengue-border: #E8C4A0;
+      --dengue-text: #7A4420;
+      --dengue-accent: #D85A30;
+ 
+      --textile: #2A5C9A;
+      --textile-bg: #EAF1FB;
+      --textile-border: #A8C4E8;
+      --textile-text: #1A3D6E;
+      --textile-accent: #185FA5;
+ 
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+      --ease: cubic-bezier(.4,0,.2,1);
+    }
+ 
+    html { font-size: 16px; scroll-behavior: smooth; }
+ 
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+ 
+    .page {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 2.5rem 6rem;
+    }
+ 
+    /* ── Header ── */
+    .section-header {
+      padding: 5rem 0 3rem;
+      max-width: 580px;
+    }
+ 
+    .section-eyebrow {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--ink-mid);
+      margin-bottom: .9rem;
+    }
+ 
+    .section-header h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 5vw, 3.4rem);
+      font-weight: 400;
+      line-height: 1.08;
+      margin-bottom: 1rem;
+    }
+ 
+    .section-header p {
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--ink-mid);
+      line-height: 1.7;
+    }
+ 
+    /* ── Layout ── */
+    .layout {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 0 3.5rem;
+      align-items: start;
+    }
+ 
+    /* ── Sidebar ── */
+    .sidebar {
+      position: sticky;
+      top: 2.5rem;
+    }
+ 
+    .sidebar-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-bottom: 1.2rem;
+    }
+ 
+    .theme-btn {
+      display: block;
+      width: 100%;
+      text-align: left;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      margin-bottom: .5rem;
+      font-family: var(--font-body);
+    }
+ 
+    .theme-btn-inner {
+      display: flex;
+      align-items: stretch;
+      border-radius: 10px;
+      border: 1px solid transparent;
+      transition: border-color .2s var(--ease), background .2s var(--ease);
+      padding: .85rem 1rem .85rem .9rem;
+      gap: .8rem;
+    }
+ 
+    .theme-btn:hover .theme-btn-inner { background: rgba(28,27,24,.04); }
+ 
+    .theme-btn.active[data-theme="dengue"] .theme-btn-inner {
+      background: var(--dengue-bg);
+      border-color: var(--dengue-border);
+    }
+ 
+    .theme-btn.active[data-theme="textile"] .theme-btn-inner {
+      background: var(--textile-bg);
+      border-color: var(--textile-border);
+    }
+ 
+    .theme-btn-pip {
+      width: 3px;
+      border-radius: 99px;
+      flex-shrink: 0;
+      background: var(--ink-faint);
+      transition: background .2s;
+      align-self: stretch;
+    }
+ 
+    .theme-btn.active[data-theme="dengue"] .theme-btn-pip { background: var(--dengue-accent); }
+    .theme-btn.active[data-theme="textile"] .theme-btn-pip { background: var(--textile-accent); }
+ 
+    .theme-btn-text { flex: 1; min-width: 0; }
+ 
+    .theme-btn-name {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.3;
+    }
+ 
+    .theme-btn-zh {
+      display: block;
+      font-size: 11px;
+      color: var(--ink-faint);
+      margin-top: 2px;
+    }
+ 
+    .theme-btn-count {
+      display: block;
+      font-size: 11px;
+      margin-top: 5px;
+    }
+ 
+    .theme-btn.active[data-theme="dengue"] .theme-btn-count { color: var(--dengue-text); }
+    .theme-btn.active[data-theme="textile"] .theme-btn-count { color: var(--textile-text); }
+    .theme-btn:not(.active) .theme-btn-count { color: var(--ink-faint); }
+ 
+    .sidebar-divider { height: 1px; background: var(--border); margin: 1rem 0; }
+ 
+    /* Type quick-nav */
+    .type-nav { padding: 0; list-style: none; }
+ 
+    .type-nav-item {
+      font-size: 12px;
+      color: var(--ink-faint);
+      padding: .28rem 0;
+      cursor: pointer;
+      transition: color .15s;
+      display: flex;
+      align-items: center;
+      gap: .45rem;
+    }
+ 
+    .type-nav-item:hover { color: var(--ink-mid); }
+    .type-nav-item.hl-dengue { color: var(--dengue-text); }
+    .type-nav-item.hl-textile { color: var(--textile-text); }
+ 
+    .type-nav-dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      background: currentColor;
+      opacity: .5;
+    }
+ 
+    /* ── Main content ── */
+    .main { min-width: 0; }
+    .theme-panel { display: none; }
+    .theme-panel.active { display: block; }
+ 
+    /* Theme hero */
+    .theme-hero {
+      padding: 1.5rem 1.75rem;
+      border-radius: 14px;
+      margin-bottom: 2.5rem;
+    }
+ 
+    .theme-hero.dengue { background: var(--dengue-bg); border: 1px solid var(--dengue-border); }
+    .theme-hero.textile { background: var(--textile-bg); border: 1px solid var(--textile-border); }
+ 
+    .theme-hero h2 {
+      font-family: var(--font-display);
+      font-size: 1.7rem;
+      font-weight: 400;
+      line-height: 1.15;
+      margin-bottom: .2rem;
+    }
+ 
+    .theme-hero-zh {
+      font-size: 12px;
+      font-weight: 400;
+      margin-bottom: .65rem;
+    }
+ 
+    .theme-hero.dengue .theme-hero-zh { color: var(--dengue-text); }
+    .theme-hero.textile .theme-hero-zh { color: var(--textile-text); }
+ 
+    .theme-hero p {
+      font-size: .88rem;
+      font-weight: 300;
+      color: var(--ink-mid);
+      line-height: 1.65;
+    }
+ 
+    .synbio-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: .85rem;
+    }
+ 
+    .synbio-tag {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: .04em;
+      padding: 3px 9px;
+      border-radius: 20px;
+      border: 1px solid;
+      background: rgba(255,255,255,.55);
+    }
+ 
+    .dengue .synbio-tag { border-color: var(--dengue-border); color: var(--dengue-text); }
+    .textile .synbio-tag { border-color: var(--textile-border); color: var(--textile-text); }
+ 
+    /* Type section */
+    .type-section { margin-bottom: 2.5rem; }
+ 
+    .type-heading {
+      display: flex;
+      align-items: baseline;
+      gap: .75rem;
+      margin-bottom: 1rem;
+      padding-bottom: .6rem;
+      border-bottom: 1px solid var(--border);
+    }
+ 
+    .type-heading-name {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      color: var(--ink-mid);
+    }
+ 
+    .type-heading-zh {
+      font-size: 12px;
+      color: var(--ink-faint);
+      font-weight: 400;
+    }
+ 
+    .type-heading-count {
+      margin-left: auto;
+      font-size: 11px;
+      color: var(--ink-faint);
+    }
+ 
+    /* Resource rows */
+    .resource-item {
+      display: grid;
+      grid-template-columns: 42px 1fr auto;
+      align-items: center;
+      gap: .75rem 1rem;
+      padding: .9rem 0;
+      border-bottom: 1px solid var(--border);
+      transition: padding .15s var(--ease), background .15s;
+    }
+ 
+    .resource-item:last-child { border-bottom: none; }
+ 
+    .resource-item:hover {
+      padding-left: .75rem;
+      padding-right: .75rem;
+      margin: 0 -.75rem;
+      background: rgba(28,27,24,.02);
+    }
+ 
+    .resource-icon {
+      width: 42px; height: 42px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+      transition: transform .15s var(--ease);
+    }
+ 
+    .resource-item:hover .resource-icon { transform: scale(1.07); }
+ 
+    .resource-icon.doc   { background: #F0EDE6; }
+    .resource-icon.game  { background: #FDF0E6; }
+    .resource-icon.web   { background: #EAF1FB; }
+    .resource-icon.comic { background: #FBF0F5; }
+    .resource-icon.audio { background: #EBF5EE; }
+ 
+    .resource-info { min-width: 0; }
+ 
+    .resource-title {
+      display: block;
+      font-size: .88rem;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.35;
+    }
+ 
+    .resource-zh {
+      display: block;
+      font-size: 12px;
+      color: var(--ink-faint);
+      font-weight: 300;
+      margin-top: 1px;
+    }
+ 
+    .resource-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: .35rem;
+      margin-top: 5px;
+    }
+ 
+    .resource-type-tag {
+      font-size: 10px;
+      font-weight: 500;
+      padding: 2px 7px;
+      border-radius: 4px;
+      letter-spacing: .04em;
+    }
+ 
+    .tag-dengue  { background: var(--dengue-bg);  color: var(--dengue-text); }
+    .tag-textile { background: var(--textile-bg); color: var(--textile-text); }
+ 
+    .resource-level { font-size: 10px; color: var(--ink-faint); }
+ 
+    .resource-link {
+      font-size: 12px;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid var(--border-mid);
+      color: var(--ink-mid);
+      text-decoration: none;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: background .15s, color .15s, border-color .15s;
+    }
+ 
+    .resource-item:hover .resource-link.dengue-link {
+      background: var(--dengue-bg);
+      color: var(--dengue-text);
+      border-color: var(--dengue-border);
+    }
+ 
+    .resource-item:hover .resource-link.textile-link {
+      background: var(--textile-bg);
+      color: var(--textile-text);
+      border-color: var(--textile-border);
+    }
+ 
+    .resource-link.coming {
+      opacity: .38;
+      pointer-events: none;
+      cursor: default;
+    }
+ 
+    @media (max-width: 700px) {
+      .layout { grid-template-columns: 1fr; }
+      .sidebar { position: static; margin-bottom: 2rem; }
+    }
+  </style>
+</head>
+<body>
+<main>
+<div class="page">
+ 
+  <div class="section-header">
+    <div class="section-eyebrow">教材共享區</div>
+    <h1>Lesson Materials</h1>
+    <p>Free resources for teachers and educators — organised by theme. Each kit includes synbio context and Chinese subtitles, ready to use in the classroom.</p>
+  </div>
+ 
+  <div class="layout">
+ 
+    <!-- ── SIDEBAR ── -->
+    <aside class="sidebar">
+      <div class="sidebar-label">Choose a theme</div>
+ 
+      <button class="theme-btn active" data-theme="dengue" onclick="switchTheme('dengue', this)">
+        <div class="theme-btn-inner">
+          <div class="theme-btn-pip"></div>
+          <div class="theme-btn-text">
+            <span class="theme-btn-name">Dengue Fever</span>
+            <span class="theme-btn-zh">登革熱教學資源</span>
+            <span class="theme-btn-count">4 resources</span>
+          </div>
+        </div>
+      </button>
+ 
+      <button class="theme-btn" data-theme="textile" onclick="switchTheme('textile', this)">
+        <div class="theme-btn-inner">
+          <div class="theme-btn-pip"></div>
+          <div class="theme-btn-text">
+            <span class="theme-btn-name">Textile Degradation</span>
+            <span class="theme-btn-zh">紡織廢料生物降解</span>
+            <span class="theme-btn-count">7 resources</span>
+          </div>
+        </div>
+      </button>
+ 
+      <div class="sidebar-divider"></div>
+ 
+      <!-- populated by JS on theme switch -->
+      <ul class="type-nav" id="type-nav" aria-label="Jump to section"></ul>
+    </aside>
+ 
+    <!-- ── MAIN ── -->
+    <div class="main">
+ 
+      <!-- ════ DENGUE PANEL ════ -->
+      <div class="theme-panel active" id="panel-dengue">
+ 
+        <div class="theme-hero dengue">
+          <h2>Dengue Fever</h2>
+          <div class="theme-hero-zh">登革熱 — 病媒蚊、病毒與生物防治</div>
+          <p>Explores the biology of the <em>Aedes aegypti</em> mosquito, dengue virus replication, and how synthetic biology tools — genetic circuits, engineered bacteria, and ovitrap design — can support disease surveillance and prevention.</p>
+          <div class="synbio-tags">
+            <span class="synbio-tag">Vector biology 病媒生物學</span>
+            <span class="synbio-tag">Genetic circuit 基因迴路</span>
+            <span class="synbio-tag">Ovitrap design 誘卵筒設計</span>
+            <span class="synbio-tag">Viral replication 病毒複製</span>
+            <span class="synbio-tag">Biosurveillance 生物監測</span>
+          </div>
+        </div>
+ 
+        <!-- BOARDGAMES -->
+        <div class="type-section" data-type-label="Boardgames &amp; Cardgames" data-type-zh="桌遊 · 卡牌遊戲" data-theme="dengue">
+          <div class="type-heading">
+            <span class="type-heading-name">Boardgames &amp; Cardgames</span>
+            <span class="type-heading-zh">桌遊 · 卡牌遊戲</span>
+            <span class="type-heading-count">2 items</span>
+          </div>
+ 
+          <div class="resource-item">
+            <div class="resource-icon game">🎲</div>
+            <div class="resource-info">
+              <strong class="resource-title">DNA Replication Boardgame — SnapGene</strong>
+              <span class="resource-zh">DNA複製桌遊 — 學習基因複製工具酶機制</span>
+              <div class="resource-meta">
+                <span class="resource-type-tag tag-dengue">Dengue</span>
+                <span class="resource-level">Boardgame · PDF print kit · all ages</span>
+              </div>
+            </div>
+            <a class="resource-link dengue-link" href="https://static.igem.wiki/teams/5066/human-practice/snap-gene-compressed.pdf" target="_blank" rel="noopener">Download ↓</a>
+          </div>
+ 
+          <div class="resource-item">
+            <div class="resource-icon game">🎲</div>
+            <div class="resource-info">
+              <strong class="resource-title">Amino Acid Assembly Cardgame — AminoPoly</strong>
+              <span class="resource-zh">胺基酸組合卡牌 — 蛋白質合成與轉譯過程</span>
+              <div class="resource-meta">
+                <span class="resource-type-tag tag-dengue">Dengue</span>
+                <span class="resource-level">Cardgame · PDF print kit · all ages</span>
+              </div>
+            </div>
+            <a class="resource-link dengue-link" href="https://static.igem.wiki/teams/5066/human-practice/aminopoly-compressed.pdf" target="_blank" rel="noopener">Download ↓</a>
+          </div>
+        </div>
+ 
+        <!-- COMICS -->
+        <div class="type-section" data-type-label="Comics" data-type-zh="漫畫" data-theme="dengue">
+          <div class="type-heading">
+            <span class="type-heading-name">Comics</span>
+            <span class="type-heading-zh">漫畫</span>
+            <span class="type-heading-count">1 item</span>
+          </div>
+ 
+          <div class="resource-item">
+            <div class="resource-icon comic">📖</div>
+            <div class="resource-info">
+              <strong class="resource-title">Illustrated Story — Mosquito Life Cycle &amp; Ovitrap Science</strong>
+              <span class="resource-zh">漫畫故事 — 蚊子生命週期與誘卵筒原理</span>
+              <div class="resource-meta">
+                <span class="resource-type-tag tag-dengue">Dengue</span>
+                <span class="resource-level">Comic · PDF · elementary school</span>
+              </div>
+            </div>
+            <a class="resource-link dengue-link" href="https://static.igem.wiki/teams/5066/pdfs/bill-listen-my-children-these-evil-humans-are-trying-to-get-us-extinct-chloe-how-horrid-evil-humans-should-be-stopped-bill-i-heard-they-invented-this-new-ovitrap-they-lure-you-in-to-la.pdf" target="_blank" rel="noopener">Download ↓</a>
+          </div>
+        </div>
+ 
+        <!-- PODCAST -->
+        <div class="type-section" data-type-label="Podcast" data-type-zh="播客" data-theme="dengue">
+          <div class="type-heading">
+            <span class="type-heading-name">Podcast</span>
+            <span class="type-heading-zh">播客</span>
+            <span class="type-heading-count">coming soon</span>
+          </div>
+ 
+          <div class="resource-item">
+            <div class="resource-icon audio">🎙️</div>
+            <div class="resource-info">
+              <strong class="resource-title">Podcast Series — Synthetic Biology &amp; Disease Prevention</strong>
+              <span class="resource-zh">合成生物學與疾病防治 Podcast 系列</span>
+              <div class="resource-meta">
+                <span class="resource-type-tag tag-dengue">Dengue</span>
+                <span class="resource-level">YouTube · link to be added</span>
+              </div>
+            </div>
+            <!-- ↓ REPLACE href WITH PODCAST YOUTUBE LINK WHEN READY -->
+            <a class="resource-link coming" href="#TODO-podcast-link" target="_blank" rel="noopener">Soon</a>
+          </div>
+        </div>
+ 
+      </div><!-- /dengue panel -->
+ 
+ 
+      <!-- ════ TEXTILE PANEL ════ -->
+      <div class="theme-panel" id="panel-textile">
+ 
+        <div class="theme-hero textile">
+          <h2>Textile Degradation</h2>
+          <div class="theme-hero-zh">紡織廢料生物降解 — 酵素工程與永續發展</div>
+          <p>Investigates how engineered microorganisms and enzyme pathways can break down synthetic textile waste. Covers gene expression, metabolic engineering, and real-world sustainability applications.</p>
+          <div class="synbio-tags">
+            <span class="synbio-tag">Enzyme engineering 酵素工程</span>
+            <span class="synbio-tag">Gene expression 基因表現</span>
+            <span class="synbio-tag">Metabolic pathway 代謝路徑</span>
+            <span class="synbio-tag">Bioremediation 生物修復</span>
+            <span class="synbio-tag">Protein folding 蛋白質折疊</span>
+          </div>
+        </div>
+ 
+        <!-- LESSON PLANS -->
+        <div class="type-section" data-type-label="Lesson Plans" data-type-zh="教案" data-theme="textile">
+          <div class="type-heading">
+            <span class="type-heading-name">Lesson Plans</span>
+            <span class="type-heading-zh">教案</span>
+            <span class="type-heading-count">2 items</span>
+          </div>
+ 
+          <div class="resource-item">
+            <div class="resource-icon doc">📄</div>
+            <div class="resource-info">
+              <strong class="resource-title">Lesson Plan — Enzyme Degradation of Textiles (Elementary)</strong>
+              <span class="resource-zh">酵素分解合成纖維教案 — 國小版</span>
+              <div class="resource-meta">
+                <span class="resource-type-tag tag-textile">Textile</span>
+                <span class="resource-level">Lesson plan · PDF · elementary school</span>
+              </div>
+            </div>
+            <a class="resource-link textile-link" href="https://static.igem.wiki/teams/5729/educationwiki/gems-elementary-slides.pdf" target="_blank" rel="noopener">Download ↓</a>
+          </div>
+ 
+          <div class="resource-item">
+            <div class="resource-icon doc">📄</div>
+            <div class="resource-info">
+              <strong class="resource-title">Lesson Plan — Synthetic Biology &amp; Textile Waste (Junior High)</strong>
+              <span class="resource-zh">合成生物學與紡織廢料教案 — 國中版</span>
+              <div class="resource-meta">
+                <span class="resource-type-tag tag-textile">Textile</span>
+                <span class="resource-level">Lesson plan · PDF · junior high school</span>
+              </div>
+            </div>
+            <a class="resource-link textile-link" href="https://static.igem.wiki/teams/5729/educationwiki/gems-taiwan-junior-high-school-educationnewest.pdf" target="_blank" rel="noopener">Download ↓</a>
+          </div>
+        </div>
+ 
+        <!-- BOARDGAMES -->
+        <div class="type-section" data-type-label="Boardgames &amp; Cardgames" data-type-zh="桌遊 · 卡牌遊戲" data-theme="textile">
+          <div class="type-heading">
+            <span class="type-heading-name">Boardgames &amp; Cardgames</span>
+            <span class="type-heading-zh">桌遊 · 卡牌遊戲</span>
+            <span class="type-heading-count">2 items</span>
+          </div>
+ 
+          <div class="resource-item">
+            <div class="resource-icon game">🎲</div>
+            <div class="resource-info">
+              <strong class="resource-title">Boardgame — Enzyme Pathway Builder</strong>
+              <span class="resource-zh">代謝路徑桌遊 — 建構纖維分解酵素路徑</span>
+              <div class="resource-meta">
+                <span class="resource-type-tag tag-textile">Textile</span>
+                <span class="resource-level">Boardgame · PDF print kit · elementary</span>
+              </div>
+            </div>
+            <a class="resource-link textile-link" href="https://static.igem.wiki/teams/5729/educationwiki/gems-elementary-slides.pdf" target="_blank" rel="noopener">Download ↓</a>
+          </div>
+ 
+          <div class="resource-item">
+            <div class="resource-icon game">🎲</div>
+            <div class="resource-info">
+              <strong class="resource-title">Card Game — Gene Expression &amp; Protein Assembly (Rulebook)</strong>
+              <span class="resource-zh">基因表現與蛋白質組裝卡牌遊戲規則手冊</span>
+              <div class="resource-meta">
+                <span class="resource-type-tag tag-textile">Textile</span>
+                <span class="resource-level">Cardgame · PDF rulebook · all ages</span>
+              </div>
+            </div>
+            <a class="resource-link textile-link" href="https://static.igem.wiki/teams/5729/educationwiki/card-game-rulebook.pdf" target="_blank" rel="noopener">Download ↓</a>
+          </div>
+        </div>
+ 
+        <!-- ONLINE GAME -->
+        <div class="type-section" data-type-label="Online Game" data-type-zh="線上遊戲" data-theme="textile">
+          <div class="type-heading">
+            <span class="type-heading-name">Online Game</span>
+            <span class="type-heading-zh">線上遊戲</span>
+            <span class="type-heading-count">1 item</span>
+          </div>
+ 
+          <div class="resource-item">
+            <div class="resource-icon web">🕹️</div>
+            <div class="resource-info">
+              <strong class="resource-title">Browser Game — Textile Fighters: Defeat the Microplastics</strong>
+              <span class="resource-zh">線上遊戲 — 對抗微塑膠的合成生物學戰士</span>
+              <div class="resource-meta">
+                <span class="resource-type-tag tag-textile">Textile</span>
+                <span class="resource-level">Browser game · itch.io · all ages</span>
+              </div>
+            </div>
+            <a class="resource-link textile-link" href="https://caden-wu-gems-tw.itch.io/textile-fighter" target="_blank" rel="noopener">Play →</a>
+          </div>
+        </div>
+ 
+        <!-- COMICS -->
+        <div class="type-section" data-type-label="Comics" data-type-zh="漫畫" data-theme="textile">
+          <div class="type-heading">
+            <span class="type-heading-name">Comics</span>
+            <span class="type-heading-zh">漫畫</span>
+            <span class="type-heading-count">1 coming soon</span>
+          </div>
+ 
+          <div class="resource-item">
+            <div class="resource-icon comic">📖</div>
+            <div class="resource-info">
+              <strong class="resource-title">Illustrated Story — A Microbe's Journey: Bioremediation of Textile Waste</strong>
+              <span class="resource-zh">漫畫故事 — 微生物的旅程：紡織廢料的生物修復</span>
+              <div class="resource-meta">
+                <span class="resource-type-tag tag-textile">Textile</span>
+                <span class="resource-level">Comic · PDF · link to be added</span>
+              </div>
+            </div>
+            <!-- ↓ REPLACE href WITH IAN COMIC PDF LINK WHEN READY -->
+            <a class="resource-link coming" href="#TODO-ian-comic-link" target="_blank" rel="noopener">Soon</a>
+          </div>
+        </div>
+ 
+        <!-- AUDIOBOOK -->
+        <div class="type-section" data-type-label="Audiobook" data-type-zh="有聲書" data-theme="textile">
+          <div class="type-heading">
+            <span class="type-heading-name">Audiobook</span>
+            <span class="type-heading-zh">有聲書</span>
+            <span class="type-heading-count">coming soon</span>
+          </div>
+ 
+          <div class="resource-item">
+            <div class="resource-icon audio">🎧</div>
+            <div class="resource-info">
+              <strong class="resource-title">Audiobook — Synthetic Biology &amp; Sustainable Textiles</strong>
+              <span class="resource-zh">有聲書 — 合成生物學與永續紡織的未來</span>
+              <div class="resource-meta">
+                <span class="resource-type-tag tag-textile">Textile</span>
+                <span class="resource-level">YouTube · link to be added</span>
+              </div>
+            </div>
+            <!-- ↓ REPLACE href WITH AUDIOBOOK YOUTUBE LINK WHEN READY -->
+            <a class="resource-link coming" href="#TODO-audiobook-link" target="_blank" rel="noopener">Soon</a>
+          </div>
+        </div>
+ 
+      </div><!-- /textile panel -->
+ 
+    </div><!-- /main -->
+  </div><!-- /layout -->
+ 
+</div><!-- /page -->
+</main>
+ 
+<script>
+  function switchTheme(theme, btn) {
+    document.querySelectorAll('.theme-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.theme-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById('panel-' + theme).classList.add('active');
+    buildTypeNav(theme);
+  }
+ 
+  function buildTypeNav(theme) {
+    const nav = document.getElementById('type-nav');
+    nav.innerHTML = '';
+    document.querySelectorAll('#panel-' + theme + ' .type-section').forEach(sec => {
+      const li = document.createElement('li');
+      li.className = 'type-nav-item hl-' + theme;
+      li.title = sec.dataset.typeZh || '';
+      li.innerHTML = '<span class="type-nav-dot"></span>' + sec.dataset.typeLabel;
+      li.onclick = () => sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      nav.appendChild(li);
+    });
+  }
+ 
+  buildTypeNav('dengue');
+</script>
+ 
+</body>
+</html>

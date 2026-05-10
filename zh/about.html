@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gems Taiwan — About Us</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <script>window.ACTIVE_PAGE = 'about.html';</script>
+  <script defer src="../nav.js"></script>
+</head>
+<body>
+
+<main>
+
+  <!-- Hero banner -->
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:start; margin-top:32px; margin-bottom:32px;">
+    <h1 style="font-size: clamp(32px,6vw,52px); font-weight:900; line-height:1.1;">About us</h1>
+    <h2 style="font-size:22px; font-weight:600; color:var(--text-muted); padding-top:8px;">Team 2026</h2>
+  </div>
+
+  <!-- Team photo banner placeholder -->
+  <div style="width:100%; height:220px; background: linear-gradient(180deg,#7ab88a 0%,#3d7a4a 60%,#2a5a36 100%); border-radius:16px; margin-bottom:28px; display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.5); font-size:14px;">
+    Team group photo (replace with actual image)
+  </div>
+
+  <!-- Team description -->
+  <p style="max-width:640px; margin: 0 auto 48px; text-align:center; font-size:16px; line-height:1.85; color:var(--text-mid);">
+    GEMS Taiwan is a five-year-old team based in Taipei, Taiwan. With two top 10 projects and a Grand Prize, the team is filled with ambition for this year's project as well. Noticing the struggles small farmers encounter when planting crops, such as osmotic, heat, and salinity stress, our team wants to alleviate these concerns through iGEM. Through our education program to other schools, we plan to educate students about the common stresses farmers can face during the year and how crops relate to our daily lives. Our education program plans to target elementary, middle, and high school students.
+  </p>
+
+  <!-- Subteam sections with tab bar -->
+  <div id="wetlab-section" class="subteam-section">
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:28px;">
+      <h2 style="font-size:clamp(28px,5vw,42px); font-weight:900;">Wetlab</h2>
+      <div class="subtab-bar" style="margin:0;">
+        <button class="subtab" onclick="scrollTo('wetlab-section')">Wetlab</button>
+        <button class="subtab inactive" onclick="scrollTo('drylab-section')">Drylab</button>
+        <button class="subtab inactive" onclick="scrollTo('hp-section')">HP</button>
+        <button class="subtab inactive" onclick="scrollTo('advisors-section')">Advisors</button>
+        <button class="subtab inactive" onclick="scrollTo('instructors-section')">Instructors</button>
+      </div>
+    </div>
+    <div class="members-grid">
+      <div class="member-card">
+        <div class="member-avatar"></div>
+        <h3>Members</h3>
+        <ul><li>grade</li><li>intro</li><li>Subteam</li></ul>
+      </div>
+      <div class="member-card">
+        <div class="member-avatar"></div>
+        <h3>Members</h3>
+        <ul><li>grade</li><li>intro</li><li>Subteam</li></ul>
+      </div>
+      <div class="member-card">
+        <div class="member-avatar"></div>
+        <h3>Members</h3>
+        <ul><li>grade</li><li>intro</li><li>Subteam</li></ul>
+      </div>
+    </div>
+  </div>
+
+  <div id="drylab-section" class="subteam-section">
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:28px;">
+      <h2 style="font-size:clamp(28px,5vw,42px); font-weight:900;">Drylab</h2>
+      <div class="subtab-bar" style="margin:0;">
+        <button class="subtab inactive" onclick="scrollTo('wetlab-section')">Wetlab</button>
+        <button class="subtab" onclick="scrollTo('drylab-section')">Drylab</button>
+        <button class="subtab inactive" onclick="scrollTo('hp-section')">HP</button>
+        <button class="subtab inactive" onclick="scrollTo('advisors-section')">Advisors</button>
+        <button class="subtab inactive" onclick="scrollTo('instructors-section')">Instructors</button>
+      </div>
+    </div>
+    <div class="members-grid">
+      <div class="member-card">
+        <div class="member-avatar"></div>
+        <h3>Members</h3>
+        <ul><li>grade</li><li>intro</li><li>Subteam</li></ul>
+      </div>
+      <div class="member-card">
+        <div class="member-avatar"></div>
+        <h3>Members</h3>
+        <ul><li>grade</li><li>intro</li><li>Subteam</li></ul>
+      </div>
+      <div class="member-card">
+        <div class="member-avatar"></div>
+        <h3>Members</h3>
+        <ul><li>grade</li><li>intro</li><li>Subteam</li></ul>
+      </div>
+    </div>
+  </div>
+
+  <div id="hp-section" class="subteam-section">
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:28px;">
+      <h2 style="font-size:clamp(28px,5vw,42px); font-weight:900;">HP</h2>
+      <div class="subtab-bar" style="margin:0;">
+        <button class="subtab inactive" onclick="scrollTo('wetlab-section')">Wetlab</button>
+        <button class="subtab inactive" onclick="scrollTo('drylab-section')">Drylab</button>
+        <button class="subtab" onclick="scrollTo('hp-section')">HP</button>
+        <button class="subtab inactive" onclick="scrollTo('advisors-section')">Advisors</button>
+        <button class="subtab inactive" onclick="scrollTo('instructors-section')">Instructors</button>
+      </div>
+    </div>
+    <div class="members-grid">
+      <div class="member-card">
+        <div class="member-avatar"></div>
+        <h3>Members</h3>
+        <ul><li>grade</li><li>intro</li><li>Subteam</li></ul>
+      </div>
+      <div class="member-card">
+        <div class="member-avatar"></div>
+        <h3>Members</h3>
+        <ul><li>grade</li><li>intro</li><li>Subteam</li></ul>
+      </div>
+      <div class="member-card">
+        <div class="member-avatar"></div>
+        <h3>Members</h3>
+        <ul><li>grade</li><li>intro</li><li>Subteam</li></ul>
+      </div>
+    </div>
+  </div>
+
+  <div id="advisors-section" class="subteam-section">
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:28px;">
+      <h2 style="font-size:clamp(28px,5vw,42px); font-weight:900;">Advisors</h2>
+      <div class="subtab-bar" style="margin:0;">
+        <button class="subtab inactive" onclick="scrollTo('wetlab-section')">Wetlab</button>
+        <button class="subtab inactive" onclick="scrollTo('drylab-section')">Drylab</button>
+        <button class="subtab inactive" onclick="scrollTo('hp-section')">HP</button>
+        <button class="subtab" onclick="scrollTo('advisors-section')">Advisors</button>
+        <button class="subtab inactive" onclick="scrollTo('instructors-section')">Instructors</button>
+      </div>
+    </div>
+    <div class="members-grid">
+      <div class="member-card">
+        <div class="member-avatar"></div>
+        <h3>Advisors</h3>
+        <ul><li>grade</li><li>experience</li></ul>
+      </div>
+      <div class="member-card">
+        <div class="member-avatar"></div>
+        <h3>Advisors</h3>
+        <ul><li>grade</li><li>experience</li></ul>
+      </div>
+      <div class="member-card">
+        <div class="member-avatar"></div>
+        <h3>Advisors</h3>
+        <ul><li>grade</li><li>experience</li></ul>
+      </div>
+    </div>
+  </div>
+
+  <div id="instructors-section" class="subteam-section">
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:28px;">
+      <h2 style="font-size:clamp(28px,5vw,42px); font-weight:900;">Instructors</h2>
+      <div class="subtab-bar" style="margin:0;">
+        <button class="subtab inactive" onclick="scrollTo('wetlab-section')">Wetlab</button>
+        <button class="subtab inactive" onclick="scrollTo('drylab-section')">Drylab</button>
+        <button class="subtab inactive" onclick="scrollTo('hp-section')">HP</button>
+        <button class="subtab inactive" onclick="scrollTo('advisors-section')">Advisors</button>
+        <button class="subtab" onclick="scrollTo('instructors-section')">Instructors</button>
+      </div>
+    </div>
+    <div class="members-grid">
+      <div class="member-card">
+        <div class="member-avatar"></div>
+        <h3>Instructors</h3>
+        <ul><li>role</li><li>experience</li><li>background</li></ul>
+      </div>
+      <div class="member-card">
+        <div class="member-avatar"></div>
+        <h3>Instructors</h3>
+        <ul><li>role</li><li>experience</li><li>background</li></ul>
+      </div>
+      <div class="member-card">
+        <div class="member-avatar"></div>
+        <h3>Instructors</h3>
+        <ul><li>role</li><li>experience</li><li>background</li></ul>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<script>
+function scrollTo(id) {
+  document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+// Add spacing between subteam sections
+document.querySelectorAll('.subteam-section').forEach(s => {
+  s.style.marginBottom = '56px';
+});
+</script>
+
+</body>
+</html>

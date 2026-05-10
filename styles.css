@@ -4,7 +4,17 @@
    resources.html has additional inline styles
    for its specialised resource-browser UI.
 ══════════════════════════════════════════ */
+.lang-switch {
+  background: rgba(255,255,255,0.92);
+  color: var(--green-dark);
+  border-color: var(--white);
+  font-weight: 700;
+}
 
+.lang-switch:hover {
+  background: var(--white);
+  color: var(--green-dark);
+}
 :root {
   --green-dark:  #2d4a3e;
   --green-mid:   #3d6b52;
