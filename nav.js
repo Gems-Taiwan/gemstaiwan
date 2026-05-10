@@ -1,28 +1,26 @@
 // nav.js — shared header + footer injected into every page
-// Each page sets window.ACTIVE_PAGE to its own filename (e.g. 'about.html')
+// Each page sets window.ACTIVE_PAGE to its own filename
 
 const PAGES = [
-  { href: 'index.html',       label: 'Home' },
-  { href: 'about.html',       label: 'About' },
-  { href: 'philosophy.html',  label: 'Philosophy' },
-  { href: 'resources.html',   label: 'Resources' },
-  { href: 'ethics.html',      label: 'Ethics' },
-  { href: 'play.html',        label: 'Play' },
-  { href: 'blog.html',        label: 'Blog' },
-  { href: 'involved.html',    label: 'Involved' },
-  { href: 'artworks.html',    label: 'Artworks' },
+  { href: 'index.html',      label: 'Home' },
+  { href: 'about.html',      label: 'About Us' },
+  { href: 'philosophy.html', label: 'Philosophy' },
+  { href: 'resources.html',  label: 'Resources' },
+  { href: 'ethics.html',     label: 'Science & Ethics' },
+  { href: 'play.html',       label: 'Online Games' },
+  { href: 'blog.html',       label: 'Blogs & News' },
+  { href: 'involved.html',   label: 'Get Involved' },
 ];
 
 function injectHeader() {
   const active = window.ACTIVE_PAGE || '';
   const links = PAGES.map(p =>
     `<a href="${p.href}"${active === p.href ? ' class="active"' : ''}>${p.label}</a>`
-  ).join('\n      ');
+  ).join('');
 
   document.body.insertAdjacentHTML('afterbegin', `
 <header>
   <div class="header-inner">
-    <a class="logo" href="index.html"><span class="logo-dot"></span>Gems Taiwan</a>
     <nav>${links}</nav>
   </div>
 </header>`);
@@ -31,9 +29,16 @@ function injectHeader() {
 function injectFooter() {
   document.body.insertAdjacentHTML('beforeend', `
 <footer>
-  <p><strong>Gems Taiwan</strong> · Synthetic Biology Education Outreach</p>
-  <p>Promoting Synthetic Biology, Inspiring Scientific Future · 設計生命，創造未來</p>
-  <p style="margin-top:8px; color:#888; font-size:13px;">&copy; 2025 Gems Taiwan. All rights reserved.</p>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <p class="footer-logo">GEMS Taiwan</p>
+      <p>2F.-1, No. 15, Ln. 374, Sec. 3,<br>Chenggong Rd., Neihu Dist.,<br>Taipei, Taiwan (R.O.C.)</p>
+    </div>
+    <div class="footer-col">
+      <p class="footer-heading">Related Links</p>
+      <a href="https://gems-taiwan.github.io/gemstaiwan/test.html" target="_blank">gems-taiwan.tw</a>
+    </div>
+  </div>
 </footer>`);
 }
 

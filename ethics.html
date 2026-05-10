@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gems Taiwan — Science &amp; Ethics</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <script>window.ACTIVE_PAGE = 'ethics.html';</script>
   <script defer src="nav.js"></script>
@@ -14,36 +14,63 @@
 
 <main>
 
-  <div class="section-header">
-    <div class="section-eyebrow">科學與倫理</div>
-    <h1>Science &amp; Ethics</h1>
-  </div>
+  <!-- ── SCIENCE ── -->
+  <section class="sci-section" style="margin-bottom: 60px; margin-top: 32px;">
+    <h1 style="font-size: clamp(32px, 6vw, 56px); font-weight: 900; margin-bottom: 24px;">Science</h1>
 
-  <div class="ethics-block">
-    <h3>What is Synbio?</h3>
-    <p>Synthetic biology is a field of science that involves redesigning organisms to have new, useful abilities for the world. Scientists use organisms such as e. coli in engineering to give them various purposes previously unexplored. In synbio, different parts of DNA are stitched together to create organisms with new capabilities. Those recombined DNA pieces are then put into organisms we call chassis to perform the intended purpose.</p>
-    <p style="margin-top: 12px;"><a href="https://www.genome.gov/about-genomics/policy-issues/Synthetic-Biology">Learn more about Synthetic Biology</a></p>
-  </div>
+    <div class="sci-layout">
+      <!-- left: image card -->
+      <div>
+        <div class="sci-image-box" style="min-height: 260px; background: #0a1628; border-radius: 12px; overflow: hidden; margin-bottom: 12px;">
+          <!-- placeholder for the DNA/synbio image -->
+          <div style="width:100%; padding: 40px 20px; text-align:center; color: #7ab3e0; font-size: 13px;">
+            🧬 Synthetic Biology image<br><span style="font-size:11px; color:#555; margin-top:6px; display:block;">(replace with actual image)</span>
+          </div>
+        </div>
+        <div style="background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px;">
+          <p style="font-weight: 600; font-size: 14px; margin-bottom: 4px; color: var(--text-dark);">Synthetic Biology</p>
+          <p style="font-size: 13px; color: var(--text-muted); line-height: 1.6;">Synthetic biology is a field of science that involves redesigning organisms for useful purposes by engineering them to have new abilities.</p>
+          <p style="font-size: 12px; color: var(--text-muted); margin-top: 6px;">📌 Genome.gov</p>
+        </div>
+      </div>
 
-  <div class="ethics-block">
-    <h3>Science Related to Our Project</h3>
-    <p>Explore our podcast episodes on science and synthetic biology:</p>
-    <ul>
-      <li><a href="https://youtu.be/ZmpN68o5IhI?si=4jc1AymzU0_fWcgE">Episode 1</a></li>
-      <li><a href="https://youtu.be/ujDHpd0K97c?si=D35WjTgyTf4uvDXX">Episode 2</a></li>
-      <li><a href="https://youtu.be/BYrJAX-8N7k?si=rUSjfAIVqJFFIfRZ">Episode 3</a></li>
-    </ul>
-  </div>
+      <!-- right: text -->
+      <div>
+        <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 14px;">What is Synbio?</h3>
+        <p style="font-size: 18px; line-height: 1.85; color: var(--text-mid);">Synthetic biology is a field of science that involves redesigning organisms to have new, useful abilities for the world. Scientists use organisms such as e. coli in engineering to give them various purposes previously unexplored. In synbio, different parts of DNA are stitched together to create a zombie that will eat us all and blow up the world!!! kidding. In reality, all those recombined DNA pieces are then put into organisms we call chassis to perform the intended purpose, such as vaccination, crop enhancement, and many more.</p>
+      </div>
+    </div>
+  </section>
 
-  <div class="ethics-block">
-    <h3>Ethics</h3>
-    <p>It's inevitable in science that there will be times when morals and what is right needs to be considered, especially in a field like synthetic biology where we are designing organisms that raises concerns about how safe and moral it is. In very basic terms: don't be a war criminal. All science has the potential to be bad, but it's up to us to make it beneficial instead of detrimental for humanity.</p>
-    <p style="margin-top: 12px;">Learn more about the ethical challenges:</p>
-    <ul>
-      <li><a href="#">Ethical Challenges and Concerns in Synthetic Biology</a></li>
-      <li><a href="#">Synthetic Biology: Ethics, Politics, and Responsible Innovation</a></li>
-    </ul>
-  </div>
+  <!-- ── ETHICS ── -->
+  <section class="sci-section">
+    <h1 style="font-size: clamp(32px, 6vw, 56px); font-weight: 900; margin-bottom: 24px;">Ethics</h1>
+
+    <div class="sci-layout">
+      <!-- left: text -->
+      <div>
+        <p style="font-size: 18px; line-height: 1.85; color: var(--text-mid);">It's inevitable in science that there will be times when morals and what is right needs to be considered, especially in a field in synbio where it's kind of like making a Frankenstein organism, which raises concerns about how safe and moral it is. In very basic terms, don't be a war criminal. It's easy to think about all the bad things you could potentially do with synthetic biology, but there's also an insurmountable amount of potential for synbio to do good, such as creating new environmentally friendly materials, medical advancement, and decomposition.</p>
+      </div>
+
+      <!-- right: image placeholder -->
+      <div class="sci-image-box" style="min-height: 260px; background: #b8d4b8; border-radius: 12px; overflow: hidden;">
+        <div style="width:100%; padding: 40px; text-align:center; color: #2d4a3e; font-size: 13px;">
+          🌿 Ethics image placeholder<br><span style="font-size:11px;">(replace with actual image)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Podcast links -->
+    <div style="margin-top: 40px;">
+      <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 14px;">Science Related to Our Project</h3>
+      <p style="margin-bottom: 12px; color: var(--text-mid);">Explore our podcast episodes on science and synthetic biology:</p>
+      <ul style="padding-left: 20px; line-height: 2.2; color: var(--text-mid); font-size: 15px;">
+        <li><a href="https://youtu.be/ZmpN68o5IhI?si=4jc1AymzU0_fWcgE" target="_blank">Episode 1</a></li>
+        <li><a href="https://youtu.be/ujDHpd0K97c?si=D35WjTgyTf4uvDXX" target="_blank">Episode 2</a></li>
+        <li><a href="https://youtu.be/BYrJAX-8N7k?si=rUSjfAIVqJFFIfRZ" target="_blank">Episode 3</a></li>
+      </ul>
+    </div>
+  </section>
 
 </main>
 
