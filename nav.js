@@ -5,25 +5,23 @@
 const isChinese = window.location.pathname.includes('/zh/');
 
 const PAGES_EN = [
-  { href: 'index.html',      label: 'Home' },
-  { href: 'about.html',      label: 'About Us' },
-  { href: 'philosophy.html', label: 'Philosophy' },
-  { href: 'resources.html',  label: 'Resources' },
-  { href: 'ethics.html',     label: 'Science & Ethics' },
-  { href: 'play.html',       label: 'Online Games' },
-  { href: 'blog.html',       label: 'Blogs & News' },
-  { href: 'involved.html',   label: 'Get Involved' },
+  { href: 'index.html', label: 'Home' },
+  { href: 'about.html', label: 'About Us' },
+  { href: 'resources.html', label: 'Resources' },
+  { href: 'ethics.html', label: 'Science & Ethics' },
+  { href: 'play.html', label: 'Online Games' },
+  { href: 'blog.html', label: 'Blogs & News' },
+  { href: 'involved.html', label: 'Get Involved' },
 ];
 
 const PAGES_ZH = [
-  { href: 'index.html',      label: '首頁' },
-  { href: 'about.html',      label: '關於我們' },
-  { href: 'philosophy.html', label: '核心理念' },
-  { href: 'resources.html',  label: '教材資源' },
-  { href: 'ethics.html',     label: '科學與倫理' },
-  { href: 'play.html',       label: '線上遊戲' },
-  { href: 'blog.html',       label: '部落格與消息' },
-  { href: 'involved.html',   label: '參與我們' },
+  { href: 'index.html', label: '首頁' },
+  { href: 'about.html', label: '關於我們' },
+  { href: 'resources.html', label: '教材資源' },
+  { href: 'ethics.html', label: '科學與倫理' },
+  { href: 'play.html', label: '線上遊戲' },
+  { href: 'blog.html', label: '部落格與消息' },
+  { href: 'involved.html', label: '參與我們' },
 ];
 
 function getCurrentFileName() {

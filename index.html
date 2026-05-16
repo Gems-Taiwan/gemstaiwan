@@ -25,7 +25,23 @@
       <div class="site-title">GEMS-TAIWAN</div>
       <div class="site-subtitle">iGEM Team 2026</div>
     </div>
+    <div>
+      <section style="margin-bottom: 60px;">
+        <div class="section-title">SECTION</div>
+        <div class="section-heading">PHILOSOPHY BEHIND SYNBIO</div>
+        <p>
+          Synthetic biology stands out as a field that actively designs solutions to real-world problems rather than
+          simply seeking to understand them. It blends creativity with science and technology, distinguishing it from
+          traditional biology by emphasizing innovation and application. This approach allows it to tackle pressing
+          global challenges such as climate change, food security, and sustainable agriculture, making it especially
+          relevant for the next generation of scientists and informed citizens. As a result, science education should
+          move beyond rote memorization and instead prioritize problem-solving, critical thinking, and real-world
+          application. It should also become more accessible and inclusive, while encouraging students to consider the
+          broader societal and environmental impacts of scientific advancements.
+        </p>
+      </section>
 
+    </div>
     <!-- ── OUR VISION & MISSION ── -->
     <section style="margin-bottom: 60px;">
       <div class="section-title">SECTION</div>
@@ -84,98 +100,64 @@
 
       </div>
     </section>
-<!-- Interactive outreach map -->
-<div class="interactive-map-section" id="project-map">
-  <div class="section-title">INTERACTIVE MAP</div>
-  <h3>Past Team Outreach Map</h3>
+    <!-- Interactive outreach map -->
+    <div class="interactive-map-section" id="project-map">
+      <div class="section-title">INTERACTIVE MAP</div>
+      <h3>Past Team Outreach Map</h3>
 
-  <p class="map-intro">
-    Click a point on the map to see what happened at each outreach location.
-  </p>
+      <p class="map-intro">
+        Click a point on the map to see what happened at each outreach location.
+      </p>
 
-  <div class="interactive-map-layout">
+      <div class="interactive-map-layout">
 
-    <!-- Left: Taiwan silhouette map -->
-    <div class="taiwan-map-card" aria-label="Interactive map of Taiwan outreach locations">
-      <div class="taiwan-silhouette-wrapper">
+        <!-- Left: Taiwan silhouette map -->
+        <div class="taiwan-map-card" aria-label="Interactive map of Taiwan outreach locations">
+          <div class="taiwan-silhouette-wrapper">
 
-        <img
-          src="images/taiwan-silhouette.svg"
-          alt="Taiwan outreach map"
-          class="taiwan-silhouette-img"
-        />
+            <img src="images/taiwan-silhouette.svg" alt="Taiwan outreach map" class="taiwan-silhouette-img" />
 
-        <button
-          class="map-point-button active"
-          data-map-point="wenhua"
-          type="button"
-          aria-label="Wenhua Elementary School"
-          style="left: 71%; top: 8%;"
-        ></button>
+            <button class="map-point-button active" data-map-point="wenhua" type="button"
+              aria-label="Wenhua Elementary School" style="left: 71%; top: 8%;"></button>
 
-        <button
-          class="map-point-button"
-          data-map-point="jianguo"
-          type="button"
-          aria-label="Jianguo High School"
-          style="left: 70%; top: 9%;"
-        ></button>
+            <button class="map-point-button" data-map-point="jianguo" type="button" aria-label="Jianguo High School"
+              style="left: 70%; top: 9%;"></button>
 
-        <button
-          class="map-point-button"
-          data-map-point="visual"
-          type="button"
-          aria-label="Taipei School for the Visually Impaired"
-          style="left: 73%; top: 8.5%;"
-        ></button>
+            <button class="map-point-button" data-map-point="visual" type="button"
+              aria-label="Taipei School for the Visually Impaired" style="left: 73%; top: 8.5%;"></button>
 
-        <button
-          class="map-point-button"
-          data-map-point="yangmei"
-          type="button"
-          aria-label="Yangmei / Tong Fu Outreach"
-          style="left: 59%; top: 13%;"
-        ></button>
+            <button class="map-point-button" data-map-point="yangmei" type="button"
+              aria-label="Yangmei / Tong Fu Outreach" style="left: 59%; top: 13%;"></button>
 
-        <button
-          class="map-point-button"
-          data-map-point="hongdao"
-          type="button"
-          aria-label="Hongdao High School"
-          style="left: 69%; top: 9.5%;"
-        ></button>
+            <button class="map-point-button" data-map-point="hongdao" type="button" aria-label="Hongdao High School"
+              style="left: 69%; top: 9.5%;"></button>
 
-        <button
-          class="map-point-button"
-          data-map-point="fongkong"
-          type="button"
-          aria-label="Fong Kong Outreach"
-          style="left: 28%; top: 77%;"
-        ></button>
+            <button class="map-point-button" data-map-point="fongkong" type="button" aria-label="Fong Kong Outreach"
+              style="left: 28%; top: 77%;"></button>
+
+          </div>
+        </div>
+
+        <!-- Right: info card -->
+        <div class="map-info-card" id="map-info-card" aria-live="polite">
+          <div class="map-info-year" id="map-info-year">2024–2025 Outreach</div>
+
+          <h4 id="map-info-title">Wenhua Elementary School</h4>
+
+          <p id="map-info-text">
+            Elementary outreach session introducing students to synthetic biology through simple, accessible examples
+            connected to everyday life and agriculture.
+          </p>
+
+          <ul id="map-info-tags">
+            <li>Elementary students</li>
+            <li>Intro to synthetic biology</li>
+            <li>Hands-on education</li>
+          </ul>
+        </div>
 
       </div>
     </div>
-
-    <!-- Right: info card -->
-    <div class="map-info-card" id="map-info-card" aria-live="polite">
-      <div class="map-info-year" id="map-info-year">2024–2025 Outreach</div>
-
-      <h4 id="map-info-title">Wenhua Elementary School</h4>
-
-      <p id="map-info-text">
-        Elementary outreach session introducing students to synthetic biology through simple, accessible examples
-        connected to everyday life and agriculture.
-      </p>
-
-      <ul id="map-info-tags">
-        <li>Elementary students</li>
-        <li>Intro to synthetic biology</li>
-        <li>Hands-on education</li>
-      </ul>
-    </div>
-
-  </div>
-</div>
 
     <!-- ── PAST PROJECTS ── -->
     <section class="projects-section">
@@ -289,7 +271,7 @@
           </a>
         </div>
       </div>
-    </section>
+
 
   </main>
 
