@@ -1,4 +1,16 @@
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="255.121px" height="430.531px" viewBox="0 0 255.121 430.531" enable-background="new 0 0 255.121 430.531" xml:space="preserve">
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="125 0 120 120"
+     preserveAspectRatio="xMidYMin meet"
+     role="img"
+     aria-label="Map of Taiwan">
+  <style>
+    .map_block {
+      fill: #c8dfc0;
+      stroke: #6a9e72;
+      stroke-width: 1;
+      stroke-linejoin: round;
+    }
+  </style>
 			<path class="map_block" name="彰化縣" d="M30.5,191.901c0.529,0.177,0.867,0.177,1.257,0.177c0.391,0,0.76,0,1.722-0.192c1.05-0.21,2.609-0.607,3.552-0.985
 			c0.365-0.146,0.646-0.292,0.908-0.428c0.467-0.241,0.908-0.47,1.605-0.609c1.06-0.212,2.655-0.212,4.344-0.212
 			c1.625,0,3.306,0,4.788,0.424c0.632,0.181,1.207,0.43,1.816,0.693c0.788,0.341,1.602,0.694,2.604,0.917

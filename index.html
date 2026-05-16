@@ -43,61 +43,61 @@
 
     </div>
     <!-- ── OUR VISION & MISSION ── -->
-    <section style="margin-bottom: 60px;">
+    <section class="info-section vision-section">
       <div class="section-title">SECTION</div>
       <div class="section-heading">OUR VISION &amp; MISSION</div>
 
-      <div class="vision-layout">
+      <div class="info-body">
+        <p>
+          At GEMS-Taiwan, we are part of the iGEM program, an international synthetic biology competition where high
+          school and college students from around the world collaborate to develop innovative synthetic biology
+          solutions to real-world problems. Through our outreach, we introduce students to the fundamentals of
+          synthetic biology in an engaging and accessible way.
+        </p>
 
-        <!-- left: 4 icon cards -->
-        <div class="vision-grid">
-          <div class="vision-card">
-            <div class="vc-icon">🌍</div>
-            <div class="vc-label">Real World</div>
-            <h3>Synthetic Biology Experience</h3>
-          </div>
+        <p>
+          Our goal is to foster interest and make awareness of synthetic biology among future generations of
+          scientists. We achieve this through:
+        </p>
 
-          <div class="vision-card light">
-            <div class="vc-icon">📚</div>
-            <div class="vc-label">Focus</div>
-            <h3>Education &amp; Experience</h3>
-          </div>
+        <ul>
+          <li>Organizing informative workshops with schools in an inclusive way</li>
+          <li>Creating educational resources that simplify complex synthetic biology concepts</li>
+          <li>Hosting informative events for the public to raise awareness of synthetic biology</li>
+          <li>Making GEMS-Taiwan the go-to place for learning about synthetic biology in Taiwan</li>
+        </ul>
+      </div>
+    </section>
 
-          <div class="vision-card light">
-            <div class="vc-icon">💡</div>
-            <div class="vc-label">Goal</div>
-            <h3>Inspiration &amp; Future Thinking</h3>
-          </div>
+    <!-- ── PHILOSOPHY BEHIND SYNBIO ── -->
+    <section class="info-section philosophy-section" id="philosophy">
+      <div class="section-title">SECTION</div>
+      <div class="section-heading">PHILOSOPHY BEHIND SYNBIO</div>
 
-          <div class="vision-card">
-            <div class="vc-icon">🧩</div>
-            <div class="vc-label">Method</div>
-            <h3>Skill &amp; Development</h3>
-          </div>
-        </div>
+      <div class="info-body">
+        <p>
+          At GEMS-Taiwan, our philosophy is rooted in the belief that synthetic biology should not be limited to the
+          laboratory. Synthetic biology is powerful because it combines scientific knowledge, creativity, engineering,
+          and social responsibility to design solutions for real-world problems. Rather than only studying life as it
+          exists, synthetic biology gives students the tools to imagine how biological systems can be redesigned to
+          address challenges in health, sustainability, agriculture, and the environment.
+        </p>
 
-        <!-- right: description text -->
-        <div class="vision-body">
-          <p>
-            At GEMS-Taiwan, we are part of the iGEM program, an international synthetic biology competition where high
-            school and college students from around the world collaborate to develop innovative synthetic biology
-            solutions to real-world problems. Through our outreach, we introduce students to the fundamentals of
-            synthetic biology in an engaging and accessible way.
-          </p>
+        <p>
+          We believe that science education should move beyond memorization and become more connected to the world
+          students live in. Through accessible workshops, public outreach, and educational resources, we aim to help
+          students understand synthetic biology not as an abstract field, but as a way of thinking: identifying a
+          problem, asking meaningful questions, designing possible solutions, and considering the ethical and social
+          impact of those solutions.
+        </p>
 
-          <p>
-            Our goal is to foster interest and make awareness of synthetic biology among future generations of
-            scientists. We achieve this through:
-          </p>
-
-          <ul>
-            <li>Organizing informative workshops with schools in an inclusive way</li>
-            <li>Creating educational resources that simplify complex synthetic biology concepts</li>
-            <li>Hosting informative events for the public to raise awareness of synthetic biology</li>
-            <li>Making GEMS-Taiwan the go-to place for learning about synthetic biology in Taiwan</li>
-          </ul>
-        </div>
-
+        <p>
+          Our goal is to make synthetic biology more approachable, inclusive, and inspiring for students in Taiwan. By
+          introducing young learners to the ideas behind synthetic biology, we hope to encourage curiosity, critical
+          thinking, and a sense of responsibility toward the future. GEMS-Taiwan serves as a bridge between advanced
+          scientific innovation and the next generation of students who may one day use biology to build a more
+          sustainable world.
+        </p>
       </div>
     </section>
     <!-- Interactive outreach map -->
@@ -166,110 +166,115 @@
       <p style="font-size:13px; color:var(--text-muted); margin-bottom: 24px;">2022 – 2025</p>
 
       <!-- Timeline bar -->
-      <div class="timeline-row">
+      <div class="timeline-row" aria-label="Past projects timeline">
 
-        <div class="tl-node">
-          <div class="tl-label above">2022: Fusarium Won't</div>
-          <div class="tl-dot"></div>
-        </div>
+        <button class="tl-node" type="button" data-project-tab="2022" aria-label="Show 2022 Fusarium Won't project">
+          <span class="tl-label above">2022: Fusarium Won't</span>
+          <span class="tl-dot"></span>
+        </button>
 
-        <div class="tl-node">
-          <div class="tl-label above" style="visibility:hidden;">spacer</div>
-          <div class="tl-dot active"></div>
-          <div class="tl-label below">2023: Cure-All Reef</div>
-        </div>
+        <button class="tl-node active" type="button" data-project-tab="2023"
+          aria-label="Show 2023 Cure-All Reef project">
+          <span class="tl-label below">2023: Cure-All Reef</span>
+          <span class="tl-dot active"></span>
+        </button>
 
-        <div class="tl-node">
-          <div class="tl-label above">2024: Dengue Beeters</div>
-          <div class="tl-dot"></div>
-        </div>
+        <button class="tl-node" type="button" data-project-tab="2024" aria-label="Show 2024 Dengue Beeters project">
+          <span class="tl-label above">2024: Dengue Beeters</span>
+          <span class="tl-dot"></span>
+        </button>
 
-        <div class="tl-node">
-          <div class="tl-label above" style="visibility:hidden;">spacer</div>
-          <div class="tl-dot"></div>
-          <div class="tl-label below">2025: Textile Fighters</div>
-        </div>
+        <button class="tl-node" type="button" data-project-tab="2025" aria-label="Show 2025 Textile Fighters project">
+          <span class="tl-label below">2025: Textile Fighters</span>
+          <span class="tl-dot"></span>
+        </button>
 
       </div>
 
       <!-- Project cards -->
-      <div class="project-card">
-        <div class="project-text">
-          <div class="project-year">2022</div>
-          <h3>Fusarium won't</h3>
-          <p>
-            In 2022, GEMS-Taiwan worked on a synthetic biology solution to help defend Cavendish banana plants from
-            Fusarium wilt, a fungal disease threatening banana crops worldwide. Their approach focused on engineering a
-            beneficial probiotic bacterium that could protect banana roots, potentially slowing down the spread of the
-            disease.
-          </p>
-          <a href="https://2022.igem.wiki/gems-taiwan/index" class="explore-link">
-            Click Here to explore: https://2022.igem.wiki/gems-taiwan/index
-          </a>
+      <div class="project-panels">
+
+        <div class="project-card project-panel" data-project-year="2022">
+          <div class="project-text">
+            <div class="project-year">2022</div>
+            <h3>Fusarium Won't</h3>
+            <p>
+              In 2022, GEMS-Taiwan worked on a synthetic biology solution to help defend Cavendish banana plants from
+              Fusarium wilt, a fungal disease threatening banana crops worldwide. Their approach focused on engineering
+              a
+              beneficial probiotic bacterium that could protect banana roots, potentially slowing down the spread of the
+              disease.
+            </p>
+            <a href="https://2022.igem.wiki/gems-taiwan/index" class="explore-link">
+              Click Here to explore: https://2022.igem.wiki/gems-taiwan/index
+            </a>
+          </div>
+
+          <div class="project-logo">
+            <span style="font-size:14px; color:var(--text-muted);">iGEM 2022 Logo</span>
+          </div>
         </div>
 
-        <div class="project-logo">
-          <span style="font-size:14px; color:var(--text-muted);">iGEM 2022 Logo</span>
-        </div>
-      </div>
-
-      <div class="project-card reverse">
-        <div class="project-logo">
-          <span style="font-size:14px; color:var(--text-muted);">Cure-All Reef Logo</span>
-        </div>
-
-        <div class="project-text">
-          <div class="project-year">2023</div>
-          <h3>Cure-All Reef</h3>
-          <p>
-            In 2023, the team's project "Cure-All Reef" aimed to improve coral reef resilience. Their synthetic biology
-            solution involved engineering bacteria to better deliver probiotics to corals, helping protect them from
-            bleaching and disease.
-          </p>
-          <a href="https://2023.igem.wiki/gemstaiwan/home" class="explore-link">
-            Click Here to explore: https://2023.igem.wiki/gemstaiwan/home
-          </a>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-text">
-          <div class="project-year">2024</div>
-          <h3>Dengue Beeters</h3>
-          <p>
-            In 2024, the team worked on "Dengue Beeters," a synthetic biology solution to combat dengue fever by
-            disrupting the mosquito life cycle with innovative biological tools and designs. The project included a
-            3D-printed on-trap and other novel strategies to control mosquito populations, which contributed to their
-            success in the competition and winning the Grand Prize in the High School Division at the 2024 Jamboree.
-          </p>
-          <a href="https://2024.igem.wiki/gems-taiwan/" class="explore-link">
-            Click Here to explore: https://2024.igem.wiki/gems-taiwan/
-          </a>
+        <div class="project-card project-panel active" data-project-year="2023">
+          <div class="project-text">
+            <div class="project-year">2023</div>
+            <h3>Cure-All Reef</h3>
+            <p>
+              In 2023, the team's project "Cure-All Reef" aimed to improve coral reef resilience. Their synthetic
+              biology
+              solution involved engineering bacteria to better deliver probiotics to corals, helping protect them from
+              bleaching and disease.
+            </p>
+            <a href="https://2023.igem.wiki/gemstaiwan/home" class="explore-link">
+              Click Here to explore: https://2023.igem.wiki/gemstaiwan/home
+            </a>
+          </div>
+          <div class="project-logo">
+            <span style="font-size:14px; color:var(--text-muted);">Cure-All Reef Logo</span>
+          </div>
         </div>
 
-        <div class="project-logo">
-          <span style="font-size:14px; color:var(--text-muted);">Dengue Beeters Logo</span>
-        </div>
-      </div>
+        <div class="project-card project-panel" data-project-year="2024">
+          <div class="project-text">
+            <div class="project-year">2024</div>
+            <h3>Dengue Beeters</h3>
+            <p>
+              In 2024, the team worked on "Dengue Beeters," a synthetic biology solution to combat dengue fever by
+              disrupting the mosquito life cycle with innovative biological tools and designs. The project included a
+              3D-printed on-trap and other novel strategies to control mosquito populations, which contributed to their
+              success in the competition and winning the Grand Prize in the High School Division at the 2024 Jamboree.
+            </p>
+            <a href="https://2024.igem.wiki/gems-taiwan/" class="explore-link">
+              Click Here to explore: https://2024.igem.wiki/gems-taiwan/
+            </a>
+          </div>
 
-      <div class="project-card reverse">
-        <div class="project-logo">
-          <span style="font-size:14px; color:var(--text-muted);">Textile Fighters Logo</span>
+          <div class="project-logo">
+            <span style="font-size:14px; color:var(--text-muted);">Dengue Beeters Logo</span>
+          </div>
         </div>
 
-        <div class="project-text">
-          <div class="project-year">2025</div>
-          <h3>Textile Fighters</h3>
-          <p>
-            In 2025, GEMS-Taiwan worked on solving the problem of textile and plastic waste by focusing on ways to break
-            down materials that are normally very hard to recycle. The team engineered and tested different enzymes that
-            can digest components of blended fabrics, developed methods to identify and preprocess different types of
-            textiles, and created tools to help classify fabrics more easily.
-          </p>
-          <a href="https://2025.igem.wiki/gems-taiwan/" class="explore-link">
-            Click Here to explore: https://2025.igem.wiki/gems-taiwan/
-          </a>
+        <div class="project-card project-panel" data-project-year="2025">
+          <div class="project-text">
+            <div class="project-year">2025</div>
+            <h3>Textile Fighters</h3>
+            <p>
+              In 2025, GEMS-Taiwan worked on solving the problem of textile and plastic waste by focusing on ways to
+              break
+              down materials that are normally very hard to recycle. The team engineered and tested different enzymes
+              that
+              can digest components of blended fabrics, developed methods to identify and preprocess different types of
+              textiles, and created tools to help classify fabrics more easily.
+            </p>
+            <a href="https://2025.igem.wiki/gems-taiwan/" class="explore-link">
+              Click Here to explore: https://2025.igem.wiki/gems-taiwan/
+            </a>
+          </div>
+          <div class="project-logo">
+            <span style="font-size:14px; color:var(--text-muted);">Textile Fighters Logo</span>
+          </div>
         </div>
+
       </div>
 
 
