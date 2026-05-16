@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -53,7 +53,6 @@
       padding: 0 2.5rem 6rem;
     }
  
-    /* ── Header ── */
     .section-header {
       padding: 5rem 0 3rem;
       max-width: 580px;
@@ -83,7 +82,6 @@
       line-height: 1.7;
     }
  
-    /* ── Layout ── */
     .layout {
       display: grid;
       grid-template-columns: 220px 1fr;
@@ -91,7 +89,6 @@
       align-items: start;
     }
  
-    /* ── Sidebar ── */
     .sidebar {
       position: sticky;
       top: 2.5rem;
@@ -163,10 +160,7 @@
     }
  
     .theme-btn-zh {
-      display: block;
-      font-size: 11px;
-      color: var(--ink-faint);
-      margin-top: 2px;
+      display: none;
     }
  
     .theme-btn-count {
@@ -181,7 +175,6 @@
  
     .sidebar-divider { height: 1px; background: var(--border); margin: 1rem 0; }
  
-    /* Type quick-nav */
     .type-nav { padding: 0; list-style: none; }
  
     .type-nav-item {
@@ -207,12 +200,10 @@
       opacity: .5;
     }
  
-    /* ── Main content ── */
     .main { min-width: 0; }
     .theme-panel { display: none; }
     .theme-panel.active { display: block; }
  
-    /* Theme hero */
     .theme-hero {
       padding: 1.5rem 1.75rem;
       border-radius: 14px;
@@ -231,13 +222,8 @@
     }
  
     .theme-hero-zh {
-      font-size: 12px;
-      font-weight: 400;
-      margin-bottom: .65rem;
+      display: none;
     }
- 
-    .theme-hero.dengue .theme-hero-zh { color: var(--dengue-text); }
-    .theme-hero.textile .theme-hero-zh { color: var(--textile-text); }
  
     .theme-hero p {
       font-size: .88rem;
@@ -266,7 +252,6 @@
     .dengue .synbio-tag { border-color: var(--dengue-border); color: var(--dengue-text); }
     .textile .synbio-tag { border-color: var(--textile-border); color: var(--textile-text); }
  
-    /* Type section */
     .type-section { margin-bottom: 2.5rem; }
  
     .type-heading {
@@ -287,9 +272,7 @@
     }
  
     .type-heading-zh {
-      font-size: 12px;
-      color: var(--ink-faint);
-      font-weight: 400;
+      display: none;
     }
  
     .type-heading-count {
@@ -298,7 +281,6 @@
       color: var(--ink-faint);
     }
  
-    /* Resource rows */
     .resource-item {
       display: grid;
       grid-template-columns: 42px 1fr auto;
@@ -346,11 +328,7 @@
     }
  
     .resource-zh {
-      display: block;
-      font-size: 12px;
-      color: var(--ink-faint);
-      font-weight: 300;
-      margin-top: 1px;
+      display: none;
     }
  
     .resource-meta {
@@ -414,79 +392,73 @@
 <body>
 <main>
 <div class="page">
- 
+
   <div class="section-header">
-    <div class="section-eyebrow">教材共享區</div>
+    <div class="section-eyebrow">Lesson Materials</div>
     <h1>Lesson Materials</h1>
     <p>Free resources for teachers and educators — organised by theme. Each kit includes synbio context and Chinese subtitles, ready to use in the classroom.</p>
   </div>
- 
+
   <div class="layout">
- 
+
     <!-- ── SIDEBAR ── -->
     <aside class="sidebar">
       <div class="sidebar-label">Choose a theme</div>
- 
+
       <button class="theme-btn active" data-theme="dengue" onclick="switchTheme('dengue', this)">
         <div class="theme-btn-inner">
           <div class="theme-btn-pip"></div>
           <div class="theme-btn-text">
             <span class="theme-btn-name">Dengue Fever</span>
-            <span class="theme-btn-zh">登革熱教學資源</span>
-            <span class="theme-btn-count">4 resources</span>
+            <span class="theme-btn-count">3 resources</span>
           </div>
         </div>
       </button>
- 
+
       <button class="theme-btn" data-theme="textile" onclick="switchTheme('textile', this)">
         <div class="theme-btn-inner">
           <div class="theme-btn-pip"></div>
           <div class="theme-btn-text">
             <span class="theme-btn-name">Textile Degradation</span>
-            <span class="theme-btn-zh">紡織廢料生物降解</span>
-            <span class="theme-btn-count">7 resources</span>
+            <span class="theme-btn-count">8 resources</span>
           </div>
         </div>
       </button>
- 
+
       <div class="sidebar-divider"></div>
- 
-      <!-- populated by JS on theme switch -->
+
       <ul class="type-nav" id="type-nav" aria-label="Jump to section"></ul>
     </aside>
- 
+
     <!-- ── MAIN ── -->
     <div class="main">
- 
+
       <!-- ════ DENGUE PANEL ════ -->
       <div class="theme-panel active" id="panel-dengue">
- 
+
         <div class="theme-hero dengue">
           <h2>Dengue Fever</h2>
-          <div class="theme-hero-zh">登革熱 — 病媒蚊、病毒與生物防治</div>
           <p>Explores the biology of the <em>Aedes aegypti</em> mosquito, dengue virus replication, and how synthetic biology tools — genetic circuits, engineered bacteria, and ovitrap design — can support disease surveillance and prevention.</p>
           <div class="synbio-tags">
-            <span class="synbio-tag">Vector biology 病媒生物學</span>
-            <span class="synbio-tag">Genetic circuit 基因迴路</span>
-            <span class="synbio-tag">Ovitrap design 誘卵筒設計</span>
-            <span class="synbio-tag">Viral replication 病毒複製</span>
-            <span class="synbio-tag">Biosurveillance 生物監測</span>
+            <span class="synbio-tag">Vector biology</span>
+            <span class="synbio-tag">Genetic circuit</span>
+            <span class="synbio-tag">Ovitrap design</span>
+            <span class="synbio-tag">Viral replication</span>
+            <span class="synbio-tag">Biosurveillance</span>
           </div>
         </div>
- 
+
         <!-- BOARDGAMES -->
-        <div class="type-section" data-type-label="Boardgames &amp; Cardgames" data-type-zh="桌遊 · 卡牌遊戲" data-theme="dengue">
+        <div class="type-section" data-type-label="Boardgames &amp; Cardgames" data-type-zh="" data-theme="dengue">
           <div class="type-heading">
             <span class="type-heading-name">Boardgames &amp; Cardgames</span>
-            <span class="type-heading-zh">桌遊 · 卡牌遊戲</span>
             <span class="type-heading-count">2 items</span>
           </div>
- 
+
           <div class="resource-item">
             <div class="resource-icon game">🎲</div>
             <div class="resource-info">
               <strong class="resource-title">DNA Replication Boardgame — SnapGene</strong>
-              <span class="resource-zh">DNA複製桌遊 — 學習基因複製工具酶機制</span>
               <div class="resource-meta">
                 <span class="resource-type-tag tag-dengue">Dengue</span>
                 <span class="resource-level">Boardgame · PDF print kit · all ages</span>
@@ -494,12 +466,11 @@
             </div>
             <a class="resource-link dengue-link" href="https://static.igem.wiki/teams/5066/human-practice/snap-gene-compressed.pdf" target="_blank" rel="noopener">Download ↓</a>
           </div>
- 
+
           <div class="resource-item">
             <div class="resource-icon game">🎲</div>
             <div class="resource-info">
               <strong class="resource-title">Amino Acid Assembly Cardgame — AminoPoly</strong>
-              <span class="resource-zh">胺基酸組合卡牌 — 蛋白質合成與轉譯過程</span>
               <div class="resource-meta">
                 <span class="resource-type-tag tag-dengue">Dengue</span>
                 <span class="resource-level">Cardgame · PDF print kit · all ages</span>
@@ -508,20 +479,18 @@
             <a class="resource-link dengue-link" href="https://static.igem.wiki/teams/5066/human-practice/aminopoly-compressed.pdf" target="_blank" rel="noopener">Download ↓</a>
           </div>
         </div>
- 
+
         <!-- COMICS -->
-        <div class="type-section" data-type-label="Comics" data-type-zh="漫畫" data-theme="dengue">
+        <div class="type-section" data-type-label="Comics" data-type-zh="" data-theme="dengue">
           <div class="type-heading">
             <span class="type-heading-name">Comics</span>
-            <span class="type-heading-zh">漫畫</span>
             <span class="type-heading-count">1 item</span>
           </div>
- 
+
           <div class="resource-item">
             <div class="resource-icon comic">📖</div>
             <div class="resource-info">
               <strong class="resource-title">Illustrated Story — Mosquito Life Cycle &amp; Ovitrap Science</strong>
-              <span class="resource-zh">漫畫故事 — 蚊子生命週期與誘卵筒原理</span>
               <div class="resource-meta">
                 <span class="resource-type-tag tag-dengue">Dengue</span>
                 <span class="resource-level">Comic · PDF · elementary school</span>
@@ -530,62 +499,36 @@
             <a class="resource-link dengue-link" href="https://static.igem.wiki/teams/5066/pdfs/bill-listen-my-children-these-evil-humans-are-trying-to-get-us-extinct-chloe-how-horrid-evil-humans-should-be-stopped-bill-i-heard-they-invented-this-new-ovitrap-they-lure-you-in-to-la.pdf" target="_blank" rel="noopener">Download ↓</a>
           </div>
         </div>
- 
-        <!-- PODCAST -->
-        <div class="type-section" data-type-label="Podcast" data-type-zh="播客" data-theme="dengue">
-          <div class="type-heading">
-            <span class="type-heading-name">Podcast</span>
-            <span class="type-heading-zh">播客</span>
-            <span class="type-heading-count">coming soon</span>
-          </div>
- 
-          <div class="resource-item">
-            <div class="resource-icon audio">🎙️</div>
-            <div class="resource-info">
-              <strong class="resource-title">Podcast Series — Synthetic Biology &amp; Disease Prevention</strong>
-              <span class="resource-zh">合成生物學與疾病防治 Podcast 系列</span>
-              <div class="resource-meta">
-                <span class="resource-type-tag tag-dengue">Dengue</span>
-                <span class="resource-level">YouTube · link to be added</span>
-              </div>
-            </div>
-            <!-- ↓ REPLACE href WITH PODCAST YOUTUBE LINK WHEN READY -->
-            <a class="resource-link coming" href="#TODO-podcast-link" target="_blank" rel="noopener">Soon</a>
-          </div>
-        </div>
- 
+
       </div><!-- /dengue panel -->
- 
- 
+
+
       <!-- ════ TEXTILE PANEL ════ -->
       <div class="theme-panel" id="panel-textile">
- 
+
         <div class="theme-hero textile">
           <h2>Textile Degradation</h2>
-          <div class="theme-hero-zh">紡織廢料生物降解 — 酵素工程與永續發展</div>
           <p>Investigates how engineered microorganisms and enzyme pathways can break down synthetic textile waste. Covers gene expression, metabolic engineering, and real-world sustainability applications.</p>
           <div class="synbio-tags">
-            <span class="synbio-tag">Enzyme engineering 酵素工程</span>
-            <span class="synbio-tag">Gene expression 基因表現</span>
-            <span class="synbio-tag">Metabolic pathway 代謝路徑</span>
-            <span class="synbio-tag">Bioremediation 生物修復</span>
-            <span class="synbio-tag">Protein folding 蛋白質折疊</span>
+            <span class="synbio-tag">Enzyme engineering</span>
+            <span class="synbio-tag">Gene expression</span>
+            <span class="synbio-tag">Metabolic pathway</span>
+            <span class="synbio-tag">Bioremediation</span>
+            <span class="synbio-tag">Protein folding</span>
           </div>
         </div>
- 
+
         <!-- LESSON PLANS -->
-        <div class="type-section" data-type-label="Lesson Plans" data-type-zh="教案" data-theme="textile">
+        <div class="type-section" data-type-label="Lesson Plans" data-type-zh="" data-theme="textile">
           <div class="type-heading">
             <span class="type-heading-name">Lesson Plans</span>
-            <span class="type-heading-zh">教案</span>
             <span class="type-heading-count">2 items</span>
           </div>
- 
+
           <div class="resource-item">
             <div class="resource-icon doc">📄</div>
             <div class="resource-info">
               <strong class="resource-title">Lesson Plan — Enzyme Degradation of Textiles (Elementary)</strong>
-              <span class="resource-zh">酵素分解合成纖維教案 — 國小版</span>
               <div class="resource-meta">
                 <span class="resource-type-tag tag-textile">Textile</span>
                 <span class="resource-level">Lesson plan · PDF · elementary school</span>
@@ -593,12 +536,11 @@
             </div>
             <a class="resource-link textile-link" href="https://static.igem.wiki/teams/5729/educationwiki/gems-elementary-slides.pdf" target="_blank" rel="noopener">Download ↓</a>
           </div>
- 
+
           <div class="resource-item">
             <div class="resource-icon doc">📄</div>
             <div class="resource-info">
               <strong class="resource-title">Lesson Plan — Synthetic Biology &amp; Textile Waste (Junior High)</strong>
-              <span class="resource-zh">合成生物學與紡織廢料教案 — 國中版</span>
               <div class="resource-meta">
                 <span class="resource-type-tag tag-textile">Textile</span>
                 <span class="resource-level">Lesson plan · PDF · junior high school</span>
@@ -607,20 +549,18 @@
             <a class="resource-link textile-link" href="https://static.igem.wiki/teams/5729/educationwiki/gems-taiwan-junior-high-school-educationnewest.pdf" target="_blank" rel="noopener">Download ↓</a>
           </div>
         </div>
- 
+
         <!-- BOARDGAMES -->
-        <div class="type-section" data-type-label="Boardgames &amp; Cardgames" data-type-zh="桌遊 · 卡牌遊戲" data-theme="textile">
+        <div class="type-section" data-type-label="Boardgames &amp; Cardgames" data-type-zh="" data-theme="textile">
           <div class="type-heading">
             <span class="type-heading-name">Boardgames &amp; Cardgames</span>
-            <span class="type-heading-zh">桌遊 · 卡牌遊戲</span>
             <span class="type-heading-count">2 items</span>
           </div>
- 
+
           <div class="resource-item">
             <div class="resource-icon game">🎲</div>
             <div class="resource-info">
               <strong class="resource-title">Boardgame — Enzyme Pathway Builder</strong>
-              <span class="resource-zh">代謝路徑桌遊 — 建構纖維分解酵素路徑</span>
               <div class="resource-meta">
                 <span class="resource-type-tag tag-textile">Textile</span>
                 <span class="resource-level">Boardgame · PDF print kit · elementary</span>
@@ -628,12 +568,11 @@
             </div>
             <a class="resource-link textile-link" href="https://static.igem.wiki/teams/5729/educationwiki/gems-elementary-slides.pdf" target="_blank" rel="noopener">Download ↓</a>
           </div>
- 
+
           <div class="resource-item">
             <div class="resource-icon game">🎲</div>
             <div class="resource-info">
               <strong class="resource-title">Card Game — Gene Expression &amp; Protein Assembly (Rulebook)</strong>
-              <span class="resource-zh">基因表現與蛋白質組裝卡牌遊戲規則手冊</span>
               <div class="resource-meta">
                 <span class="resource-type-tag tag-textile">Textile</span>
                 <span class="resource-level">Cardgame · PDF rulebook · all ages</span>
@@ -642,20 +581,18 @@
             <a class="resource-link textile-link" href="https://static.igem.wiki/teams/5729/educationwiki/card-game-rulebook.pdf" target="_blank" rel="noopener">Download ↓</a>
           </div>
         </div>
- 
+
         <!-- ONLINE GAME -->
-        <div class="type-section" data-type-label="Online Game" data-type-zh="線上遊戲" data-theme="textile">
+        <div class="type-section" data-type-label="Online Game" data-type-zh="" data-theme="textile">
           <div class="type-heading">
             <span class="type-heading-name">Online Game</span>
-            <span class="type-heading-zh">線上遊戲</span>
             <span class="type-heading-count">1 item</span>
           </div>
- 
+
           <div class="resource-item">
             <div class="resource-icon web">🕹️</div>
             <div class="resource-info">
               <strong class="resource-title">Browser Game — Textile Fighters: Defeat the Microplastics</strong>
-              <span class="resource-zh">線上遊戲 — 對抗微塑膠的合成生物學戰士</span>
               <div class="resource-meta">
                 <span class="resource-type-tag tag-textile">Textile</span>
                 <span class="resource-level">Browser game · itch.io · all ages</span>
@@ -664,61 +601,75 @@
             <a class="resource-link textile-link" href="https://caden-wu-gems-tw.itch.io/textile-fighter" target="_blank" rel="noopener">Play →</a>
           </div>
         </div>
- 
-        <!-- COMICS -->
-        <div class="type-section" data-type-label="Comics" data-type-zh="漫畫" data-theme="textile">
+
+        <!-- STORYBOOK -->
+        <div class="type-section" data-type-label="Storybook" data-type-zh="" data-theme="textile">
           <div class="type-heading">
-            <span class="type-heading-name">Comics</span>
-            <span class="type-heading-zh">漫畫</span>
-            <span class="type-heading-count">1 coming soon</span>
+            <span class="type-heading-name">Storybook</span>
+            <span class="type-heading-count">1 item</span>
           </div>
- 
+
           <div class="resource-item">
-            <div class="resource-icon comic">📖</div>
+            <div class="resource-icon book">📚</div>
             <div class="resource-info">
-              <strong class="resource-title">Illustrated Story — A Microbe's Journey: Bioremediation of Textile Waste</strong>
-              <span class="resource-zh">漫畫故事 — 微生物的旅程：紡織廢料的生物修復</span>
+              <strong class="resource-title">Storybook — The World of Synthetic Biology &amp; Textile Science</strong>
               <div class="resource-meta">
                 <span class="resource-type-tag tag-textile">Textile</span>
-                <span class="resource-level">Comic · PDF · link to be added</span>
+                <span class="resource-level">PDF · all ages</span>
               </div>
             </div>
-            <!-- ↓ REPLACE href WITH IAN COMIC PDF LINK WHEN READY -->
-            <a class="resource-link coming" href="#TODO-ian-comic-link" target="_blank" rel="noopener">Soon</a>
+            <a class="resource-link textile-link" href="https://static.igem.wiki/teams/5729/educationwiki/storybook.pdf" target="_blank" rel="noopener">Download ↓</a>
           </div>
         </div>
- 
+
+        <!-- PODCAST -->
+        <div class="type-section" data-type-label="Podcast" data-type-zh="" data-theme="textile">
+          <div class="type-heading">
+            <span class="type-heading-name">Podcast</span>
+            <span class="type-heading-count">1 item</span>
+          </div>
+
+          <div class="resource-item">
+            <div class="resource-icon audio">🎙️</div>
+            <div class="resource-info">
+              <strong class="resource-title">Podcast Series — Synthetic Biology &amp; The Cell Next Door</strong>
+              <div class="resource-meta">
+                <span class="resource-type-tag tag-textile">Textile</span>
+                <span class="resource-level">Podcast · YouTube playlist</span>
+              </div>
+            </div>
+            <a class="resource-link textile-link" href="https://www.youtube.com/watch?v=ZmpN68o5IhI&list=PLyaRayqkCwh4QlQZU0eNYbZkm2F3JitTa&index=7" target="_blank" rel="noopener">Watch →</a>
+          </div>
+        </div>
+
         <!-- AUDIOBOOK -->
-        <div class="type-section" data-type-label="Audiobook" data-type-zh="有聲書" data-theme="textile">
+        <div class="type-section" data-type-label="Audiobook" data-type-zh="" data-theme="textile">
           <div class="type-heading">
             <span class="type-heading-name">Audiobook</span>
-            <span class="type-heading-zh">有聲書</span>
-            <span class="type-heading-count">coming soon</span>
+            <span class="type-heading-count">1 item</span>
           </div>
- 
+
           <div class="resource-item">
             <div class="resource-icon audio">🎧</div>
             <div class="resource-info">
               <strong class="resource-title">Audiobook — Synthetic Biology &amp; Sustainable Textiles</strong>
-              <span class="resource-zh">有聲書 — 合成生物學與永續紡織的未來</span>
               <div class="resource-meta">
                 <span class="resource-type-tag tag-textile">Textile</span>
-                <span class="resource-level">YouTube · link to be added</span>
+                <span class="resource-level">Audiobook · YouTube playlist</span>
               </div>
             </div>
-            <!-- ↓ REPLACE href WITH AUDIOBOOK YOUTUBE LINK WHEN READY -->
-            <a class="resource-link coming" href="#TODO-audiobook-link" target="_blank" rel="noopener">Soon</a>
+            <a class="resource-link textile-link" href="https://www.youtube.com/watch?v=wDwpsd4awfM&list=PLyaRayqkCwh4QlQZU0eNYbZkm2F3JitTa&index=1" target="_blank" rel="noopener">Listen →</a>
           </div>
         </div>
- 
+
       </div><!-- /textile panel -->
- 
+
     </div><!-- /main -->
   </div><!-- /layout -->
- 
+
 </div><!-- /page -->
 </main>
- 
+
 <script>
   function switchTheme(theme, btn) {
     document.querySelectorAll('.theme-btn').forEach(b => b.classList.remove('active'));
@@ -727,22 +678,21 @@
     document.getElementById('panel-' + theme).classList.add('active');
     buildTypeNav(theme);
   }
- 
+
   function buildTypeNav(theme) {
     const nav = document.getElementById('type-nav');
     nav.innerHTML = '';
     document.querySelectorAll('#panel-' + theme + ' .type-section').forEach(sec => {
       const li = document.createElement('li');
       li.className = 'type-nav-item hl-' + theme;
-      li.title = sec.dataset.typeZh || '';
       li.innerHTML = '<span class="type-nav-dot"></span>' + sec.dataset.typeLabel;
       li.onclick = () => sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
       nav.appendChild(li);
     });
   }
- 
+
   buildTypeNav('dengue');
 </script>
- 
+
 </body>
 </html>
