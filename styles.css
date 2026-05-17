@@ -978,6 +978,7 @@ a {
   text-align: center;
 }
 
+
 .poster-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1267,6 +1268,7 @@ a {
 .contact-item a:hover {
   text-decoration: underline;
 }
+
 /* ══════════════════════════════════════
    FOOTER
 ══════════════════════════════════════ */
@@ -1383,6 +1385,7 @@ a {
     margin-top: 32px;
   }
 }
+
 /* ══════════════════════════════════════
    RESPONSIVE
 ══════════════════════════════════════ */

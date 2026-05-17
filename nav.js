@@ -8,7 +8,7 @@ const isChinese = window.location.pathname.includes('/zh/');
 const CONTACT = {
   instagram: 'https://www.instagram.com/gems_taiwan/',
   youtube: 'https://www.youtube.com/@gemstaiwan4743/featured',
-  email: 'your-email@example.com',
+  email: 'social.media@gems.com.tw',
   phoneDisplay: '+886 287 924 755',
   phoneLink: '+886287924755',
   maps: 'https://www.google.com/maps/search/?api=1&query=2F.-1%2C%20No.%2015%2C%20Ln.%20374%2C%20Sec.%203%2C%20Chenggong%20Rd.%2C%20Neihu%20Dist.%2C%20Taipei%2C%20Taiwan'
