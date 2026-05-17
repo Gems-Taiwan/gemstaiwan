@@ -16,93 +16,72 @@ function showSection(sectionId) {
     window.scrollTo(0, 0);
   }
 }
-
 // Interactive outreach map data
 const outreachMapData = {
   luzhou: {
-    year: "2024–2025 Outreach",
-    title: "Luzhou elementary school",
-    text: "Elementary outreach session introducing students to synthetic biology through simple, accessible examples connected to everyday life and agriculture.",
-    tags: [
-      "Elementary students",
-      "Intro to synthetic biology",
-      "Hands-on education"
-    ]
+    title: "Luzhou Elementary School",
+    image: "images/outreach/luzhou.jpg",
+    alt: "Luzhou Elementary School outreach"
   },
 
   yucheng: {
-    year: "2024–2025 Outreach",
     title: "Taipei Municipal Yucheng Senior High School",
-    text: "High-school outreach focused on connecting synthetic biology concepts to real-world problem solving and iGEM-style project design.",
-    tags: [
-      "High school",
-      "Project design",
-      "Synbio applications"
-    ]
+    image: "images/outreach/yucheng.jpg",
+    alt: "Taipei Municipal Yucheng Senior High School outreach"
   },
 
   xingya: {
-    year: "2024–2025 Outreach",
     title: "Xing Ya Elementary School",
-    text: "Inclusive outreach location where materials can be adapted to make synthetic biology more accessible for different learning needs.",
-    tags: [
-      "Accessibility",
-      "Inclusive education",
-      "Adapted materials"
-    ]
+    image: "images/outreach/xingya.jpg",
+    alt: "Xing Ya Elementary School outreach"
   },
 
   fude: {
-    year: "2024–2025 Outreach",
     title: "Fude Elementary School",
-    text: "Student workshop designed to make synthetic biology feel approachable through discussion, examples, and education activities.",
-    tags: [
-      "Workshop",
-      "Student discussion",
-      "Science communication"
-    ]
+    image: "images/outreach/fude.jpg",
+    alt: "Fude Elementary School outreach"
   },
 
   evergreen: {
-    year: "2024–2025 Outreach",
     title: "Evergreen Kindergarten",
-    text: "Southern Taiwan outreach stop expanding the team’s education impact beyond Taipei and connecting biology to local communities.",
-    tags: [
-      "Southern Taiwan",
-      "Local communities",
-      "Education impact"
-    ]
-  },
-  yonghe: {
-    year: "2024–2025 Outreach",
-    title: "New Taipei Municipal Yonghe Junior High School",
-    text: "Southern Taiwan outreach stop expanding the team’s education impact beyond Taipei and connecting biology to local communities.",
-    tags: [
-      "Southern Taiwan",
-      "Local communities",
-      "Education impact"
-    ]
-  },
-  visual: {
-    year: "2024–2025 Outreach",
-    title: "Taipei School for the Visually Impaired",
-    text: "Southern Taiwan outreach stop expanding the team’s education impact beyond Taipei and connecting biology to local communities.",
-    tags: [
-      "Southern Taiwan",
-      "Local communities",
-      "Education impact"
-    ]
+    image: "images/outreach/evergreen.jpg",
+    alt: "Evergreen Kindergarten outreach"
   },
 
-  xinsong: {
-    year: "2024–2025 Outreach",
+  yonghe: {
+    title: "New Taipei Municipal Yonghe Junior High School",
+    image: "images/outreach/yonghe.jpg",
+    alt: "New Taipei Municipal Yonghe Junior High School outreach"
+  },
+
+  yifang: {
+    title: "Yifang Elementary School",
+    image: "images/outreach/yifang.jpg",
+    alt: "Yifang Elementary School outreach"
+  },
+
+  huaxing: {
+    title: "Huaxing Children’s Home",
+    image: "images/outreach/huaxing.jpg",
+    alt: "Huaxing Children’s Home outreach"
+  },
+
+  daan: {
+    title: "Da’an Elementary School",
+    image: "images/outreach/daan.jpg",
+    alt: "Da’an Elementary School outreach"
+  },
+
+  visual: {
+    title: "Taipei School for the Visually Impaired",
+    image: "images/outreach/visual.jpg",
+    alt: "Taipei School for the Visually Impaired outreach"
+  },
+
+  xisong: {
     title: "Xisong High School",
-    text: "Community-facing education stop connecting crop stress, agriculture, and biological solutions to students outside central Taipei.",
-    tags: [
-      "Community outreach",
-      "Agriculture",
-      "Crop stress"
-    ]
+    image: "images/outreach/xisong.jpg",
+    alt: "Xisong High School outreach"
   }
 };
 
@@ -113,22 +92,16 @@ function updateOutreachMap(pointId) {
     return;
   }
 
-  const yearEl = document.getElementById("map-info-year");
   const titleEl = document.getElementById("map-info-title");
-  const textEl = document.getElementById("map-info-text");
-  const tagsEl = document.getElementById("map-info-tags");
+  const imageEl = document.getElementById("map-info-image");
 
-  if (!yearEl || !titleEl || !textEl || !tagsEl) {
+  if (!titleEl || !imageEl) {
     return;
   }
 
-  yearEl.textContent = data.year;
   titleEl.textContent = data.title;
-  textEl.textContent = data.text;
-
-  tagsEl.innerHTML = data.tags
-    .map(tag => `<li>${tag}</li>`)
-    .join("");
+  imageEl.src = data.image;
+  imageEl.alt = data.alt;
 
   document.querySelectorAll(".map-point, .map-point-button").forEach(point => {
     point.classList.toggle("active", point.dataset.mapPoint === pointId);
