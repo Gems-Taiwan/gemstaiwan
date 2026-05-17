@@ -1,189 +1,242 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gems Taiwan — Home</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="../styles.css" />
   <script>window.ACTIVE_PAGE = 'index.html';</script>
   <script defer src="../nav.js"></script>
+  <script defer src="../script.js"></script>
 </head>
+
 <body>
 
-<main>
+  <main>
 
-  <!-- ── HERO ── -->
-  <div class="home-hero">
-    <div class="site-title">GEMS-TAIWAN</div>
-    <div class="site-subtitle">iGEM Team 2026</div>
-  </div>
+    <!-- ── HERO ── -->
+    <div class="home-hero">
+      <div class="site-title">GEMS-TAIWAN</div>
+      <div class="site-subtitle">iGEM Team 2026</div>
+    </div>
+    <!-- ── OUR VISION & MISSION ── -->
+    <section class="info-section vision-section">
+      <div class="section-title">SECTION</div>
+      <div class="section-heading">我們的願景與使命</div>
 
-  <!-- ── OUR VISION & MISSION ── -->
-  <section style="margin-bottom: 60px;">
-    <div class="section-title">SECTION</div>
-    <div class="section-heading">OUR VISION &amp; MISSION</div>
+      <div class="info-body">
+        <p>
+          在 GEMS-台灣，我們所參與的 iGEM 計畫是一項國際性的合成生物學競賽，學生在其中設計以生物學為基礎的解決方案來應對現實世界的問題。
+          合成生物學是一個結合生物學與工程學的領域，透過重新設計生命系統來達成實用目的。我們的特別之處在於直接參與 iGEM 研究，因此能分享真實、第一線的專案實作經驗。
+        </p>
 
-    <div class="vision-layout">
-      <!-- left: 4 icon cards -->
-      <div class="vision-grid">
-        <div class="vision-card">
-          <div class="vc-icon">🌍</div>
-          <div class="vc-label">Real World</div>
-          <h3>Synthetic Biology Experience</h3>
-        </div>
-        <div class="vision-card light">
-          <div class="vc-icon">📚</div>
-          <div class="vc-label">Focus</div>
-          <h3>Education &amp; Experience</h3>
-        </div>
-        <div class="vision-card light">
-          <div class="vc-icon">💡</div>
-          <div class="vc-label">Goal</div>
-          <h3>Inspiration &amp; Future Thinking</h3>
-        </div>
-        <div class="vision-card">
-          <div class="vc-icon">🧩</div>
-          <div class="vc-label">Method</div>
-          <h3>Skill &amp; Development</h3>
-        </div>
-      </div>
+        <p>
+          我們認為教育是 iGEM
+          中非常重要的一環，因為它讓我們能夠分享研究與想法，並將複雜的概念轉化為更容易理解的內容。透過我們的推廣活動，我們以簡單且有趣的方式介紹合成生物學等主題，即使是沒有相關背景的學生也能理解。我們也希望透過這些教育活動，讓不同年齡層的學生都能對這個領域產生興趣，並啟發他們去思考現實世界中的問題。
 
-      <!-- right: description text -->
-      <div class="vision-body">
-        <p>At GEMS-Taiwan, we are part of the iGEM program, an international synthetic biology competition where high school and college students from around the world collaborate to develop innovative synthetic biology solutions to real-world problems. Through our outreach, we introduce students to the fundamentals of synthetic biology in an engaging and accessible way.</p>
-        <p>Our goal is to foster interest and make awareness of synthetic biology among future generations of scientists. We achieve this through:</p>
+        </p>
+        <p>
+          我們的目標是：
+        </p>
         <ul>
-          <li>Organizing informative workshops with schools in an inclusive way</li>
-          <li>Creating educational resources that simplify complex synthetic biology concepts</li>
-          <li>Hosting informative events for the public to raise awareness of synthetic biology</li>
-          <li>Making GEMS-Taiwan the go-to place for learning about synthetic biology in Taiwan</li>
+          <li>以互動方式將 STEM 學習融入學校教育</li>
+          <li>鼓勵學生對科學研究產生興趣</li>
+          <li>培養團隊合作、問題解決與溝通能力</li>
+          <li>幫助學生思考科學如何影響社會</li>
         </ul>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ── OUR IMPACT ── -->
-  <section class="impact-section">
-    <div class="section-title">SECTION</div>
-    <div class="section-heading">OUR IMPACT</div>
-    <p style="font-size:13px; color:var(--text-muted); margin-bottom:20px;">2024–2025</p>
+    <!-- ── PHILOSOPHY BEHIND SYNBIO ── -->
+    <section class="info-section philosophy-section" id="philosophy">
+      <div class="section-title">SECTION</div>
+      <div class="section-heading">合成生物學背後的哲學</div>
 
-    <div class="impact-layout">
-      <!-- School list -->
-      <div>
-        <div class="section-title" style="margin-bottom:10px;">Schools</div>
-        <ul class="impact-schools">
-          <li>Dunhua Elementary across 北市文化國小 (Wenhua Elementary School)</li>
-          <li>Taipei Municipal Senior High School 市立建國高級中學 (Jianguo High School)</li>
-          <li>Fong Kong Elementary 鳳崗 國小</li>
-          <li>Yangmei Tong Fu Social Primary School 新竹市陽明國小</li>
-          <li>Fong Kong Yong Tuo Temple Secondary 鳳崗永道廟</li>
-          <li>Truong School for the Visually Impaired 台北市視障學校</li>
-          <li>Houng High School 弘道高校中學</li>
-        </ul>
+      <div class="info-body">
+        <p>
+          合成生物學的獨特之處在於，它積極設計解決方案來應對現實世界的問題，而不僅僅是試圖理解問題而已。它與傳統生物學的差別在於將創造力與科學技術結合，強調創新和應用。這種方法使其能夠處理氣候變遷、糧食安全和永續農業等緊迫的全球挑戰，對下一代科學家和關心這些議題的有心人士尤其重要。因此，科學教育應該超越死記硬背，轉而優先考慮問題解決能力、批判性思考和實際應用。同時，科學教育也應該更加普及和包容，並鼓勵學生思考科學進步對更廣泛的社會和環境的影響。
+        </p>
       </div>
+    </section>
 
-      <!-- Taiwan map placeholder -->
-      <div class="impact-map-box">
-        <svg width="160" height="200" viewBox="0 0 160 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- simplified Taiwan silhouette -->
-          <path d="M80 10 C100 12 120 30 128 55 C136 80 130 110 120 135 C110 158 95 178 80 190 C65 178 50 158 40 135 C30 110 24 80 32 55 C40 30 60 12 80 10Z"
-                fill="#c8dfc0" stroke="#6a9e72" stroke-width="2"/>
-          <!-- dots for schools -->
-          <circle cx="78" cy="55" r="6" fill="#2d4a3e" opacity="0.8"/>
-          <circle cx="68" cy="80" r="5" fill="#2d4a3e" opacity="0.7"/>
-          <circle cx="85" cy="100" r="5" fill="#2d4a3e" opacity="0.7"/>
-          <circle cx="72" cy="120" r="5" fill="#2d4a3e" opacity="0.6"/>
-          <circle cx="90" cy="140" r="4" fill="#2d4a3e" opacity="0.6"/>
-          <circle cx="65" cy="65"  r="4" fill="#6a9e72"/>
-          <circle cx="92" cy="75"  r="4" fill="#6a9e72"/>
-        </svg>
-        <p style="font-size:13px; margin-top:4px;">Impact map — schools served</p>
-      </div>
-    </div>
-  </section>
+    <!-- Interactive outreach map -->
+    <div class="interactive-map-section" id="project-map">
+      <div class="section-title">INTERACTIVE MAP</div>
+      <h3>以往團隊拓展地圖</h3>
 
-  <!-- ── PAST PROJECTS ── -->
-  <section class="projects-section">
-    <div class="section-title">SECTION</div>
-    <div class="section-heading">PAST PROJECTS</div>
-    <p style="font-size:13px; color:var(--text-muted); margin-bottom: 24px;">2022 – 2025</p>
+      <p class="map-intro">
+        點擊地圖上的某一點，即可查看每個外展地點發生的情況。
+      </p>
 
-    <!-- Timeline bar -->
-    <div class="timeline-row">
-      <div class="tl-node">
-        <div class="tl-label above">2022: Fusarium Won't</div>
-        <div class="tl-dot"></div>
-      </div>
-      <div class="tl-node">
-        <div class="tl-label above" style="visibility:hidden;">spacer</div>
-        <div class="tl-dot active"></div>
-        <div class="tl-label below">2023: Cure-All Reef</div>
-      </div>
-      <div class="tl-node">
-        <div class="tl-label above">2024: Dengue Beeters</div>
-        <div class="tl-dot"></div>
-      </div>
-      <div class="tl-node">
-        <div class="tl-label above" style="visibility:hidden;">spacer</div>
-        <div class="tl-dot"></div>
-        <div class="tl-label below">2025: Textile Fighters</div>
-      </div>
-    </div>
+      <div class="interactive-map-layout">
 
-    <!-- Project cards -->
-    <div class="project-card">
-      <div class="project-text">
-        <div class="project-year">2022</div>
-        <h3>Fusarium won't</h3>
-        <p>In 2022, GEMS-Taiwan worked on a synthetic biology solution to help defend Cavendish banana plants from Fusarium wilt (a fungal disease threatening banana crops worldwide). Their approach focused on engineering a beneficial probiotic bacterium that could protect banana roots, potentially slowing down the spread of the disease.</p>
-        <a href="https://2022.igem.wiki/gems-taiwan/index" class="explore-link">Click Here to explore: https://2022.igem.wiki/gems-taiwan/index</a>
-      </div>
-      <div class="project-logo">
-        <span style="font-size:14px; color:var(--text-muted);">iGEM 2022 Logo</span>
+        <!-- Left: Taiwan silhouette map -->
+        <div class="taiwan-map-card" aria-label="Interactive map of Taiwan outreach locations">
+          <div class="taiwan-silhouette-wrapper">
+
+            <img src="../images/taiwan-silhouette.svg" alt="Taiwan outreach map" class="taiwan-silhouette-img" />
+
+            <button class="map-point-button active" data-map-point="luzhou" type="button"
+              aria-label="Luzhou elementary school" style="left: 36%; top: 40%;"></button>
+
+            <button class="map-point-button" data-map-point="yucheng" type="button"
+              aria-label="Taipei Municipal Yucheng Senior High School" style="left: 63%; top: 42%;"></button>
+
+            <button class="map-point-button" data-map-point="xingya" type="button"
+              aria-label="Xing Ya Elementary School" style="left: 55%; top: 45%;"></button>
+
+            <button class="map-point-button" data-map-point="evergreen" type="button"
+              aria-label="Evergreen Kindergarten" style="left: 53%; top: 53%;"></button>
+
+            <button class="map-point-button" data-map-point="yonghe" type="button"
+              aria-label="New Taipei Municipal Yonghe Junior Highschool" style="left: 45%; top: 58%;"></button>
+
+            <button class="map-point-button" data-map-point="visual" type="button"
+              aria-label="Taipei School for the Visually Impaired" style="left: 51%; top: 32%;"></button>
+
+            <button class="map-point-button" data-map-point="daan" type="button" aria-label="Da'an Elementary School"
+              style="left: 52%; top: 55%;"></button>
+
+            <button class="map-point-button" data-map-point="fude" type="button" aria-label="Fude Elementary School"
+              style="left: 59%; top: 48%;"></button>
+
+            <button class="map-point-button" data-map-point="yifang" type="button" aria-label="Yifang Elementary School"
+              style="left: 42%; top: 27%;"></button>
+
+            <button class="map-point-button" data-map-point="huaxing" type="button" aria-label="Huaxing Children’s Home"
+              style="left: 52%; top: 36%;"></button>
+
+            <button class="map-point-button" data-map-point="xisong" type="button" aria-label="Xisong High School"
+              style="left: 54%; top: 42%;"></button>
+
+          </div>
+        </div>
+
+        <!-- Right: info card -->
+        <div class="map-info-card">
+          <h4 id="map-info-title">Luzhou Elementary School</h4>
+
+          <img id="map-info-image" class="map-info-image" src="images/outreach/luzhou.jpg"
+            alt="Luzhou Elementary School outreach" />
+        </div>
+
       </div>
     </div>
 
-    <div class="project-card reverse">
-      <div class="project-logo">
-        <span style="font-size:14px; color:var(--text-muted);">Cure-All Reef Logo</span>
-      </div>
-      <div class="project-text">
-        <div class="project-year">2023</div>
-        <h3>Cure-All Reef</h3>
-        <p>In 2023, the team's project "Cure-All Reef" aimed to improve coral reef resilience. Their synthetic biology solution involved engineering bacteria to better deliver probiotics to corals, helping protect them from bleaching and disease.</p>
-        <a href="https://2023.igem.wiki/gemstaiwan/home" class="explore-link">Click Here to explore: https://2023.igem.wiki/gemstaiwan/home</a>
-      </div>
-    </div>
+    <!-- ── PAST PROJECTS ── -->
+    <section class="projects-section">
+      <div class="section-title">SECTION</div>
+      <div class="section-heading">過往項目</div>
+      <p style="font-size:13px; color:var(--text-muted); margin-bottom: 24px;">2022 – 2025</p>
 
-    <div class="project-card">
-      <div class="project-text">
-        <div class="project-year">2024</div>
-        <h3>Dengue Beeters</h3>
-        <p>In 2024, the team worked on "Dengue Beeters," a synthetic biology solution to combat dengue fever by disrupting the mosquito life cycle with innovative biological tools and designs. The project included a 3D-printed on-trap and other novel strategies to control mosquito populations, which contributed to their success in the competition and winning the Grand Prize in the High School Division at the 2024 Jamboree.</p>
-        <a href="https://2024.igem.wiki/gems-taiwan/" class="explore-link">Click Here to explore: https://2024.igem.wiki/gems-taiwan/</a>
-      </div>
-      <div class="project-logo">
-        <span style="font-size:14px; color:var(--text-muted);">Dengue Beeters Logo</span>
-      </div>
-    </div>
+      <!-- Timeline bar -->
+      <div class="timeline-row" aria-label="Past projects timeline">
 
-    <div class="project-card reverse">
-      <div class="project-logo">
-        <span style="font-size:14px; color:var(--text-muted);">Textile Fighters Logo</span>
-      </div>
-      <div class="project-text">
-        <div class="project-year">2025</div>
-        <h3>Textile Fighters</h3>
-        <p>In 2025, GEMS-Taiwan worked on solving the problem of textile and plastic waste by focusing on ways to break down materials that are normally very hard to recycle. The team engineered and tested different enzymes that can digest components of blended fabrics, developed methods to identify and preprocess different types of textiles, and created tools to help classify fabrics more easily.</p>
-        <a href="https://2025.igem.wiki/gems-taiwan/" class="explore-link">Click Here to explore: https://2025.igem.wiki/gems-taiwan/</a>
-      </div>
-    </div>
-  </section>
+        <button class="tl-node" type="button" data-project-tab="2022" aria-label="Show 2022 Fusarium Won't project">
+          <span class="tl-label above">2022: Fusarium Won't</span>
+          <span class="tl-dot"></span>
+        </button>
 
-</main>
+        <button class="tl-node active" type="button" data-project-tab="2023"
+          aria-label="Show 2023 Cure-All Reef project">
+          <span class="tl-label below">2023: Cure-All Reef</span>
+          <span class="tl-dot active"></span>
+        </button>
+
+        <button class="tl-node" type="button" data-project-tab="2024" aria-label="Show 2024 Dengue Beeters project">
+          <span class="tl-label above">2024: Dengue Beeters</span>
+          <span class="tl-dot"></span>
+        </button>
+
+        <button class="tl-node" type="button" data-project-tab="2025" aria-label="Show 2025 Textile Fighters project">
+          <span class="tl-label below">2025: Textile Fighters</span>
+          <span class="tl-dot"></span>
+        </button>
+
+      </div>
+
+      <!-- Project cards -->
+      <div class="project-panels">
+
+        <div class="project-card project-panel" data-project-year="2022">
+          <div class="project-text">
+            <div class="project-year">2022</div>
+            <h3>Fusarium Won't</h3>
+            <p>
+              2022 年，GEMS-台灣致力於以合成生物學提出一項解決方案，協助防禦卡文迪許香蕉（Cavendish）植株免受枯萎病（Fusarium
+              wilt，一種威脅全球香蕉作物的真菌性疾病）的侵害。他們的方法著重於工程化一種有益的益生菌，使其能保護香蕉根部，並有望減緩疾病的擴散。
+            </p>
+            <a href="https://2022.igem.wiki/gems-taiwan/index" class="explore-link">
+              Click Here to explore: https://2022.igem.wiki/gems-taiwan/index
+            </a>
+          </div>
+
+          <div class="project-logo">
+            <img src="../images/past-logos/2022Logo.png" alt="Fusarium Won't logo">
+          </div>
+        </div>
+
+        <div class="project-card project-panel active" data-project-year="2023">
+          <div class="project-text">
+            <div class="project-year">2023</div>
+            <h3>Cure-All Reef</h3>
+            <p>
+              2023 年，團隊的專案「Cure-All Reef」旨在提升珊瑚礁的韌性。他們的合成生物學解決方案是工程化細菌，使其能更有效地向珊瑚傳遞益生菌，從而幫助珊瑚抵禦白化與疾病的影響。
+            </p>
+            <a href="https://2023.igem.wiki/gemstaiwan/home" class="explore-link">
+              Click Here to explore: https://2023.igem.wiki/gemstaiwan/home
+            </a>
+          </div>
+          <div class="project-logo">
+            <img src="../images/past-logos/2023Logo.png" alt="Cure-All Reef Logo">
+          </div>
+        </div>
+
+        <div class="project-card project-panel" data-project-year="2024">
+          <div class="project-text">
+            <div class="project-year">2024</div>
+            <h3>Dengue Beeters</h3>
+            <p>
+              2024 年，團隊開展了「Dengue Beeters」專案，透過合成生物學的方法對抗登革熱，利用創新的生物工具與設計來干擾蚊子的生活週期。該專案包含 3D
+              列印的誘卵桶（ovitrap）以及其他新穎的蚊蟲控制策略，有效協助抑制蚊蟲族群的數量。這些成果也讓團隊在競賽中表現優異，並於 iGEM Jamboree 高中組中榮獲大獎（Grand Prize）。
+            </p>
+            <a href="https://2024.igem.wiki/gems-taiwan/" class="explore-link">
+              Click Here to explore: https://2024.igem.wiki/gems-taiwan/
+            </a>
+          </div>
+
+          <div class="project-logo">
+            <img src="../images/past-logos/2024Logo.png" alt="Dengue Beeters logo">
+          </div>
+        </div>
+
+        <div class="project-card project-panel" data-project-year="2025">
+          <div class="project-text">
+            <div class="project-year">2025</div>
+            <h3>Textile Fighters</h3>
+            <p>
+              2025
+              年，GEMS-台灣致力於解決紡織與塑膠廢棄物問題，重點放在分解這些通常難以回收的材料。團隊工程設計並測試多種酵素，使其能分解混紡布料中的成分，同時開發辨識與預處理不同紡織材料的方法，並建立工具以協助更有效地分類各類布料。
+            </p>
+            <a href="https://2025.igem.wiki/gems-taiwan/" class="explore-link">
+              Click Here to explore: https://2025.igem.wiki/gems-taiwan/
+            </a>
+          </div>
+          <div class="project-logo">
+            <img src="../images/past-logos/2025Logo.png" alt="Textile Fighters logo">
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
 
 </body>
+
 </html>
