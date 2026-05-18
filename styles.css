@@ -224,9 +224,32 @@ a {
    HOME PAGE
 ══════════════════════════════════════ */
 
+body {
+  margin: 0;
+}
+
+main {
+  padding-top: 0;
+}
+
 .home-hero {
+  margin-top: 0;
+  padding-top: 0;
+  overflow: visible;
   text-align: center;
-  padding: 48px 0 28px;
+}
+
+.site-title-image {
+  display: block;
+  position: relative;
+  left: 50%;
+  width: 100vw;
+  max-width: 100vw;
+  height: auto;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  margin-top: -1vw;
+  margin-bottom: 18px;
 }
 
 .site-title {
