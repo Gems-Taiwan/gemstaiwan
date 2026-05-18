@@ -1,14 +1,19 @@
 // script.js
 
+const isChinesePage = window.location.pathname.includes("/zh/");
+const assetPrefix = isChinesePage ? "../" : "";
+
+function getAssetPath(path) {
+  return `${assetPrefix}${path}`;
+}
+
 function showSection(sectionId) {
-  // Hide all sections
   const sections = document.querySelectorAll("section");
 
   sections.forEach(section => {
     section.classList.remove("active");
   });
 
-  // Show selected section
   const selectedSection = document.getElementById(sectionId);
 
   if (selectedSection) {
@@ -16,71 +21,75 @@ function showSection(sectionId) {
     window.scrollTo(0, 0);
   }
 }
-// Interactive outreach map data
+
+/* ══════════════════════════════════════
+   INTERACTIVE OUTREACH MAP
+══════════════════════════════════════ */
+
 const outreachMapData = {
   luzhou: {
-    title: "Luzhou Elementary School",
-    image: "images/outreach/luzhou.jpg",
+    title: isChinesePage ? "蘆洲國小" : "Luzhou Elementary School",
+    image: getAssetPath("images/outreach/luzhou.jpg"),
     alt: "Luzhou Elementary School outreach"
   },
 
   yucheng: {
-    title: "Taipei Municipal Yucheng Senior High School",
-    image: "images/outreach/yucheng.jpg",
+    title: isChinesePage ? "臺北市立育成高中" : "Taipei Municipal Yucheng Senior High School",
+    image: getAssetPath("images/outreach/yucheng.jpg"),
     alt: "Taipei Municipal Yucheng Senior High School outreach"
   },
 
   xingya: {
-    title: "Xing Ya Elementary School",
-    image: "images/outreach/xingya.jpg",
+    title: isChinesePage ? "興雅國小" : "Xing Ya Elementary School",
+    image: getAssetPath("images/outreach/xingya.jpg"),
     alt: "Xing Ya Elementary School outreach"
   },
 
   fude: {
-    title: "Fude Elementary School",
-    image: "images/outreach/fude.jpg",
+    title: isChinesePage ? "福德國小" : "Fude Elementary School",
+    image: getAssetPath("images/outreach/fude.jpg"),
     alt: "Fude Elementary School outreach"
   },
 
   evergreen: {
-    title: "Evergreen Kindergarten",
-    image: "images/outreach/evergreen.jpg",
+    title: isChinesePage ? "長青幼兒園" : "Evergreen Kindergarten",
+    image: getAssetPath("images/outreach/evergreen.jpg"),
     alt: "Evergreen Kindergarten outreach"
   },
 
   yonghe: {
-    title: "New Taipei Municipal Yonghe Junior High School",
-    image: "images/outreach/yonghe.jpg",
+    title: isChinesePage ? "新北市立永和國中" : "New Taipei Municipal Yonghe Junior High School",
+    image: getAssetPath("images/outreach/yonghe.jpg"),
     alt: "New Taipei Municipal Yonghe Junior High School outreach"
   },
 
   yifang: {
-    title: "Yifang Elementary School",
-    image: "images/outreach/yifang.jpg",
+    title: isChinesePage ? "義方國小" : "Yifang Elementary School",
+    image: getAssetPath("images/outreach/yifang.jpg"),
     alt: "Yifang Elementary School outreach"
   },
 
   huaxing: {
-    title: "Huaxing Children’s Home",
-    image: "images/outreach/huaxing.jpg",
+    title: isChinesePage ? "華興育幼院" : "Huaxing Children’s Home",
+    image: getAssetPath("images/outreach/huaxing.jpg"),
     alt: "Huaxing Children’s Home outreach"
   },
 
   daan: {
-    title: "Da’an Elementary School",
-    image: "images/outreach/daan.jpg",
+    title: isChinesePage ? "大安國小" : "Da’an Elementary School",
+    image: getAssetPath("images/outreach/daan.jpg"),
     alt: "Da’an Elementary School outreach"
   },
 
   visual: {
-    title: "Taipei School for the Visually Impaired",
-    image: "images/outreach/visual.jpg",
+    title: isChinesePage ? "臺北市立啟明學校" : "Taipei School for the Visually Impaired",
+    image: getAssetPath("images/outreach/visual.jpg"),
     alt: "Taipei School for the Visually Impaired outreach"
   },
 
   xisong: {
-    title: "Xisong High School",
-    image: "images/outreach/xisong.jpg",
+    title: isChinesePage ? "西松高中" : "Xisong High School",
+    image: getAssetPath("images/outreach/xisong.jpg"),
     alt: "Xisong High School outreach"
   }
 };
@@ -127,20 +136,31 @@ function initOutreachMap() {
       }
     });
   });
+
+  const activePoint =
+    document.querySelector(".map-point.active, .map-point-button.active") ||
+    mapPoints[0];
+
+  if (activePoint && activePoint.dataset.mapPoint) {
+    updateOutreachMap(activePoint.dataset.mapPoint);
+  }
 }
+
 /* ══════════════════════════════════════
- PAST PROJECTS TIMELINE
- Click a timeline dot to show that year only
+   PAST PROJECTS TIMELINE
+   Click a timeline dot to show that year only
 ══════════════════════════════════════ */
 
-document.addEventListener("DOMContentLoaded", () => {
+function initPastProjectsTimeline() {
   const projectTabs = document.querySelectorAll("[data-project-tab]");
   const projectPanels = document.querySelectorAll("[data-project-year]");
 
-  if (!projectTabs.length || !projectPanels.length) return;
+  if (!projectTabs.length || !projectPanels.length) {
+    return;
+  }
 
   function showProjectYear(year) {
-    projectTabs.forEach((tab) => {
+    projectTabs.forEach(tab => {
       const isActive = tab.dataset.projectTab === year;
       tab.classList.toggle("active", isActive);
 
@@ -150,19 +170,32 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    projectPanels.forEach((panel) => {
+    projectPanels.forEach(panel => {
       const isActive = panel.dataset.projectYear === year;
       panel.classList.toggle("active", isActive);
     });
   }
 
-  projectTabs.forEach((tab) => {
+  projectTabs.forEach(tab => {
     tab.addEventListener("click", () => {
       showProjectYear(tab.dataset.projectTab);
     });
   });
 
-  showProjectYear("2023");
-});
+  const activeTab =
+    document.querySelector("[data-project-tab].active") ||
+    projectTabs[0];
 
-document.addEventListener("DOMContentLoaded", initOutreachMap);
+  if (activeTab && activeTab.dataset.projectTab) {
+    showProjectYear(activeTab.dataset.projectTab);
+  }
+}
+
+/* ══════════════════════════════════════
+   INITIALIZE PAGE FEATURES
+══════════════════════════════════════ */
+
+document.addEventListener("DOMContentLoaded", () => {
+  initOutreachMap();
+  initPastProjectsTimeline();
+});
