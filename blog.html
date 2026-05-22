@@ -3,53 +3,212 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gems Taiwan — Blogs &amp; News</title>
+  <title>Gems Taiwan — Artworks</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <script>window.ACTIVE_PAGE = 'blog.html';</script>
+  <script>window.ACTIVE_PAGE = 'artworks.html';</script>
   <script defer src="nav.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --border:    rgba(28,27,24,0.09);
+      --green:     #3A7348;
+      --green-bg:  #EEF6F1;
+      --serif:     'Playfair Display', Georgia, serif;
+      --sans:      'DM Sans', system-ui, sans-serif;
+    }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .page {
+      max-width: 1080px; 
+      margin: 0 auto;
+      padding: 4rem 2.5rem 7rem;
+      width: 100%;
+    }
+
+    /* Hero layout matching the explicit design of the About page */
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: start;
+      margin-top: 32px;
+      margin-bottom: 48px;
+    }
+
+    .hero-title {
+      font-size: clamp(32px, 6vw, 52px);
+      font-weight: 900;
+      line-height: 1.1;
+    }
+
+    .hero-subtitle {
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--text-muted);
+      padding-top: 8px;
+    }
+
+    /* Timeline Structure */
+    .blog-timeline { position: relative; }
+    .blog-timeline::before {
+      content: '';
+      position: absolute;
+      left: 108px; top: 0; bottom: 0;
+      width: 1px;
+      background: var(--border);
+    }
+
+    .blog-entry {
+      display: grid;
+      grid-template-columns: 108px 1fr;
+      gap: 0 2.5rem;
+      padding: 3rem 0;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+    .blog-entry:last-child { border-bottom: none; }
+
+    .blog-entry::after {
+      content: '';
+      position: absolute;
+      left: 104px; top: 3.6rem;
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      background: var(--green);
+      border: 2px solid transparent;
+      box-shadow: 0 0 0 1px var(--green);
+    }
+
+    .blog-year {
+      padding-top: 2px;
+      text-align: right;
+      padding-right: 2rem;
+    }
+    .blog-year-num {
+      display: inline-block;
+      font-family: var(--serif);
+      font-size: 2rem; font-weight: 900;
+      color: var(--green); line-height: 1;
+    }
+    .blog-year-label {
+      display: block;
+      font-size: 10px; font-weight: 500;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--text-muted); margin-top: 4px;
+    }
+
+    .blog-theme-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 10px; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: var(--green);
+      background: var(--green-bg);
+      padding: 4px 10px; border-radius: 20px;
+      margin-bottom: 1rem;
+    }
+    .blog-theme-tag span {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--green); display: inline-block;
+    }
+
+    .blog-title {
+      font-family: var(--serif);
+      font-size: clamp(1.3rem, 2.5vw, 1.75rem);
+      font-weight: 700; line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .blog-text {
+      font-size: .95rem; font-weight: 300;
+      color: var(--text-mid); line-height: 1.85;
+      max-width: 640px;
+    }
+    .blog-text + .blog-text { margin-top: .75rem; }
+
+    .topic-pills {
+      display: flex; flex-wrap: wrap; gap: 6px;
+      margin-top: 1.25rem;
+    }
+    .pill {
+      font-size: 11px; font-weight: 500;
+      color: var(--text-mid);
+      background: rgba(28,27,24,.05);
+      border: 1px solid var(--border);
+      padding: 3px 10px; border-radius: 20px;
+    }
+
+    @media (max-width: 680px) {
+      .page { padding: 2rem 1.25rem 5rem; }
+      .hero-layout { grid-template-columns: 1fr; gap: 8px; margin-bottom: 24px; }
+      .blog-timeline::before { display: none; }
+      .blog-entry { grid-template-columns: 1fr; gap: .75rem; padding: 2rem 0; }
+      .blog-entry::after { display: none; }
+      .blog-year { text-align: left; padding-right: 0; }
+    }
+  </style>
 </head>
 <body>
 
 <main>
+<div class="page">
 
-  <h1 class="page-title center" style="margin-top: 32px; margin-bottom: 32px;">Blog &amp; News</h1>
+  <div class="hero-layout">
+    <h1 class="hero-title">Blog &amp; News</h1>
+  </div>
 
-  <div class="blog-list">
+  <div class="blog-timeline">
 
-    <div class="blog-entry">
-      <div class="blog-date-box">Date</div>
-      <div class="blog-content-box">News/blog content</div>
-    </div>
+    <article class="blog-entry">
+      <div class="blog-year">
+        <span class="blog-year-num">2024</span>
+        <span class="blog-year-label">Workshop</span>
+      </div>
+      <div class="blog-body">
+        <div class="blog-theme-tag"><span></span>Dengue Fever</div>
+        <h2 class="blog-title">Youth Engagement Workshop — Dengue Fever &amp; Synthetic Biology</h2>
+        <p class="blog-text">In our 2024 team workshop, we focus on engaging youth in the fight against dengue fever through different interactive activities, such as bracelet-making, hands-on experiments, and games. And to further promote the topic, dengue fever, we also combine many teaching of synthetic biology.</p>
+        <p class="blog-text">By breaking down the complex biological concepts, we were able to let students of different ages understand how ATCG, DNA, genes, and cells work. We design the education of synthetic biology to not only spread the idea of synthetic biology, but also ignite the students' interest in synthetic biology.</p>
+        <div class="topic-pills">
+          <span class="pill">Bracelet-making</span>
+          <span class="pill">Hands-on experiments</span>
+          <span class="pill">DNA &amp; genes</span>
+          <span class="pill">Youth outreach</span>
+        </div>
+      </div>
+    </article>
 
-    <div class="blog-entry">
-      <div class="blog-date-box">Date</div>
-      <div class="blog-content-box">News/blog content</div>
-    </div>
-
-    <div class="blog-entry">
-      <div class="blog-date-box">Date</div>
-      <div class="blog-content-box">News/blog content</div>
-    </div>
-
-    <div class="blog-entry">
-      <div class="blog-date-box">Date</div>
-      <div class="blog-content-box">News/blog content</div>
-    </div>
-
-    <div class="blog-entry">
-      <div class="blog-date-box">Date</div>
-      <div class="blog-content-box">News/blog content</div>
-    </div>
-
-    <div class="blog-entry">
-      <div class="blog-date-box">Date</div>
-      <div class="blog-content-box">News/blog content</div>
-    </div>
+    <article class="blog-entry">
+      <div class="blog-year">
+        <span class="blog-year-num">2025</span>
+        <span class="blog-year-label">Workshop</span>
+      </div>
+      <div class="blog-body">
+        <div class="blog-theme-tag"><span></span>Textile Degradation</div>
+        <h2 class="blog-title">Raising Awareness of Textile Pollution Through Interactive Learning</h2>
+        <p class="blog-text">In the 2025 team, we focus on raising awareness of textile pollution through interactive engagement to let the students know more about plastic pollution, textile recycling, and the role of DNA and enzymes in biotechnology.</p>
+        <p class="blog-text">By planning lessons and interactive activities for different school levels, we were able to evaluate the knowledge suitable for them, adapt our pacing to the students' level, and later quantify how much they have learned. We also combine some synthetic biology into the lessons, through experiments and activities, the students were able to learn more about DNA and synthetic biology.</p>
+        <div class="topic-pills">
+          <span class="pill">Plastic pollution</span>
+          <span class="pill">Textile recycling</span>
+          <span class="pill">Enzymes &amp; DNA</span>
+          <span class="pill">Multi-level lessons</span>
+        </div>
+      </div>
+    </article>
 
   </div>
 
+</div>
 </main>
 
 </body>
