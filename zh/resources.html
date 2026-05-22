@@ -3,340 +3,785 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gems Taiwan — 教材共享區</title>
+  <title>Gems Taiwan — Science &amp; Ethics</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-  <script>window.ACTIVE_PAGE = 'resources.html';</script>
-  <script defer src="nav.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <script>window.ACTIVE_PAGE = 'ethics.html';</script>
+  <script defer src="../nav.js"></script>
 </head>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Gems Taiwan — 教材共享區</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <script>
+    window.ACTIVE_PAGE = 'resources.html';
+  </script>
+
+  <script defer src="nav.js"></script>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    :root{
+
+      --ink:#171717;
+      --text-mid:#66645F;
+      --border:#E6E0D8;
+
+      --dengue:#C07038;
+
+      --textile:#2A5C9A;
+
+      --font-display:'Playfair Display', serif;
+      --font-body:'DM Sans', sans-serif;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:var(--cream);
+      color:var(--ink);
+      font-family:var(--font-body);
+      line-height:1.6;
+    }
+
+    main{
+      width:100%;
+    }
+
+    .page{
+      max-width:1280px;
+      margin:auto;
+      padding:40px 40px 100px;
+    }
+
+    /* HERO */
+
+    .hero{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:32px;
+      align-items:start;
+      margin-bottom:56px;
+    }
+
+    .hero h1{
+      font-size:clamp(42px,7vw,76px);
+      line-height:0.95;
+      font-weight:900;
+      font-family:var(--font-display);
+    }
+
+    .hero-right{
+      padding-top:12px;
+    }
+
+    .hero-label{
+      font-size:14px;
+      font-weight:700;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--text-mid);
+      margin-bottom:18px;
+    }
+
+    .hero-right p{
+      font-size:16px;
+      line-height:1.9;
+      color:var(--text-mid);
+      max-width:620px;
+    }
+
+    /* TABS */
+
+    .resource-tabs{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom:56px;
+    }
+
+    .resource-tab{
+      border:none;
+      background:#ECE7DF;
+      color:var(--ink);
+      padding:14px 24px;
+      border-radius:999px;
+      font-size:14px;
+      font-weight:700;
+      cursor:pointer;
+      transition:0.25s;
+      font-family:var(--font-body);
+    }
+
+    .resource-tab:hover{
+      transform:translateY(-2px);
+    }
+
+    .resource-tab.active{
+      background:var(--ink);
+      color:white;
+    }
+
+    /* PANEL */
+
+    .theme-panel{
+      display:none;
+      animation:fade .35s ease;
+    }
+
+    .theme-panel.active{
+      display:block;
+    }
+
+    @keyframes fade{
+      from{
+        opacity:0;
+        transform:translateY(12px);
+      }
+      to{
+        opacity:1;
+        transform:none;
+      }
+    }
+
+    /* HERO BLOCK */
+
+    .theme-hero{
+      padding:54px;
+      border-radius:32px;
+      margin-bottom:72px;
+      overflow:hidden;
+      position:relative;
+    }
+
+    .theme-hero.dengue{
+      background:linear-gradient(135deg,#F6DFCF 0%,#F9EFE7 100%);
+    }
+
+    .theme-hero.textile{
+      background:linear-gradient(135deg,#DCE8F8 0%,#EEF4FC 100%);
+    }
+
+    .theme-hero h2{
+      font-size:clamp(48px,8vw,72px);
+      line-height:0.95;
+      margin-bottom:12px;
+      font-weight:900;
+      font-family:var(--font-display);
+    }
+
+    .theme-hero-sub{
+      font-size:15px;
+      font-weight:600;
+      margin-bottom:20px;
+      opacity:0.8;
+    }
+
+    .theme-hero p{
+      max-width:760px;
+      font-size:16px;
+      line-height:1.95;
+      color:var(--text-mid);
+    }
+
+    .synbio-tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:28px;
+    }
+
+    .synbio-tag{
+      padding:8px 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,0.65);
+      font-size:12px;
+      font-weight:700;
+    }
+
+    /* TYPE SECTION */
+
+    .type-section{
+      margin-bottom:84px;
+    }
+
+    .type-heading{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-bottom:32px;
+    }
+
+    .type-heading-name{
+      font-size:clamp(30px,5vw,48px);
+      line-height:1;
+      font-weight:900;
+      font-family:var(--font-display);
+    }
+
+    .type-heading-right{
+      text-align:right;
+    }
+
+    .type-heading-zh{
+      display:block;
+      font-size:14px;
+      color:var(--text-mid);
+      margin-bottom:4px;
+    }
+
+    .type-heading-count{
+      font-size:12px;
+      color:#999;
+    }
+
+    /* GRID */
+
+    .resources-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:22px;
+    }
+
+    /* CARD */
+
+    .resource-item{
+      background:white;
+      border-radius:28px;
+      padding:28px;
+      min-height:300px;
+      display:flex;
+      flex-direction:column;
+      transition:0.28s;
+    }
+
+    .resource-item:hover{
+      transform:translateY(-6px);
+      box-shadow:0 18px 40px rgba(0,0,0,0.08);
+    }
+
+    /* ICON */
+
+    .resource-icon{
+      width:72px;
+      height:72px;
+      border-radius:22px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:32px;
+      margin-bottom:24px;
+    }
+
+    .doc{
+      background:#F2EEE8;
+    }
+
+    .game{
+      background:#FBE9DC;
+    }
+
+    .web{
+      background:#E3ECFA;
+    }
+
+    .comic{
+      background:#F8E8F0;
+    }
+
+    .audio{
+      background:#E9F4EC;
+    }
+
+    .book{
+      background:#EFE7FF;
+    }
+
+    /* CONTENT */
+
+    .resource-title{
+      font-size:20px;
+      font-weight:700;
+      line-height:1.35;
+      margin-bottom:8px;
+    }
+
+    .resource-zh{
+      font-size:14px;
+      color:var(--text-mid);
+      line-height:1.75;
+      margin-bottom:20px;
+    }
+
+    .resource-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-bottom:28px;
+    }
+
+    .resource-type-tag{
+      padding:6px 12px;
+      border-radius:999px;
+      font-size:11px;
+      font-weight:700;
+    }
+
+    .tag-dengue{
+      background:var(--dengue-light);
+      color:#8A4D24;
+    }
+
+    .tag-textile{
+      background:var(--textile-light);
+      color:#234D81;
+    }
+
+    .resource-level{
+      font-size:12px;
+      color:#999;
+      align-self:center;
+    }
+
+    /* BUTTON */
+
+    .resource-link{
+      margin-top:auto;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:13px 22px;
+      border-radius:999px;
+      text-decoration:none;
+      font-size:14px;
+      font-weight:700;
+      transition:0.2s;
+      width:fit-content;
+    }
+
+    .resource-link:hover{
+      transform:translateY(-2px);
+    }
+
+    .dengue-link{
+      background:var(--dengue-light);
+      color:#8A4D24;
+    }
+
+    .textile-link{
+      background:var(--textile-light);
+      color:#234D81;
+    }
+
+    /* MOBILE */
+
+    @media(max-width:900px){
+
+      .hero{
+        grid-template-columns:1fr;
+      }
+
+      .page{
+        padding:28px 20px 80px;
+      }
+
+      .theme-hero{
+        padding:36px;
+      }
+
+      .resources-grid{
+        grid-template-columns:1fr;
+      }
+
+    }
+
+  </style>
+</head>
+
 <body>
+
 <main>
+
 <div class="page">
 
-  <div class="section-header">
-    <div class="section-eyebrow">教材共享區</div>
-    <h1>教學資源</h1>
-    <p>免費提供給教師與教育工作者的教材——依主題分類整理。每套資源均包含合成生物學背景說明，可直接於課堂使用。</p>
+  <!-- HERO -->
+
+  <div class="hero">
+
+    <h1>
+      教學資源
+    </h1>
+
+    <div class="hero-right">
+
+      <div class="hero-label">
+        教材共享區
+      </div>
+
+      <p>
+        免費提供給教師與教育工作者的教材資源。所有內容依主題分類整理，結合合成生物學、永續發展與互動式學習，可直接於課堂與工作坊使用。
+      </p>
+
+    </div>
+
   </div>
 
-  <div class="layout">
+  <!-- TABS -->
 
-    <!-- ── SIDEBAR ── -->
-    <aside class="sidebar">
-      <div class="sidebar-label">選擇主題</div>
+  <div class="resource-tabs">
 
-      <button class="theme-btn active" data-theme="dengue" onclick="switchTheme('dengue', this)">
-        <div class="theme-btn-inner">
-          <div class="theme-btn-pip"></div>
-          <div class="theme-btn-text">
-            <span class="theme-btn-name">登革熱</span>
-            <span class="theme-btn-zh">登革熱教學資源</span>
-            <span class="theme-btn-count">3 份資源</span>
-          </div>
-        </div>
-      </button>
+    <button class="resource-tab active" onclick="switchTheme('dengue', this)">
+      登革熱
+    </button>
 
-      <button class="theme-btn" data-theme="textile" onclick="switchTheme('textile', this)">
-        <div class="theme-btn-inner">
-          <div class="theme-btn-pip"></div>
-          <div class="theme-btn-text">
-            <span class="theme-btn-name">紡織廢料降解</span>
-            <span class="theme-btn-zh">紡織廢料生物降解</span>
-            <span class="theme-btn-count">8 份資源</span>
-          </div>
-        </div>
-      </button>
+    <button class="resource-tab" onclick="switchTheme('textile', this)">
+      紡織廢料降解
+    </button>
 
-      <div class="sidebar-divider"></div>
+  </div>
 
-      <ul class="type-nav" id="type-nav" aria-label="跳至分類"></ul>
-    </aside>
+  <!-- DENGUE -->
 
-    <!-- ── MAIN ── -->
-    <div class="main">
+  <div class="theme-panel active" id="panel-dengue">
 
-      <!-- ════ DENGUE PANEL ════ -->
-      <div class="theme-panel active" id="panel-dengue">
+    <div class="theme-hero dengue">
 
-        <div class="theme-hero dengue">
-          <h2>登革熱</h2>
-          <div class="theme-hero-zh">登革熱 — 病媒蚊、病毒與生物防治</div>
-          <p>探討埃及斑蚊的生物特性、登革病毒的複製機制，以及合成生物學工具——包括基因迴路、工程菌與誘卵筒設計——如何支援疾病監測與防治工作。</p>
-          <div class="synbio-tags">
-            <span class="synbio-tag">病媒生物學</span>
-            <span class="synbio-tag">基因迴路</span>
-            <span class="synbio-tag">誘卵筒設計</span>
-            <span class="synbio-tag">病毒複製</span>
-            <span class="synbio-tag">生物監測</span>
-          </div>
-        </div>
+      <h2>登革熱</h2>
 
-        <!-- BOARDGAMES -->
-        <div class="type-section" data-type-label="桌遊・卡牌遊戲" data-type-zh="桌遊 · 卡牌遊戲" data-theme="dengue">
-          <div class="type-heading">
-            <span class="type-heading-name">桌遊・卡牌遊戲</span>
-            <span class="type-heading-zh">Boardgames &amp; Cardgames</span>
-            <span class="type-heading-count">2 項</span>
-          </div>
+      <div class="theme-hero-sub">
+        登革病毒 · 病媒蚊 · 合成生物學
+      </div>
 
-          <div class="resource-item">
-            <div class="resource-icon game">🎲</div>
-            <div class="resource-info">
-              <strong class="resource-title">DNA複製桌遊 — SnapGene</strong>
-              <span class="resource-zh">學習基因複製工具酶機制</span>
-              <div class="resource-meta">
-                <span class="resource-type-tag tag-dengue">登革熱</span>
-                <span class="resource-level">桌遊 · PDF 列印套件 · 適合各年齡</span>
-              </div>
-            </div>
-            <a class="resource-link dengue-link" href="https://static.igem.wiki/teams/5066/human-practice/snap-gene-compressed.pdf" target="_blank" rel="noopener">下載 ↓</a>
-          </div>
+      <p>
+        探討埃及斑蚊的生物特性、登革病毒複製機制，以及合成生物學工具如何應用於疾病監測與防治，包括基因迴路、工程菌與誘卵筒設計。
+      </p>
 
-          <div class="resource-item">
-            <div class="resource-icon game">🎲</div>
-            <div class="resource-info">
-              <strong class="resource-title">胺基酸組合卡牌 — AminoPoly</strong>
-              <span class="resource-zh">蛋白質合成與轉譯過程</span>
-              <div class="resource-meta">
-                <span class="resource-type-tag tag-dengue">登革熱</span>
-                <span class="resource-level">卡牌遊戲 · PDF 列印套件 · 適合各年齡</span>
-              </div>
-            </div>
-            <a class="resource-link dengue-link" href="https://static.igem.wiki/teams/5066/human-practice/aminopoly-compressed.pdf" target="_blank" rel="noopener">下載 ↓</a>
+      <div class="synbio-tags">
+        <span class="synbio-tag">病媒生物學</span>
+        <span class="synbio-tag">病毒複製</span>
+        <span class="synbio-tag">基因迴路</span>
+        <span class="synbio-tag">生物監測</span>
+      </div>
+
+    </div>
+
+    <!-- BOARDGAME -->
+
+    <div class="type-section">
+
+      <div class="type-heading">
+
+        <div>
+          <div class="type-heading-name">
+            桌遊・卡牌遊戲
           </div>
         </div>
 
-        <!-- COMICS -->
-        <div class="type-section" data-type-label="漫畫" data-type-zh="漫畫" data-theme="dengue">
-          <div class="type-heading">
-            <span class="type-heading-name">漫畫</span>
-            <span class="type-heading-zh">Comics</span>
-            <span class="type-heading-count">1 項</span>
+        <div class="type-heading-right">
+          <span class="type-heading-zh">Boardgames & Cardgames</span>
+          <span class="type-heading-count">2 項資源</span>
+        </div>
+
+      </div>
+
+      <div class="resources-grid">
+
+        <div class="resource-item">
+
+          <div class="resource-icon game">🎲</div>
+
+          <div class="resource-title">
+            DNA複製桌遊 — SnapGene
           </div>
 
-          <div class="resource-item">
-            <div class="resource-icon comic">📖</div>
-            <div class="resource-info">
-              <strong class="resource-title">漫畫故事 — 蚊子生命週期與誘卵筒原理</strong>
-              <span class="resource-zh">圖解蚊蟲生態與防治裝置的設計原理</span>
-              <div class="resource-meta">
-                <span class="resource-type-tag tag-dengue">登革熱</span>
-                <span class="resource-level">漫畫 · PDF · 國小適用</span>
-              </div>
-            </div>
-            <a class="resource-link dengue-link" href="https://static.igem.wiki/teams/5066/pdfs/bill-listen-my-children-these-evil-humans-are-trying-to-get-us-extinct-chloe-how-horrid-evil-humans-should-be-stopped-bill-i-heard-they-invented-this-new-ovitrap-they-lure-you-in-to-la.pdf" target="_blank" rel="noopener">下載 ↓</a>
+          <div class="resource-zh">
+            學習 DNA 複製與工具酶作用機制，透過互動式桌遊理解分子生物學核心概念。
+          </div>
+
+          <div class="resource-meta">
+            <span class="resource-type-tag tag-dengue">登革熱</span>
+            <span class="resource-level">PDF · 桌遊</span>
+          </div>
+
+          <a class="resource-link dengue-link"
+            href="https://static.igem.wiki/teams/5066/human-practice/snap-gene-compressed.pdf"
+            target="_blank">
+            下載 ↓
+          </a>
+
+        </div>
+
+        <div class="resource-item">
+
+          <div class="resource-icon game">🧬</div>
+
+          <div class="resource-title">
+            胺基酸組合卡牌 — AminoPoly
+          </div>
+
+          <div class="resource-zh">
+            透過卡牌配對與組裝，理解蛋白質轉譯與胺基酸排列邏輯。
+          </div>
+
+          <div class="resource-meta">
+            <span class="resource-type-tag tag-dengue">登革熱</span>
+            <span class="resource-level">卡牌遊戲</span>
+          </div>
+
+          <a class="resource-link dengue-link"
+            href="https://static.igem.wiki/teams/5066/human-practice/aminopoly-compressed.pdf"
+            target="_blank">
+            下載 ↓
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- COMICS -->
+
+    <div class="type-section">
+
+      <div class="type-heading">
+
+        <div>
+          <div class="type-heading-name">
+            漫畫
           </div>
         </div>
 
-      </div><!-- /dengue panel -->
-
-
-      <!-- ════ TEXTILE PANEL ════ -->
-      <div class="theme-panel" id="panel-textile">
-
-        <div class="theme-hero textile">
-          <h2>紡織廢料降解</h2>
-          <div class="theme-hero-zh">紡織廢料生物降解 — 酵素工程與永續發展</div>
-          <p>探討工程微生物與酵素路徑如何分解合成纖維廢料，涵蓋基因表現、代謝工程及實際永續應用。</p>
-          <div class="synbio-tags">
-            <span class="synbio-tag">酵素工程</span>
-            <span class="synbio-tag">基因表現</span>
-            <span class="synbio-tag">代謝路徑</span>
-            <span class="synbio-tag">生物修復</span>
-            <span class="synbio-tag">蛋白質折疊</span>
-          </div>
+        <div class="type-heading-right">
+          <span class="type-heading-zh">Comics</span>
+          <span class="type-heading-count">1 項資源</span>
         </div>
 
-        <!-- LESSON PLANS -->
-        <div class="type-section" data-type-label="教案" data-type-zh="教案" data-theme="textile">
-          <div class="type-heading">
-            <span class="type-heading-name">教案</span>
-            <span class="type-heading-zh">Lesson Plans</span>
-            <span class="type-heading-count">2 項</span>
+      </div>
+
+      <div class="resources-grid">
+
+        <div class="resource-item">
+
+          <div class="resource-icon comic">📖</div>
+
+          <div class="resource-title">
+            蚊子生命週期與誘卵筒原理
           </div>
 
-          <div class="resource-item">
-            <div class="resource-icon doc">📄</div>
-            <div class="resource-info">
-              <strong class="resource-title">酵素分解合成纖維教案 — 國小版</strong>
-              <span class="resource-zh">適合國小學生的纖維降解入門課程</span>
-              <div class="resource-meta">
-                <span class="resource-type-tag tag-textile">紡織</span>
-                <span class="resource-level">教案 · PDF · 國小適用</span>
-              </div>
-            </div>
-            <a class="resource-link textile-link" href="https://static.igem.wiki/teams/5729/educationwiki/gems-elementary-slides.pdf" target="_blank" rel="noopener">下載 ↓</a>
+          <div class="resource-zh">
+            以漫畫形式介紹蚊蟲生態、病毒傳播與誘卵筒防治設計。
           </div>
 
-          <div class="resource-item">
-            <div class="resource-icon doc">📄</div>
-            <div class="resource-info">
-              <strong class="resource-title">合成生物學與紡織廢料教案 — 國中版</strong>
-              <span class="resource-zh">適合國中學生的合成生物學進階課程</span>
-              <div class="resource-meta">
-                <span class="resource-type-tag tag-textile">紡織</span>
-                <span class="resource-level">教案 · PDF · 國中適用</span>
-              </div>
-            </div>
-            <a class="resource-link textile-link" href="https://static.igem.wiki/teams/5729/educationwiki/gems-taiwan-junior-high-school-educationnewest.pdf" target="_blank" rel="noopener">下載 ↓</a>
+          <div class="resource-meta">
+            <span class="resource-type-tag tag-dengue">漫畫教材</span>
+            <span class="resource-level">國小適用</span>
           </div>
+
+          <a class="resource-link dengue-link"
+            href="https://static.igem.wiki/teams/5066/pdfs/bill-listen-my-children-these-evil-humans-are-trying-to-get-us-extinct-chloe-how-horrid-evil-humans-should-be-stopped-bill-i-heard-they-invented-this-new-ovitrap-they-lure-you-in-to-la.pdf"
+            target="_blank">
+            下載 ↓
+          </a>
+
         </div>
 
-        <!-- BOARDGAMES -->
-        <div class="type-section" data-type-label="桌遊・卡牌遊戲" data-type-zh="桌遊 · 卡牌遊戲" data-theme="textile">
-          <div class="type-heading">
-            <span class="type-heading-name">桌遊・卡牌遊戲</span>
-            <span class="type-heading-zh">Boardgames &amp; Cardgames</span>
-            <span class="type-heading-count">2 項</span>
-          </div>
+      </div>
 
-          <div class="resource-item">
-            <div class="resource-icon game">🎲</div>
-            <div class="resource-info">
-              <strong class="resource-title">代謝路徑桌遊 — 建構纖維分解酵素路徑</strong>
-              <span class="resource-zh">透過遊戲學習酵素代謝路徑的組成</span>
-              <div class="resource-meta">
-                <span class="resource-type-tag tag-textile">紡織</span>
-                <span class="resource-level">桌遊 · PDF 列印套件 · 國小適用</span>
-              </div>
-            </div>
-            <a class="resource-link textile-link" href="https://static.igem.wiki/teams/5729/educationwiki/gems-elementary-slides.pdf" target="_blank" rel="noopener">下載 ↓</a>
-          </div>
+    </div>
 
-          <div class="resource-item">
-            <div class="resource-icon game">🎲</div>
-            <div class="resource-info">
-              <strong class="resource-title">基因表現與蛋白質組裝卡牌遊戲規則手冊</strong>
-              <span class="resource-zh">完整遊戲規則與教學說明</span>
-              <div class="resource-meta">
-                <span class="resource-type-tag tag-textile">紡織</span>
-                <span class="resource-level">卡牌遊戲 · PDF 規則手冊 · 適合各年齡</span>
-              </div>
-            </div>
-            <a class="resource-link textile-link" href="https://static.igem.wiki/teams/5729/educationwiki/card-game-rulebook.pdf" target="_blank" rel="noopener">下載 ↓</a>
-          </div>
+  </div>
+
+  <!-- TEXTILE -->
+
+  <div class="theme-panel" id="panel-textile">
+
+    <div class="theme-hero textile">
+
+      <h2>紡織廢料降解</h2>
+
+      <div class="theme-hero-sub">
+        酵素工程 · 永續材料 · 合成生物學
+      </div>
+
+      <p>
+        探討工程微生物與酵素如何分解合成纖維與微塑膠，並介紹代謝工程、蛋白質設計與永續應用。
+      </p>
+
+      <div class="synbio-tags">
+        <span class="synbio-tag">酵素工程</span>
+        <span class="synbio-tag">蛋白質折疊</span>
+        <span class="synbio-tag">代謝工程</span>
+        <span class="synbio-tag">生物修復</span>
+      </div>
+
+    </div>
+
+    <!-- LESSON PLANS -->
+
+    <div class="type-section">
+
+      <div class="type-heading">
+
+        <div class="type-heading-name">
+          教案
         </div>
 
-        <!-- ONLINE GAME -->
-        <div class="type-section" data-type-label="線上遊戲" data-type-zh="線上遊戲" data-theme="textile">
-          <div class="type-heading">
-            <span class="type-heading-name">線上遊戲</span>
-            <span class="type-heading-zh">Online Game</span>
-            <span class="type-heading-count">1 項</span>
-          </div>
-
-          <div class="resource-item">
-            <div class="resource-icon web">🕹️</div>
-            <div class="resource-info">
-              <strong class="resource-title">線上遊戲 — 對抗微塑膠的合成生物學戰士</strong>
-              <span class="resource-zh">瀏覽器遊戲，透過互動關卡認識微塑膠問題</span>
-              <div class="resource-meta">
-                <span class="resource-type-tag tag-textile">紡織</span>
-                <span class="resource-level">瀏覽器遊戲 · itch.io · 適合各年齡</span>
-              </div>
-            </div>
-            <a class="resource-link textile-link" href="https://caden-wu-gems-tw.itch.io/textile-fighter" target="_blank" rel="noopener">開始遊玩 →</a>
-          </div>
+        <div class="type-heading-right">
+          <span class="type-heading-zh">Lesson Plans</span>
+          <span class="type-heading-count">2 項資源</span>
         </div>
 
-        <!-- STORYBOOK -->
-        <div class="type-section" data-type-label="故事書" data-type-zh="故事書" data-theme="textile">
-          <div class="type-heading">
-            <span class="type-heading-name">故事書</span>
-            <span class="type-heading-zh">Storybook</span>
-            <span class="type-heading-count">1 項</span>
+      </div>
+
+      <div class="resources-grid">
+
+        <div class="resource-item">
+
+          <div class="resource-icon doc">📄</div>
+
+          <div class="resource-title">
+            酵素分解合成纖維教案
           </div>
 
-          <div class="resource-item">
-            <div class="resource-icon book">📚</div>
-            <div class="resource-info">
-              <strong class="resource-title">故事書 — 合成生物學與紡織科學的世界</strong>
-              <span class="resource-zh">以故事形式介紹合成生物學與永續紡織</span>
-              <div class="resource-meta">
-                <span class="resource-type-tag tag-textile">紡織</span>
-                <span class="resource-level">PDF · 適合各年齡</span>
-              </div>
-            </div>
-            <a class="resource-link textile-link" href="https://static.igem.wiki/teams/5729/educationwiki/storybook.pdf" target="_blank" rel="noopener">下載 ↓</a>
+          <div class="resource-zh">
+            適合國小學生的永續紡織與酵素降解入門課程。
           </div>
+
+          <div class="resource-meta">
+            <span class="resource-type-tag tag-textile">國小教材</span>
+            <span class="resource-level">PDF</span>
+          </div>
+
+          <a class="resource-link textile-link"
+            href="https://static.igem.wiki/teams/5729/educationwiki/gems-elementary-slides.pdf"
+            target="_blank">
+            下載 ↓
+          </a>
+
         </div>
 
-        <!-- PODCAST -->
-        <div class="type-section" data-type-label="播客" data-type-zh="播客" data-theme="textile">
-          <div class="type-heading">
-            <span class="type-heading-name">播客</span>
-            <span class="type-heading-zh">Podcast</span>
-            <span class="type-heading-count">1 項</span>
+        <div class="resource-item">
+
+          <div class="resource-icon doc">🧪</div>
+
+          <div class="resource-title">
+            合成生物學與紡織廢料
           </div>
 
-          <div class="resource-item">
-            <div class="resource-icon audio">🎙️</div>
-            <div class="resource-info">
-              <strong class="resource-title">合成生物學 Podcast 系列 — 隔壁的細胞</strong>
-              <span class="resource-zh">以輕鬆對話介紹合成生物學核心概念</span>
-              <div class="resource-meta">
-                <span class="resource-type-tag tag-textile">紡織</span>
-                <span class="resource-level">播客 · YouTube 播放清單</span>
-              </div>
-            </div>
-            <a class="resource-link textile-link" href="https://www.youtube.com/watch?v=ZmpN68o5IhI&list=PLyaRayqkCwh4QlQZU0eNYbZkm2F3JitTa&index=7" target="_blank" rel="noopener">觀看 →</a>
+          <div class="resource-zh">
+            結合合成生物學與環境永續的國中課程內容。
           </div>
+
+          <div class="resource-meta">
+            <span class="resource-type-tag tag-textile">國中教材</span>
+            <span class="resource-level">PDF</span>
+          </div>
+
+          <a class="resource-link textile-link"
+            href="https://static.igem.wiki/teams/5729/educationwiki/gems-taiwan-junior-high-school-educationnewest.pdf"
+            target="_blank">
+            下載 ↓
+          </a>
+
         </div>
 
-        <!-- AUDIOBOOK -->
-        <div class="type-section" data-type-label="有聲書" data-type-zh="有聲書" data-theme="textile">
-          <div class="type-heading">
-            <span class="type-heading-name">有聲書</span>
-            <span class="type-heading-zh">Audiobook</span>
-            <span class="type-heading-count">1 項</span>
-          </div>
+      </div>
 
-          <div class="resource-item">
-            <div class="resource-icon audio">🎧</div>
-            <div class="resource-info">
-              <strong class="resource-title">有聲書 — 合成生物學與永續紡織的未來</strong>
-              <span class="resource-zh">聆聽式學習，認識生物技術與環境永續</span>
-              <div class="resource-meta">
-                <span class="resource-type-tag tag-textile">紡織</span>
-                <span class="resource-level">有聲書 · YouTube 播放清單</span>
-              </div>
-            </div>
-            <a class="resource-link textile-link" href="https://www.youtube.com/watch?v=wDwpsd4awfM&list=PLyaRayqkCwh4QlQZU0eNYbZkm2F3JitTa&index=1" target="_blank" rel="noopener">收聽 →</a>
-          </div>
+    </div>
+
+    <!-- ONLINE GAME -->
+
+    <div class="type-section">
+
+      <div class="type-heading">
+
+        <div class="type-heading-name">
+          線上遊戲
         </div>
 
-      </div><!-- /textile panel -->
+        <div class="type-heading-right">
+          <span class="type-heading-zh">Interactive Game</span>
+          <span class="type-heading-count">1 項資源</span>
+        </div>
 
-    </div><!-- /main -->
-  </div><!-- /layout -->
+      </div>
 
-</div><!-- /page -->
+      <div class="resources-grid">
+
+        <div class="resource-item">
+
+          <div class="resource-icon web">🕹️</div>
+
+          <div class="resource-title">
+            對抗微塑膠的合成生物學戰士
+          </div>
+
+          <div class="resource-zh">
+            瀏覽器互動遊戲，認識微塑膠與工程酵素分解技術。
+          </div>
+
+          <div class="resource-meta">
+            <span class="resource-type-tag tag-textile">互動教材</span>
+            <span class="resource-level">itch.io</span>
+          </div>
+
+          <a class="resource-link textile-link"
+            href="https://caden-wu-gems-tw.itch.io/textile-fighter"
+            target="_blank">
+            開始遊玩 →
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
 </main>
 
 <script>
-  function switchTheme(theme, btn) {
-    document.querySelectorAll('.theme-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    document.querySelectorAll('.theme-panel').forEach(p => p.classList.remove('active'));
-    document.getElementById('panel-' + theme).classList.add('active');
-    buildTypeNav(theme);
-  }
 
-  function buildTypeNav(theme) {
-    const nav = document.getElementById('type-nav');
-    nav.innerHTML = '';
-    document.querySelectorAll('#panel-' + theme + ' .type-section').forEach(sec => {
-      const li = document.createElement('li');
-      li.className = 'type-nav-item hl-' + theme;
-      li.title = sec.dataset.typeZh || '';
-      li.innerHTML = '<span class="type-nav-dot"></span>' + sec.dataset.typeLabel;
-      li.onclick = () => sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      nav.appendChild(li);
-    });
-  }
+function switchTheme(theme, btn){
 
-  buildTypeNav('dengue');
+  document.querySelectorAll('.resource-tab').forEach(tab=>{
+    tab.classList.remove('active');
+  });
+
+  btn.classList.add('active');
+
+  document.querySelectorAll('.theme-panel').forEach(panel=>{
+    panel.classList.remove('active');
+  });
+
+  document.getElementById('panel-' + theme).classList.add('active');
+
+}
+
 </script>
 
 </body>
