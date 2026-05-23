@@ -1668,6 +1668,17 @@ main {
   margin-bottom: 24px;
 }
 
+.map-extra-image-wrap {
+  width: 80%;
+  margin: 40px auto 0;
+}
+
+.map-extra-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* ── Responsive slide sizing ── */
 @media (max-width: 700px) {
   .carousel-slide {
