@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,63 +8,40 @@
   <title>Gems Taiwan — Get Involved</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link 
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" 
-    rel="stylesheet" 
-  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
 
- 
+
   <link rel="stylesheet" href="../styles.css" />
 
   <style>
-    .poster-slideshow {
-      max-width: 560px;
-      margin: 40px auto 50px;
-      text-align: center;
-      padding: 0 24px;
+    .image-size {
+      width: auto;
+      height: 348px;
     }
 
-    .poster-slide-box {
-      background: #ffffff;
-      padding: 14px;
-      border-radius: 18px;
-      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
-    }
-
-    .poster-slide-box img {
-      width: 100%;
-      height: auto;
-      display: none;
-      border-radius: 12px;
-    }
-
-    .poster-slide-box img.active {
-      display: block;
-    }
-
-    .slideshow-controls {
+    .container {
       display: flex;
-      justify-content: center;
+      gap: 10px;
+    }
+
+    .box {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px 20px 20px;
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 18px;
-      margin-top: 18px;
-      flex-wrap: wrap;
+      text-align: center;
+      transition: box-shadow 0.18s, border-color 0.18s;
     }
 
-    .slide-btn {
-      border: none;
-      background: #ffffff;
-      padding: 10px 18px;
-      border-radius: 999px;
-      cursor: pointer;
-      font-family: "DM Sans", sans-serif;
-      font-weight: 600;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.10);
-    }
-
-    .slide-count {
-      font-size: 14px;
-      color: var(--text-muted);
+    .box-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 16px;
     }
 
     .signup-section {
@@ -109,79 +87,62 @@
 
 <body>
 
-<main>
+  <main>
 
-  <h1 class="page-title center" style="margin-top: 32px;">參與我們</h1>
+    <h1 class="page-title center" style="margin-top: 32px;">參與我們</h1>
 
-  <!-- Chinese / Mandarin poster slideshow -->
-  <div class="poster-slideshow">
-    <div class="poster-slide-box">
-
-      <img 
-        class="poster-slide active"
-        src="https://raw.githubusercontent.com/Oscariooooo/GEMSTAIWAN_ImageUPLOAD/main/ChinesePoster4.png" 
-        alt="Chinese Poster 4">
-
-      <img 
-        class="poster-slide"
-        src="https://raw.githubusercontent.com/Oscariooooo/GEMSTAIWAN_ImageUPLOAD/main/Chineseposter3.png" 
-        alt="Chinese Poster 3">
-
-      <img 
-        class="poster-slide"
-        src="https://raw.githubusercontent.com/Oscariooooo/GEMSTAIWAN_ImageUPLOAD/main/MandarinPoster.png" 
-        alt="Mandarin Poster">
-
-      <img 
-        class="poster-slide"
-        src="https://raw.githubusercontent.com/Oscariooooo/GEMSTAIWAN_ImageUPLOAD/main/ChinesePoster2.png" 
-        alt="Mandarin Poster 2">
-
+    <!-- Poster -->
+    <div class="container">
+      <div class="box">
+        <h2 class="box-title">國小</h2>
+        <img class="image-size" src="../images/involved/elementary_eng.png" alt="English Poster 2">
+      </div>
+      <div class="box">
+        <h2 class="box-title">國中</h2>
+        <img class="image-size" src="../images/involved/junior_eng.png" alt="English Poster 4">
+      </div>
+      <div class="box">
+        <h2 class="box-title">高中</h2>
+        <img class="image-size" src="../images/involved/high_eng.png" alt="English Poster">
+      </div>
     </div>
 
-    <div class="slideshow-controls">
-      <button class="slide-btn" type="button" onclick="changeSlide(-1)">← Previous</button>
-      <span class="slide-count" id="slideCount">1 / 4</span>
-      <button class="slide-btn" type="button" onclick="changeSlide(1)">Next →</button>
+
+
+    <div class="signup-section">
+      <h2>立即報名</h2>
+      <p><strong>填寫以下表單開始報名：</strong></p>
+
+      <a href="https://docs.google.com/forms/d/1GA3MGRhnRAbWJxb010RgmITatjY5hBockVmNfAcopHI/edit" target="_blank">
+        https://docs.google.com/forms/d/1GA3MGRhnRAbWJxb010RgmITatjY5hBockVmNfAcopHI/edit
+      </a>
     </div>
-  </div>
 
-  <div class="signup-section">
-    <h2>立即報名</h2>
-<p><strong>填寫以下表單開始報名：</strong></p>
+    <div class="standalone-diagram-wrapper">
+      <img src="https://raw.githubusercontent.com/Oscariooooo/GEMSTAIWAN_ImageUPLOAD/main/FlowchartChinese.png"
+        alt="中文工作坊流程圖">
+    </div>
 
-    <a 
-      href="https://docs.google.com/forms/d/1GA3MGRhnRAbWJxb010RgmITatjY5hBockVmNfAcopHI/edit" 
-      target="_blank">
-      https://docs.google.com/forms/d/1GA3MGRhnRAbWJxb010RgmITatjY5hBockVmNfAcopHI/edit
-    </a>
-  </div> 
+  </main>
 
-  <div class="standalone-diagram-wrapper">
-    <img 
-      src="https://raw.githubusercontent.com/Oscariooooo/GEMSTAIWAN_ImageUPLOAD/main/FlowchartChinese.png" 
-      alt="中文工作坊流程圖">
-  </div>
+  <script>
+    let currentSlide = 0;
 
-</main>
+    const slides = document.querySelectorAll(".poster-slide");
+    const slideCount = document.getElementById("slideCount");
 
-<script>
-  let currentSlide = 0;
+    function showSlide(index) {
+      slides[currentSlide].classList.remove("active");
+      currentSlide = (index + slides.length) % slides.length;
+      slides[currentSlide].classList.add("active");
+      slideCount.textContent = `${currentSlide + 1} / ${slides.length}`;
+    }
 
-  const slides = document.querySelectorAll(".poster-slide");
-  const slideCount = document.getElementById("slideCount");
-
-  function showSlide(index) {
-    slides[currentSlide].classList.remove("active");
-    currentSlide = (index + slides.length) % slides.length;
-    slides[currentSlide].classList.add("active");
-    slideCount.textContent = `${currentSlide + 1} / ${slides.length}`;
-  }
-
-  function changeSlide(direction) {
-    showSlide(currentSlide + direction);
-  }
-</script>
+    function changeSlide(direction) {
+      showSlide(currentSlide + direction);
+    }
+  </script>
 
 </body>
+
 </html>
