@@ -199,3 +199,75 @@ document.addEventListener("DOMContentLoaded", () => {
   initOutreachMap();
   initPastProjectsTimeline();
 });
+/* ══════════════════════════════════════
+   AUTO-ADVANCING IMAGE CAROUSEL
+   Works by duplicating slides so the
+   CSS animation loops seamlessly.
+   No JS timer needed — pure CSS scroll
+   with JS only for dot sync.
+══════════════════════════════════════ */
+
+function initCarousels() {
+  document.querySelectorAll('.carousel').forEach(carousel => {
+    const track = carousel.querySelector('.carousel-track');
+    if (!track) return;
+
+    const slides = Array.from(track.querySelectorAll('.carousel-slide'));
+    if (!slides.length) return;
+
+    // Duplicate all slides so the track is 2× wide → seamless loop
+    slides.forEach(slide => {
+      const clone = slide.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      track.appendChild(clone);
+    });
+
+    // Optional dot indicators — only for the real (non-cloned) slides
+    const dotsContainer = carousel.parentElement.querySelector('.carousel-dots');
+    if (!dotsContainer) return;
+
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+      dotsContainer.appendChild(dot);
+    });
+
+    const dots = dotsContainer.querySelectorAll('.carousel-dot');
+    const slideCount = slides.length;
+
+    // Sync dots to animation progress
+    function syncDots() {
+      const duration = parseFloat(
+        getComputedStyle(track).animationDuration
+      ) * 1000 || 24000;
+
+      const elapsed = (Date.now() % duration) / duration; // 0–1
+      const index = Math.floor(elapsed * slideCount) % slideCount;
+
+      dots.forEach((d, i) => d.classList.toggle('active', i === index));
+    }
+
+    // Run dot sync at ~10fps to save battery
+    setInterval(syncDots, 100);
+
+    // Clicking a dot jumps the animation to that slide's position
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        const duration = parseFloat(
+          getComputedStyle(track).animationDuration
+        ) * 1000 || 24000;
+
+        const fraction = i / slideCount;
+        const delayMs = -(fraction * duration);
+
+        track.style.animationDelay = `${delayMs}ms`;
+      });
+    });
+  });
+}
+
+// Call in DOMContentLoaded (already defined above — extend it)
+document.addEventListener('DOMContentLoaded', () => {
+  initCarousels();
+});
