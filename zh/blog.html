@@ -1,300 +1,207 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gems Taiwan — Science &amp; Ethics</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../styles.css" />
   <script>window.ACTIVE_PAGE = 'ethics.html';</script>
   <script defer src="../nav.js"></script>
+
   <style>
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    :root {
-      --border: rgba(28, 27, 24, 0.09);
-      --green: #3A7348;
-      --green-bg: #EEF6F1;
-      --serif: 'Playfair Display', Georgia, serif;
-      --sans: 'DM Sans', system-ui, sans-serif;
-    }
-
-    html {
-      font-size: 16px;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: var(--sans);
-      line-height: 1.6;
-      min-height: 100vh;
-    }
-
-    .page {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 4rem 2.5rem 7rem;
+    .slider-container {
+      position: relative;
       width: 100%;
+      max-width: 650px;
+      margin: 20px 0;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     }
-
-    /* Hero layout matching the explicit design of the About page */
-    .hero-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      align-items: start;
-      margin-top: 32px;
-      margin-bottom: 48px;
-      width: 1000px;
-    }
-
-    .hero-title {
-      font-size: clamp(32px, 6vw, 52px);
-      font-weight: 900;
-      line-height: 1.1;
-    }
-
-    .hero-subtitle {
-      font-size: 22px;
-      font-weight: 600;
-      color: var(--text-muted);
-      padding-top: 8px;
-    }
-
-    /* Timeline Structure */
-    .blog-timeline {
-      position: relative;
-    }
-
-    .blog-timeline::before {
-      content: '';
-      position: absolute;
-      left: 108px;
-      top: 0;
-      bottom: 0;
-      width: 1px;
-      background: var(--border);
-    }
-
-    .blog-entry {
-      display: grid;
-      grid-template-columns: 108px 1fr;
-      gap: 0 2.5rem;
-      padding: 3rem 0;
-      border-bottom: 1px solid var(--border);
-      position: relative;
-    }
-
-    .blog-entry:last-child {
-      border-bottom: none;
-    }
-
-    .blog-entry::after {
-      content: '';
-      position: absolute;
-      left: 104px;
-      top: 3.6rem;
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: var(--green);
-      border: 2px solid transparent;
-      box-shadow: 0 0 0 1px var(--green);
-    }
-
-    .blog-year {
-      padding-top: 2px;
-      text-align: right;
-      padding-right: 2rem;
-    }
-
-    .blog-year-num {
-      display: inline-block;
-      font-family: var(--serif);
-      font-size: 2rem;
-      font-weight: 900;
-      color: var(--green);
-      line-height: 1;
-    }
-
-    .blog-year-label {
-      display: block;
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-top: 4px;
-    }
-
-    .blog-theme-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      color: var(--green);
-      background: var(--green-bg);
-      padding: 4px 10px;
-      border-radius: 20px;
-      margin-bottom: 1rem;
-    }
-
-    .blog-theme-tag span {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--green);
-      display: inline-block;
-    }
-
-    .blog-title {
-      font-family: var(--serif);
-      font-size: clamp(1.3rem, 2.5vw, 1.75rem);
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 1rem;
-    }
-
-    .blog-text {
-      font-size: .95rem;
-      font-weight: 300;
-      color: var(--text-mid);
-      line-height: 1.85;
-      max-width: 640px;
-    }
-
-    .blog-text+.blog-text {
-      margin-top: .75rem;
-    }
-
-    .topic-pills {
+    .slider-wrapper {
       display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 1.25rem;
     }
-
-    .pill {
-      font-size: 11px;
-      font-weight: 500;
-      color: var(--text-mid);
-      background: rgba(28, 27, 24, .05);
-      border: 1px solid var(--border);
-      padding: 3px 10px;
-      border-radius: 20px;
+    .slider-slide {
+      min-width: 100%;
+      height: 380px;
+      object-fit: cover;
+      display: block;
     }
-
-    @media (max-width: 680px) {
-      .page {
-        padding: 2rem 1.25rem 5rem;
-      }
-
-      .hero-layout {
-        grid-template-columns: 1fr;
-        gap: 8px;
-        margin-bottom: 24px;
-      }
-
-      .blog-timeline::before {
-        display: none;
-      }
-
-      .blog-entry {
-        grid-template-columns: 1fr;
-        gap: .75rem;
-        padding: 2rem 0;
-      }
-
-      .blog-entry::after {
-        display: none;
-      }
-
-      .blog-year {
-        text-align: left;
-        padding-right: 0;
-      }
+    .slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.85);
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, transform 0.2s;
+      z-index: 10;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
     }
+    .slider-btn:hover {
+      background: #ffffff;
+      transform: translateY(-50%) scale(1.05);
+    }
+    .slider-btn.prev { left: 15px; }
+    .slider-btn.next { right: 15px; }
   </style>
 </head>
 
 
 <body>
-  <main>
-    <div class="page">
 
-      <div class="hero-layout">
-        <h1 class="hero-title">部落格與最新消息</h1>
-        <h2 class="hero-subtitle">活動記錄與心得</h2>
+
+
+<main>
+<div class="page">
+
+  <div class="hero-layout">
+    <h1 class="hero-title">部落格與最新消息</h1>
+    <h2 class="hero-subtitle">活動記錄與心得</h2>
+  </div>
+
+  <div class="blog-timeline">
+
+    <article class="blog-entry">
+      <div class="blog-year">
+        <span class="blog-year-num">2025</span>
+        <span class="blog-year-label">工作坊</span>
       </div>
-
-      <div class="blog-timeline">
-
-        <article class="blog-entry">
-          <div class="blog-year">
-            <span class="blog-year-num">2024</span>
-            <span class="blog-year-label">工作坊</span>
+      <div class="blog-body">
+        <div class="blog-theme-tag"><span></span>紡織廢料降解</div>
+        <h2 class="blog-title">透過互動式教學提升學生對紡織品污染的認識</h2>
+        <p class="blog-text">在 2025 團隊中，我們專注於透過互動式教學引導學生關注紡織品污染問題，帶領他們深入了解塑膠污染、紡織品回收，以及 DNA 和酵素在 biological 技術中所扮演的重要角色。</p>
+        <p class="blog-text">藉由為不同學齡階段的學生量身打造專屬課程與互動活動，我們能夠精準評估適合其程度的知識內容、彈性調整教學節奏，並在事後量化他們的學習成果。此外，我們也將合成生物學融入教學中，透過實驗與科學活動，讓學生更進一步認識 DNA 與合成生物學的奧秘。</p>
+        
+        <div class="slider-container" id="slider-2025">
+          <div class="slider-wrapper">
+            <img class="slider-slide" src="https://drive.google.com/thumbnail?id=14pQ1Xz_R3t9A2tF47I70r1x7OpxwZ6P3&sz=s4000" alt="2025 活動照片 1">
+            <img class="slider-slide" src="https://drive.google.com/thumbnail?id=14vX8Pz_Q3t9A2tF47I70r1x7OpxwZ6P4&sz=s4000" alt="2025 活動照片 2">
+            <img class="slider-slide" src="https://drive.google.com/thumbnail?id=14zW8Pz_R3t9A2tF47I70r1x7OpxwZ6P5&sz=s4000" alt="2025 活動照片 3">
           </div>
-          <div class="blog-body">
-            <div class="blog-theme-tag"><span></span>登革熱</div>
-            <h2 class="blog-title">青少年參與工作坊 — 登革熱與合成生物學</h2>
-            <p class="blog-text">在 2024
-              年的工作坊中，我們致力於透過串珠手鍊製作、實作實驗和互動遊戲等多元活動，讓青少年一同參與對抗登革熱的行動。為了進一步推廣登革熱防治這個主題，我們也融入了合成生物學的基礎課程。</p>
-            <p class="blog-text">透過將複雜的生物學概念化繁為簡，我們幫助不同年齡層的學生理解
-              ATCG、DNA、基因與細胞的運作機制。我們設計的合成生物學教育不僅旨在傳播相關科學概念，更希望能激發學生對合成生物學領域的濃厚興趣。</p>
-            <div class="topic-pills">
-              <span class="pill">手鍊製作</span>
-              <span class="pill">實作實驗</span>
-              <span class="pill">DNA 與基因</span>
-              <span class="pill">青少年推廣</span>
-            </div>
-            <div>
-              <img src="../images/blog/2024_1.jpg" alt="2024_1"
-                style="margin-top: 1.5rem; border-radius: 12px; max-width: 100%; height: auto;">
-            </div>
-        </article>
+          <button class="slider-btn prev" onclick="moveSlide('slider-2025', -1)">&#10094;</button>
+          <button class="slider-btn next" onclick="moveSlide('slider-2025', 1)">&#10095;</button>
+        </div>
 
-        <article class="blog-entry">
-          <div class="blog-year">
-            <span class="blog-year-num">2025</span>
-            <span class="blog-year-label">工作坊</span>
-          </div>
-          <div class="blog-body">
-            <div class="blog-theme-tag"><span></span>紡織廢料降解</div>
-            <h2 class="blog-title">透過互動式教學提升學生對紡織品污染的認識</h2>
-            <p class="blog-text">在 2025 團隊中，我們專注於透過互動式教學引導學生關注紡織品污染問題，帶領他們深入了解塑膠污染、紡織品回收，以及 DNA 和酵素在生物技術中所扮演的重要角色。</p>
-            <p class="blog-text">
-              藉由為不同學齡階段的學生量身打造專屬課程與互動活動，我們能夠精準評估適合其程度的知識內容、彈性調整教學節奏，並在事後量化他們的學習成果。此外，我們也將合成生物學融入教學中，透過實驗與科學活動，讓學生更進一步認識
-              DNA 與合成生物學的奧秘。</p>
-            <div class="topic-pills">
-              <span class="pill">塑膠污染</span>
-              <span class="pill">紡織品回收</span>
-              <span class="pill">酵素與 DNA</span>
-              <span class="pill">分層教學</span>
-            </div>
-            <div>
-              <img src="../images/blog/2025_1.webp" alt="2025_1"
-                style="margin-top: 1.5rem; border-radius: 12px; max-width: 100%; height: auto;">
-            </div>
-        </article>
-
+        <div class="topic-pills">
+          <span class="pill">塑膠污染</span>
+          <span class="pill">紡織品回收</span>
+          <span class="pill">酵素與 DNA</span>
+          <span class="pill">分層教學</span>
+        </div>
       </div>
+    </article>
 
-    </div>
-  </main>
+    <article class="blog-entry">
+      <div class="blog-year">
+        <span class="blog-year-num">2024</span>
+        <span class="blog-year-label">工作坊</span>
+      </div>
+      <div class="blog-body">
+        <div class="blog-theme-tag"><span></span>登革熱</div>
+        <h2 class="blog-title">青少年參與工作坊 — 登革熱與合成生物學</h2>
+        <p class="blog-text">在 2024 年的工作坊中，我們致力於透過串珠手鍊製作、實作實驗和互動遊戲等多元活動，讓青少年一同參與對抗登革熱的行動。為了進一步推廣登革熱防治這個主題，我們也融入了合成生物學的基礎課程。</p>
+        <p class="blog-text">透過將複雜的生物學概念化繁為簡，我們幫助不同年齡層的學生理解 ATCG、DNA、基因與細胞的運作機制。我們設計的合成生物學教育不僅旨在傳播相關科學概念，更希望能激發學生對合成生物學領域的濃厚興趣。</p>
+        
+        <div class="slider-container" id="slider-2024">
+          <div class="slider-wrapper">
+            <img class="slider-slide" src="https://drive.google.com/file/d/1y_WWTVwJpY8vVO-ftoVL9h40nOcaAxSt/view?usp=drive_link" alt="2024 活動照片 ">
+            <img class="slider-slide" src="https://drive.google.com/file/d/1qGnb8VxURoD7CCjcCYBWgkN9QlFEojE7/view?usp=drive_link" alt="2024 活動照片 ">
+            <img class="slider-slide" src="https://drive.google.com/file/d/1CSgGoDls8GbWX96LOZQ1mZvEpObj6LuC/view?usp=drive_link" alt="2024 活動照片 ">
+            <img class="slider-slide" src="https://drive.google.com/file/d/1tWs0AbCbitCacoj64NLl1gLlLND-MUue/view?usp=drive_link" alt="2024 活動照片 ">
+            <img class="slider-slide" src="https://drive.google.com/file/d/1L0zSD__qREWlE0RAcHuT2-6AriyMNVGO/view?usp=drive_link" alt="2024 活動照片 ">
+            <img class="slider-slide" src="https://drive.google.com/file/d/1Xd5_P8Q_vALPH5s3nrctDJ-LeF40qYM9/view?usp=drive_link" alt="2024 活動照片 ">
+            <img class="slider-slide" src="https://drive.google.com/file/d/1HBursuzmX5zF3IswFY8aFhLosNyzbDWi/view?usp=drive_link" alt="2024 活動照片 ">
+            <img class="slider-slide" src="https://drive.google.com/file/d/1N1NnW5IX83_nlvRqbFSTqQK0Fu9B-BrI/view?usp=drive_link" alt="2024 活動照片 ">
+          </div>
+          <button class="slider-btn prev" onclick="moveSlide('slider-2024', -1)">&#10094;</button>
+          <button class="slider-btn next" onclick="moveSlide('slider-2024', 1)">&#10095;</button>
+        </div>
+
+        <div class="topic-pills">
+          <span class="pill">手鍊製作</span>
+          <span class="pill">實作實驗</span>
+          <span class="pill">DNA 與基因</span>
+          <span class="pill">青少年推廣</span>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+</div>
+</main>
+
+<script>
+  const slidersData = {};
+
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".slider-container").forEach((container) => {
+      const id = container.id;
+      const wrapper = container.querySelector(".slider-wrapper");
+      const originalSlides = container.querySelectorAll(".slider-slide");
+      const originalCount = originalSlides.length;
+
+      if (originalCount === 0) return;
+
+      const firstClone = originalSlides[0].cloneNode(true);
+      const lastClone = originalSlides[originalCount - 1].cloneNode(true);
+
+      wrapper.appendChild(firstClone);
+      wrapper.insertBefore(lastClone, originalSlides[0]);
+
+      let currentIndex = 1;
+      wrapper.style.transition = "none";
+      wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+      slidersData[id] = {
+        wrapper: wrapper,
+        currentIndex: currentIndex,
+        totalWithClones: originalCount + 2,
+        originalCount: originalCount,
+        isTransitioning: false
+      };
+    });
+  });
+
+  function moveSlide(sliderId, direction) {
+    const data = slidersData[sliderId];
+    if (!data || data.isTransitioning) return;
+
+    data.isTransitioning = true;
+    data.currentIndex += direction;
+
+    data.wrapper.style.transition = "transform 0.4s ease-in-out";
+    data.wrapper.style.transform = `translateX(-${data.currentIndex * 100}%)`;
+
+    data.wrapper.addEventListener("transitionend", function exactReset() {
+      data.wrapper.removeEventListener("transitionend", exactReset);
+
+      if (data.currentIndex >= data.totalWithClones - 1) {
+        data.wrapper.style.transition = "none";
+        data.currentIndex = 1;
+        data.wrapper.style.transform = `translateX(-${data.currentIndex * 100}%)`;
+      } 
+      else if (data.currentIndex <= 0) {
+        data.wrapper.style.transition = "none";
+        data.currentIndex = data.originalCount;
+        data.wrapper.style.transform = `translateX(-${data.currentIndex * 100}%)`;
+      }
+
+      data.isTransitioning = false;
+    });
+  }
+</script>
 
 </body>
-
 </html>
