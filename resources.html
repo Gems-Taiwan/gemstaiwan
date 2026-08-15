@@ -504,6 +504,12 @@
       border-color: var(--textile-border);
     }
 
+    .resource-item:hover .resource-link.new-link {
+      background: var(--new-bg);
+      color: var(--new-text);
+      border-color: var(--new-border);
+    }
+
     .resource-link.coming {
       opacity: .38;
       pointer-events: none;
@@ -544,18 +550,18 @@
       <div class="sidebar-label">Choose a theme</div>
 
                   <button class="theme-btn active"
-                    data-theme="new"
-                    onclick="switchTheme('new', this)">
+                          data-theme="new"
+                          onclick="switchTheme('new', this)">
 
-        <div class="theme-btn-inner">
-          <div class="theme-btn-pip"></div>
+                    <div class="theme-btn-inner">
+                      <div class="theme-btn-pip"></div>
 
-          <div class="theme-btn-text">
-            <span class="theme-btn-name">New Theme</span>
-            <span class="theme-btn-count">2 resources</span>
-          </div>
-        </div>
-      </button>
+                      <div class="theme-btn-text">
+                        <span class="theme-btn-name">New Theme</span>
+                        <span class="theme-btn-count">6 resources</span>
+                      </div>
+                    </div>
+                  </button>
 
             <button class="theme-btn"
               data-theme="dengue"
@@ -1186,7 +1192,7 @@
 
           <div class="type-heading">
             <span class="type-heading-name">Lesson Plans</span>
-            <span class="type-heading-count">1 item</span>
+            <span class="type-heading-count">3 items</span>
           </div>
 
           <div class="resource-item">
@@ -1206,14 +1212,67 @@
               </div>
             </div>
 
-            <a class="resource-link"
+            <a class="resource-link new-link"
                href="https://docs.google.com/document/d/1_Zz0lcXX8pJWoUvxaR_V16XEpOn_77D-/edit"
                target="_blank"
                rel="noopener">
 
-              Open ↗
+              Download ↓
             </a>
           </div>
+
+          <div class="resource-item">
+
+            <div class="resource-icon doc">📄</div>
+
+            <div class="resource-info">
+              <strong class="resource-title">
+                Junior High School Lesson Plan
+              </strong>
+
+              <div class="resource-meta">
+                <span class="resource-type-tag">New</span>
+                <span class="resource-level">
+                  Lesson plan · Google Doc · junior high school
+                </span>
+              </div>
+            </div>
+
+            <a class="resource-link new-link"
+               href="https://docs.google.com/document/d/1IeCZfAKOXkoFAf32Rsn57-YSFWzL7IgK/edit#heading=h.h5xegitf0dna"
+               target="_blank"
+               rel="noopener">
+
+              Download ↓
+            </a>
+          </div>
+
+          <div class="resource-item">
+
+            <div class="resource-icon doc">📄</div>
+
+            <div class="resource-info">
+              <strong class="resource-title">
+                High School Lesson Plan
+              </strong>
+
+              <div class="resource-meta">
+                <span class="resource-type-tag">New</span>
+                <span class="resource-level">
+                  Lesson plan · Google Doc · high school
+                </span>
+              </div>
+            </div>
+
+            <a class="resource-link new-link"
+               href="https://docs.google.com/document/d/1uGPNanzQcx_cx7l0gSlMYOTUdcg-tyXp92xl_qKgFsY/edit?tab=t.0#heading=h.h5xegitf0dna"
+               target="_blank"
+               rel="noopener">
+
+              Download ↓
+            </a>
+          </div>
+
         </div>
 
         <div class="type-section"
@@ -1222,7 +1281,7 @@
 
           <div class="type-heading">
             <span class="type-heading-name">Lesson Slides</span>
-            <span class="type-heading-count">1 item</span>
+            <span class="type-heading-count">3 items</span>
           </div>
 
           <div class="resource-item">
@@ -1231,29 +1290,78 @@
 
             <div class="resource-info">
               <strong class="resource-title">
-                Lesson Slides (folder)
+                Plant Defenders — Beating Environmental Stress (Elementary)
               </strong>
-
-              <span class="resource-desc">
-                A folder of slides for classroom use.
-              </span>
 
               <div class="resource-meta">
                 <span class="resource-type-tag">New</span>
                 <span class="resource-level">
-                  Slides · Google Drive
+                  Slides · PDF · elementary school
                 </span>
               </div>
             </div>
 
-            <a class="resource-link"
-               href="https://drive.google.com/drive/folders/19Smj1dxsIeRjJKBNqeV2t-xNdh9bJ7ml"
+            <a class="resource-link new-link"
+               href="https://drive.google.com/file/d/1EHIhA_hbRsbHOsfM7IwcGNF1tc3YJnLk/view?usp=sharing"
                target="_blank"
                rel="noopener">
 
-              Open folder ↗
+              Download ↓
             </a>
           </div>
+
+          <div class="resource-item">
+
+            <div class="resource-icon doc">🖥️</div>
+
+            <div class="resource-info">
+              <strong class="resource-title">
+                氣候保衛戰：守護植物的微型工程師 (Junior High)
+              </strong>
+
+              <div class="resource-meta">
+                <span class="resource-type-tag">New</span>
+                <span class="resource-level">
+                  Slides · Google Slides · junior high
+                </span>
+              </div>
+            </div>
+
+            <a class="resource-link new-link"
+               href="https://docs.google.com/presentation/d/1q4i3k1JyIGkHxeRoxyKOdYg-cB85jMFkPhW0xPFYmh8/edit?slide=id.g4dfce81f19_0_45#slide=id.g4dfce81f19_0_45"
+               target="_blank"
+               rel="noopener">
+
+              Download ↓
+            </a>
+          </div>
+
+          <div class="resource-item">
+
+            <div class="resource-icon doc">🖥️</div>
+
+            <div class="resource-info">
+              <strong class="resource-title">
+                Genetic Code & Food Security (High School)
+              </strong>
+
+              <div class="resource-meta">
+                <span class="resource-type-tag">New</span>
+                <span class="resource-level">
+                  Slides · Canva · high school
+                </span>
+              </div>
+            </div>
+
+            <a class="resource-link new-link"
+               href="https://www.canva.com/design/DAHHlxSUsXY/a6eo5KZFuYGzaMemCxc4BA/edit"
+               target="_blank"
+               rel="noopener">
+
+              Download ↓
+            </a>
+          </div>
+
         </div>
       </div>
 

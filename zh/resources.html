@@ -504,6 +504,12 @@
       border-color: var(--textile-border);
     }
 
+    .resource-item:hover .resource-link.new-link {
+      background: var(--new-bg);
+      color: var(--new-text);
+      border-color: var(--new-border);
+    }
+
     .resource-link.coming {
       opacity: .38;
       pointer-events: none;
@@ -544,18 +550,18 @@
       <div class="sidebar-label">選擇教學主題</div>
 
                   <button class="theme-btn active"
-                    data-theme="new"
-                    onclick="switchTheme('new', this)">
+                          data-theme="new"
+                          onclick="switchTheme('new', this)">
 
-        <div class="theme-btn-inner">
-          <div class="theme-btn-pip"></div>
+                    <div class="theme-btn-inner">
+                      <div class="theme-btn-pip"></div>
 
-          <div class="theme-btn-text">
-            <span class="theme-btn-name">新增主題</span>
-            <span class="theme-btn-count">2 項資源</span>
-          </div>
-        </div>
-      </button>
+                      <div class="theme-btn-text">
+                        <span class="theme-btn-name">新增主題</span>
+                        <span class="theme-btn-count">6 項資源</span>
+                      </div>
+                    </div>
+                  </button>
 
             <button class="theme-btn"
               data-theme="dengue"
@@ -1174,10 +1180,10 @@
              data-type-label="課堂教案"
              data-theme="new">
 
-          <div class="type-heading">
-            <span class="type-heading-name">課堂教案</span>
-            <span class="type-heading-count">1 項項目</span>
-          </div>
+            <div class="type-heading">
+              <span class="type-heading-name">課堂教案</span>
+              <span class="type-heading-count">3 項項目</span>
+            </div>
 
           <div class="resource-item">
 
@@ -1196,23 +1202,23 @@
               </div>
             </div>
 
-            <a class="resource-link"
+            <a class="resource-link new-link"
                href="https://docs.google.com/document/d/180TQqncR-N0-Z3eT3k83kYjxaigYA1UM/edit#heading=h.r4z7qkuvmqt4"
                target="_blank"
                rel="noopener">
 
-              開啟 ↗
+              檔案下載 ↓
             </a>
           </div>
         </div>
-
+        
         <div class="type-section"
              data-type-label="教學簡報"
              data-theme="new">
 
           <div class="type-heading">
             <span class="type-heading-name">教學簡報</span>
-            <span class="type-heading-count">1 項項目</span>
+            <span class="type-heading-count">3 項項目</span>
           </div>
 
           <div class="resource-item">
@@ -1221,27 +1227,75 @@
 
             <div class="resource-info">
               <strong class="resource-title">
-                教學簡報（資料夾）
+                Plant Defenders：抵抗環境壓力（國小）
               </strong>
-
-              <span class="resource-desc">
-                存放投影片的 Google Drive 資料夾。
-              </span>
 
               <div class="resource-meta">
                 <span class="resource-type-tag">新增</span>
                 <span class="resource-level">
-                  簡報投影片 · Google Drive
+                  簡報投影片 · PDF · 國小學級
                 </span>
               </div>
             </div>
 
-            <a class="resource-link"
-               href="https://drive.google.com/drive/folders/19Smj1dxsIeRjJKBNqeV2t-xNdh9bJ7ml"
+            <a class="resource-link new-link"
+               href="https://drive.google.com/file/d/1EHIhA_hbRsbHOsfM7IwcGNF1tc3YJnLk/view?usp=sharing"
                target="_blank"
                rel="noopener">
 
-              開啟資料夾 ↗
+              檔案下載 ↓
+            </a>
+          </div>
+
+          <div class="resource-item">
+
+            <div class="resource-icon doc">🖥️</div>
+
+            <div class="resource-info">
+              <strong class="resource-title">
+                氣候保衛戰：守護植物的微型工程師（國中）
+              </strong>
+
+              <div class="resource-meta">
+                <span class="resource-type-tag">新增</span>
+                <span class="resource-level">
+                  簡報投影片 · Google Slides · 國中學級
+                </span>
+              </div>
+            </div>
+
+            <a class="resource-link new-link"
+               href="https://docs.google.com/presentation/d/1q4i3k1JyIGkHxeRoxyKOdYg-cB85jMFkPhW0xPFYmh8/edit?slide=id.g4dfce81f19_0_45#slide=id.g4dfce81f19_0_45"
+               target="_blank"
+               rel="noopener">
+
+              檔案下載 ↓
+            </a>
+          </div>
+
+          <div class="resource-item">
+
+            <div class="resource-icon doc">🖥️</div>
+
+            <div class="resource-info">
+              <strong class="resource-title">
+                基因密碼解密：從 DNA 到未來糧食安全（高中）
+              </strong>
+
+              <div class="resource-meta">
+                <span class="resource-type-tag">新增</span>
+                <span class="resource-level">
+                  簡報投影片 · Canva · 高中學級
+                </span>
+              </div>
+            </div>
+
+            <a class="resource-link new-link"
+               href="https://www.canva.com/design/DAHHlxSUsXY/a6eo5KZFuYGzaMemCxc4BA/edit"
+               target="_blank"
+               rel="noopener">
+
+              檔案下載 ↓
             </a>
           </div>
         </div>
