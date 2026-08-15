@@ -54,6 +54,12 @@
       --textile-text: #1A3D6E;
       --textile-accent: #185FA5;
 
+      --new: #3B8F5A;
+      --new-bg: #ECF8EE;
+      --new-border: #CFEBD6;
+      --new-text: #1F5A33;
+      --new-accent: #2EA64A;
+
       --font-display: 'DM Serif Display', Georgia, serif;
       --font-body: 'DM Sans', system-ui, sans-serif;
       --ease: cubic-bezier(.4,0,.2,1);
@@ -212,6 +218,19 @@
       color: var(--textile-text);
     }
 
+    .theme-btn.active[data-theme="new"] .theme-btn-inner {
+      background: var(--new-bg);
+      border-color: var(--new-border);
+    }
+
+    .theme-btn.active[data-theme="new"] .theme-btn-pip {
+      background: var(--new-accent);
+    }
+
+    .theme-btn.active[data-theme="new"] .theme-btn-count {
+      color: var(--new-text);
+    }
+
     .theme-btn:not(.active) .theme-btn-count {
       color: var(--ink-faint);
     }
@@ -287,6 +306,11 @@
       border: 1px solid var(--textile-border);
     }
 
+    .theme-hero.new {
+      background: var(--new-bg);
+      border: 1px solid var(--new-border);
+    }
+
     .theme-hero h2 {
       font-family: var(--font-display);
       font-size: 1.7rem;
@@ -327,6 +351,11 @@
     .textile .synbio-tag {
       border-color: var(--textile-border);
       color: var(--textile-text);
+    }
+
+    .new .synbio-tag {
+      border-color: var(--new-border);
+      color: var(--new-text);
     }
 
     .type-section {
@@ -514,6 +543,20 @@
 
       <div class="sidebar-label">Choose a theme</div>
 
+      <button class="theme-btn"
+              data-theme="new"
+              onclick="switchTheme('new', this)">
+
+        <div class="theme-btn-inner">
+          <div class="theme-btn-pip"></div>
+
+          <div class="theme-btn-text">
+            <span class="theme-btn-name">New Theme</span>
+            <span class="theme-btn-count">0 resources</span>
+          </div>
+        </div>
+      </button>
+
       <button class="theme-btn active"
               data-theme="dengue"
               onclick="switchTheme('dengue', this)">
@@ -538,20 +581,6 @@
           <div class="theme-btn-text">
             <span class="theme-btn-name">Textile Degradation</span>
             <span class="theme-btn-count">9 resources</span>
-          </div>
-        </div>
-      </button>
-
-      <button class="theme-btn"
-              data-theme="new"
-              onclick="switchTheme('new', this)">
-
-        <div class="theme-btn-inner">
-          <div class="theme-btn-pip"></div>
-
-          <div class="theme-btn-text">
-            <span class="theme-btn-name">New Theme</span>
-            <span class="theme-btn-count">0 resources</span>
           </div>
         </div>
       </button>
@@ -1137,7 +1166,7 @@
 
       <div class="theme-panel" id="panel-new">
 
-        <div class="theme-hero">
+        <div class="theme-hero new">
           <h2>New Theme</h2>
 
           <p>
