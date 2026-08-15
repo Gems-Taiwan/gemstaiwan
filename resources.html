@@ -543,21 +543,21 @@
 
       <div class="sidebar-label">Choose a theme</div>
 
-      <button class="theme-btn"
-              data-theme="new"
-              onclick="switchTheme('new', this)">
+                  <button class="theme-btn active"
+                    data-theme="new"
+                    onclick="switchTheme('new', this)">
 
         <div class="theme-btn-inner">
           <div class="theme-btn-pip"></div>
 
           <div class="theme-btn-text">
             <span class="theme-btn-name">New Theme</span>
-            <span class="theme-btn-count">0 resources</span>
+            <span class="theme-btn-count">2 resources</span>
           </div>
         </div>
       </button>
 
-      <button class="theme-btn active"
+            <button class="theme-btn"
               data-theme="dengue"
               onclick="switchTheme('dengue', this)">
 
@@ -595,7 +595,7 @@
 
     <div class="main">
 
-      <div class="theme-panel active" id="panel-dengue">
+      <div class="theme-panel" id="panel-dengue">
 
         <div class="theme-hero dengue">
           <h2>Dengue Fever</h2>
@@ -1164,7 +1164,7 @@
 
       </div>
 
-      <div class="theme-panel" id="panel-new">
+      <div class="theme-panel active" id="panel-new">
 
         <div class="theme-hero new">
           <h2>New Theme</h2>
@@ -1181,12 +1181,12 @@
         </div>
 
         <div class="type-section"
-             data-type-label="Placeholder"
+             data-type-label="Lesson Plans"
              data-theme="new">
 
           <div class="type-heading">
-            <span class="type-heading-name">Placeholder</span>
-            <span class="type-heading-count">0 items</span>
+            <span class="type-heading-name">Lesson Plans</span>
+            <span class="type-heading-count">1 item</span>
           </div>
 
           <div class="resource-item">
@@ -1195,27 +1195,66 @@
 
             <div class="resource-info">
               <strong class="resource-title">
-                Placeholder resource title
+                Elementary Lesson Plan
               </strong>
 
               <div class="resource-meta">
                 <span class="resource-type-tag">New</span>
                 <span class="resource-level">
-                  Coming soon
+                  Lesson plan · Google Doc · elementary school
                 </span>
               </div>
             </div>
 
-            <a class="resource-link coming"
-               href="#"
+            <a class="resource-link"
+               href="https://docs.google.com/document/d/1_Zz0lcXX8pJWoUvxaR_V16XEpOn_77D-/edit"
                target="_blank"
                rel="noopener">
 
-              Coming soon
+              Open ↗
             </a>
           </div>
         </div>
 
+        <div class="type-section"
+             data-type-label="Lesson Slides"
+             data-theme="new">
+
+          <div class="type-heading">
+            <span class="type-heading-name">Lesson Slides</span>
+            <span class="type-heading-count">1 item</span>
+          </div>
+
+          <div class="resource-item">
+
+            <div class="resource-icon doc">🖥️</div>
+
+            <div class="resource-info">
+              <strong class="resource-title">
+                Lesson Slides (folder)
+              </strong>
+
+              <span class="resource-desc">
+                A folder of slides for classroom use.
+              </span>
+
+              <div class="resource-meta">
+                <span class="resource-type-tag">New</span>
+                <span class="resource-level">
+                  Slides · Google Drive
+                </span>
+              </div>
+            </div>
+
+            <a class="resource-link"
+               href="https://drive.google.com/drive/folders/19Smj1dxsIeRjJKBNqeV2t-xNdh9bJ7ml"
+               target="_blank"
+               rel="noopener">
+
+              Open folder ↗
+            </a>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -1262,7 +1301,7 @@
   }
 
   // Initial load
-  buildTypeNav('dengue');
+  buildTypeNav('new');
 </script>
 
 </body>

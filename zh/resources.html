@@ -543,21 +543,21 @@
 
       <div class="sidebar-label">選擇教學主題</div>
 
-      <button class="theme-btn"
-              data-theme="new"
-              onclick="switchTheme('new', this)">
+                  <button class="theme-btn active"
+                    data-theme="new"
+                    onclick="switchTheme('new', this)">
 
         <div class="theme-btn-inner">
           <div class="theme-btn-pip"></div>
 
           <div class="theme-btn-text">
             <span class="theme-btn-name">新增主題</span>
-            <span class="theme-btn-count">0 項資源</span>
+            <span class="theme-btn-count">2 項資源</span>
           </div>
         </div>
       </button>
 
-      <button class="theme-btn active"
+            <button class="theme-btn"
               data-theme="dengue"
               onclick="switchTheme('dengue', this)">
 
@@ -595,7 +595,7 @@
 
     <div class="main">
 
-      <div class="theme-panel active" id="panel-dengue">
+      <div class="theme-panel" id="panel-dengue">
 
         <div class="theme-hero dengue">
           <h2>登革熱防治</h2>
@@ -1155,7 +1155,7 @@
 
       </div>
 
-      <div class="theme-panel" id="panel-new">
+      <div class="theme-panel active" id="panel-new">
 
         <div class="theme-hero new">
           <h2>新增主題</h2>
@@ -1171,12 +1171,12 @@
         </div>
 
         <div class="type-section"
-             data-type-label="佔位"
+             data-type-label="課堂教案"
              data-theme="new">
 
           <div class="type-heading">
-            <span class="type-heading-name">佔位</span>
-            <span class="type-heading-count">0 項項目</span>
+            <span class="type-heading-name">課堂教案</span>
+            <span class="type-heading-count">1 項項目</span>
           </div>
 
           <div class="resource-item">
@@ -1185,23 +1185,63 @@
 
             <div class="resource-info">
               <strong class="resource-title">
-                佔位資源標題
+                國小課程教案
               </strong>
 
               <div class="resource-meta">
                 <span class="resource-type-tag">新增</span>
                 <span class="resource-level">
-                  即將推出
+                  課堂教案 · Google 文件 · 國小學級
                 </span>
               </div>
             </div>
 
-            <a class="resource-link coming"
-               href="#"
+            <a class="resource-link"
+               href="https://docs.google.com/document/d/180TQqncR-N0-Z3eT3k83kYjxaigYA1UM/edit#heading=h.r4z7qkuvmqt4"
                target="_blank"
                rel="noopener">
 
-              即將推出
+              開啟 ↗
+            </a>
+          </div>
+        </div>
+
+        <div class="type-section"
+             data-type-label="教學簡報"
+             data-theme="new">
+
+          <div class="type-heading">
+            <span class="type-heading-name">教學簡報</span>
+            <span class="type-heading-count">1 項項目</span>
+          </div>
+
+          <div class="resource-item">
+
+            <div class="resource-icon doc">🖥️</div>
+
+            <div class="resource-info">
+              <strong class="resource-title">
+                教學簡報（資料夾）
+              </strong>
+
+              <span class="resource-desc">
+                存放投影片的 Google Drive 資料夾。
+              </span>
+
+              <div class="resource-meta">
+                <span class="resource-type-tag">新增</span>
+                <span class="resource-level">
+                  簡報投影片 · Google Drive
+                </span>
+              </div>
+            </div>
+
+            <a class="resource-link"
+               href="https://drive.google.com/drive/folders/19Smj1dxsIeRjJKBNqeV2t-xNdh9bJ7ml"
+               target="_blank"
+               rel="noopener">
+
+              開啟資料夾 ↗
             </a>
           </div>
         </div>
@@ -1252,7 +1292,7 @@
   }
 
   // 初始載入
-  buildTypeNav('dengue');
+  buildTypeNav('new');
 </script>
 
 </body>
