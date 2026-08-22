@@ -33,6 +33,12 @@ const outreachMapData = {
     alt: "Luzhou Elementary School outreach"
   },
 
+  pengbo: {
+    title: isChinesePage ? "私立芃博文理短期補習班" : "Private Pengbo Liberal Arts and Science Cram School",
+    image: getAssetPath("images/outreach/Redone.png"),
+    alt: "Private Pengbo Liberal Arts and Science Cram School outreach"
+  },
+
   yucheng: {
     title: isChinesePage ? "臺北市立育成高中" : "Taipei Municipal Yucheng Senior High School",
     image: getAssetPath("images/outreach/yucheng.jpg"),
@@ -103,6 +109,18 @@ const outreachMapData = {
     title: isChinesePage ? "新北市頂溪國小" : "Dingxi Elementary School",
     image: getAssetPath("images/outreach/Credone.png"),
     alt: "Dingxi Elementary School outreach"
+  },
+
+  yongping: {
+    title: isChinesePage ? "永平國小" : "Yongping Elementary School",
+    image: getAssetPath("images/outreach/yonghe.jpg"),
+    alt: "Yongping Elementary School outreach"
+  },
+
+  fuhsing: {
+    title: isChinesePage ? "臺北市私立復興實驗高級中學" : "Taipei Fuhsing Private School",
+    image: getAssetPath("images/outreach/xisong.jpg"),
+    alt: "Taipei Fuhsing Private School outreach"
   }
 };
 
