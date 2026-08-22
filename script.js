@@ -91,6 +91,18 @@ const outreachMapData = {
     title: isChinesePage ? "西松高中" : "Xisong High School",
     image: getAssetPath("images/outreach/xisong.jpg"),
     alt: "Xisong High School outreach"
+  },
+
+  utaipei: {
+    title: isChinesePage ? "台北市立大學附設國小" : "Affiliated Experimental Elementary School of University of Taipei",
+    image: getAssetPath("images/outreach/Redone.png"),
+    alt: "Affiliated Experimental Elementary School of University of Taipei outreach"
+  },
+
+  dingxi: {
+    title: isChinesePage ? "新北市頂溪國小" : "Dingxi Elementary School",
+    image: getAssetPath("images/outreach/Credone.png"),
+    alt: "Dingxi Elementary School outreach"
   }
 };
 
