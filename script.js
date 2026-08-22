@@ -35,7 +35,7 @@ const outreachMapData = {
 
   pengbo: {
     title: isChinesePage ? "私立芃博文理短期補習班" : "Private Pengbo Liberal Arts and Science Cram School",
-    image: getAssetPath("images/outreach/Redone.png"),
+    image: getAssetPath("images/outreach/3.webp"),
     alt: "Private Pengbo Liberal Arts and Science Cram School outreach"
   },
 
@@ -101,25 +101,25 @@ const outreachMapData = {
 
   utaipei: {
     title: isChinesePage ? "台北市立大學附設國小" : "Affiliated Experimental Elementary School of University of Taipei",
-    image: getAssetPath("images/outreach/Redone.png"),
+    image: getAssetPath("images/outreach/1.webp"),
     alt: "Affiliated Experimental Elementary School of University of Taipei outreach"
   },
 
   dingxi: {
     title: isChinesePage ? "新北市頂溪國小" : "Dingxi Elementary School",
-    image: getAssetPath("images/outreach/Credone.png"),
+    image: getAssetPath("images/outreach/2.jpg"),
     alt: "Dingxi Elementary School outreach"
   },
 
   yongping: {
     title: isChinesePage ? "永平國小" : "Yongping Elementary School",
-    image: getAssetPath("images/outreach/yonghe.jpg"),
+    image: getAssetPath("images/outreach/4.jpg"),
     alt: "Yongping Elementary School outreach"
   },
 
   fuhsing: {
     title: isChinesePage ? "臺北市私立復興實驗高級中學" : "Taipei Fuhsing Private School",
-    image: getAssetPath("images/outreach/xisong.jpg"),
+    image: getAssetPath("images/outreach/5.jpg"),
     alt: "Taipei Fuhsing Private School outreach"
   }
 };
